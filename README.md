@@ -6,7 +6,7 @@ The basic setup consists of a bare git repository, the work tree of the reposito
 
 Then this repo can be pulled in to the home directory of a new machine with the command  `git clone --separate-git-dir=~/.myconf /path/to/repo ~`.
 
-![scrot](https://i.redd.it/yvmw0xjqd2yy.png)
+![scrot](https://u.teknik.io/QjkEO.png)
 
 ## Setup
 
