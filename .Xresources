@@ -1,0 +1,33 @@
+! Xft settings
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.hinting: 1
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.dpi: 125
+Xft.rgba: rgb
+
+! X settings
+Xcursor.size: 60
+Xcursor.theme: OSX-ElCap
+
+! Set the font
+URxvt.font: xft:Consolas for Powerline:size=12
+URxvt.boldFont: xft:Consolas for Powerline:size=12
+URxvt.letterSpace: 0
+
+! Disable scrollbar
+URxvt.scrollBar: false
+
+! Set terminal padding
+URxvt.internalBorder: 20
+
+! Enables copy/paste with Ctrl-Shift-C/V
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.perl-ext-common: default,clipboard
+
+! Enable cursor underline
+URxvt*cursorUnderline: true

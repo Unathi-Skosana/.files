@@ -1,0 +1,35 @@
+#!/usr/bin/sh
+
+# git commands
+alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# file editing shortcuts
+alias v="nvim"
+alias vim="nvim"
+alias zshrc="nvim ~/.zshrc"
+alias bspwmrc="nvim ~/.config/bspwm/bspwmrc"
+alias i3rc="nvim ~/.config/i3/config"
+alias polyconfig="nvim ~/.config/polybar/config"
+alias sxhkdrc="nvim ~/.config/sxhkd/sxhkdrc"
+alias termconfig="nvim  ~/.config/termite/config"
+alias bspreload="sh ~/.config/bspwm/bspwmrc"
+
+#fasd
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
+
+# yaourt and pacman commands
+alias unlockdb="sudo rm /var/lib/pacman/db.lck && echo 'Unlocked...'"
+
+# general commands
+alias py="python"
+alias py2="python2"
+alias j="jump"
+alias connect="nmcli dev wifi connect"
+alias checkstyle="python ~/.scripts/checkstyle.py"
