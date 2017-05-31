@@ -52,3 +52,6 @@ source $HOME/.bin/prompts/lambda-mode.zsh-theme
 
 # fasd
 eval "$(fasd --init auto)"
+
+# wal
+(wal -r &)

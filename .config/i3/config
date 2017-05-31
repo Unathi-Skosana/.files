@@ -8,17 +8,17 @@ font pango:xos4 terminus 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # Set colors from Xresources
-set_from_resource $fg i3wm.color15 #ECE0D7
-set_from_resource $bg i3wm.color10 #ECE0D7
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec applauncher.sh
+bindsym $mod+d exec rof
 
 # change focus
 bindsym $mod+j focus left
@@ -121,8 +121,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 for_window [class="^.*"] border pixel 1
 
 # Gaps
-gaps inner 10
-gaps outer 30
+gaps inner 5
+gaps outer 0
 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
@@ -161,8 +161,17 @@ bindsym $mod+r mode "resize"
 # scratchpad
 bindsym $mod+Shift+s exec "scratchpad"
 
-# xinitrc
-exec "sh .xinitrc"
+# Media keys
+
+bindsym XF86AudioRaiseVolume exec "amixer -q sset Master 5%+ &"
+
+bindsym XF86AudioLowerVolume exec "amixer -q sset Master 5%- &"
+
+bindsym XF86AudioMute exec "amixer -q sset Master toggle &"
+
+bindsym XF86KbdBrightnessUp exec "xbacklight -inc 5 &"
+
+bindsym XF86KbdBrightnessDown exec "xbacklight -dec 5 &"
 
 # screenshot
 bindsym $mod+p exec "scrot"
@@ -172,3 +181,10 @@ bindsym $mod+n exec "pcmanfm"
 
 # Scratchpad window
 bindsym Mod1+s exec "scratchpad"
+
+bindsym Mod1+p exec "lock.sh"
+
+bindsym Mod1+w exec "wal -i $HOME/Pictures/Wallpapers -o wal-set"
+
+# xinitrc
+exec "sh .xinitrc"

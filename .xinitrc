@@ -5,5 +5,5 @@ checkredshift.sh &
 urxvtd -q -f &
 mpd &
 launchbar &
-feh --bg-fill ~/Pictures/JwljAry.png
 rfkill block all
+wal -i "$(< "${HOME}/.cache/wal/wal")"

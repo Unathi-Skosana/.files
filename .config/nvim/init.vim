@@ -1,29 +1,34 @@
-if &compatible
-  set nocompatible
-endif
-filetype on
-" append to runtime path
-set rtp+=/usr/share/vim/vimfiles
-" initialize dein, plugins are installed to this directory
-call dein#begin(expand('~/.cache/dein'))
-" add packages here, e.g:
-call dein#add('Valloric/YouCompleteMe')
-call dein#add('Shougo/deoplete.nvim', { 'do': ':UpRemotePlugins' })
-call dein#add('Shougo/denite.nvim')
-call dein#add('Shougo/vimfiler')
-call dein#add('scrooloose/nerdtree')
-call dein#add('Yggdroot/indentLine')
-call dein#add('airblade/vim-gitgutter')
+ if &compatible
+   set nocompatible
+ endif
+ filetype on
+ 
+ " append to runtime path
+ set rtp+=/usr/share/vim/vimfiles
+ " initialize dein, plugins are installed to this directory
+ call dein#begin(expand('~/.cache/dein'))
 
-" exit dein
-call dein#end()
-" auto-install missing packages on startup
-if dein#check_install()
-  call dein#install()
-endif
-filetype plugin on
+ " add packages here, e.g:
+ call dein#add('Valloric/YouCompleteMe')
+ call dein#add('Shougo/deoplete.nvim', { 'do': ':UpRemotePlugins' })
+ call dein#add('Shougo/denite.nvim')
+ call dein#add('Shougo/vimfiler')
+ call dein#add('scrooloose/nerdtree')
+ call dein#add('Yggdroot/indentLine')
+ call dein#add('airblade/vim-gitgutter')
+ call dein#add('SirVer/ultisnips')
+ call dein#add('honza/vim-snippets')
 
-"End dein Scripts-------------------------
+
+ " exit dein
+ call dein#end()
+ " auto-install missing packages on startup
+ if dein#check_install()
+   call dein#install()
+ endif
+ filetype plugin on
+
+ "End dein Scripts-------------------------
 
  set pastetoggle=<F2>
  set clipboard=unnamed
@@ -33,8 +38,8 @@ filetype plugin on
 
  " Colors 
  set background=dark
- colorscheme ryuuko
- 
+ colorscheme wal
+
  " Editor settings
  set tabstop=4
  set shiftwidth=4

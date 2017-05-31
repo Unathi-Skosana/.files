@@ -1,19 +1,20 @@
 ! Xft settings
-Xft.antialias: 1
-Xft.autohint: 0
-Xft.hinting: 1
-Xft.lcdfilter: lcddefault
-Xft.hintstyle: hintslight
-Xft.dpi: 125
+!
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
 Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
 
 ! X settings
 Xcursor.size: 60
 Xcursor.theme: OSX-ElCap
 
 ! Set the font
-URxvt.font: xft:Consolas for Powerline:size=12
-URxvt.boldFont: xft:Consolas for Powerline:size=12
+URxvt.font: xft:Roboto Mono:size=9
+URxvt.boldFont: xft:Roboto Mono:size=9
 URxvt.letterSpace: 0
 
 ! Disable scrollbar
@@ -31,3 +32,7 @@ URxvt.perl-ext-common: default,clipboard
 
 ! Enable cursor underline
 URxvt*cursorUnderline: true
+
+! Rofi
+rofi.opacity: 10
+rofi.font: Roboto Mono 12
