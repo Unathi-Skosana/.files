@@ -12,12 +12,13 @@
  call dein#add('Valloric/YouCompleteMe')
  call dein#add('Shougo/deoplete.nvim', { 'do': ':UpRemotePlugins' })
  call dein#add('Shougo/denite.nvim')
- call dein#add('Shougo/vimfiler')
  call dein#add('scrooloose/nerdtree')
  call dein#add('Yggdroot/indentLine')
  call dein#add('airblade/vim-gitgutter')
  call dein#add('SirVer/ultisnips')
  call dein#add('honza/vim-snippets')
+ call dein#add('godlygeek/tabular')
+ call dein#add('plasticboy/vim-markdown')
 
 
  " exit dein
@@ -39,6 +40,7 @@
  " Colors 
  set background=dark
  colorscheme wal
+ let g:base16_shell_path="~/.config/base16-shell/"
 
  " Editor settings
  set tabstop=4
@@ -66,8 +68,10 @@
  let g:UltiSnipsJumpForwardTrigger="<c-b>"
  let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
- " Vimfiler
- let g:vimfiler_as_default_explorer = 1
+ " Markdown-mode
+ let g:vim_markdown_toc_autofit = 1
+ let g:vim_markdown_json_frontmatter = 1
+ let g:vim_markdown_math = 1
 
  " Unmaps the arrow keys
  map <Up>    <nop>

@@ -33,3 +33,6 @@ alias py2="python2"
 alias j="jump"
 alias connect="nmcli dev wifi connect"
 alias checkstyle="python ~/.scripts/checkstyle.py"
+
+# Everything else
+alias code="sh ~/.VSCode/bin/code &"
