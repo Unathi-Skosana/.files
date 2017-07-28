@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/zsh
 
 # git commands
 alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -6,6 +6,8 @@ alias config='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # file editing shortcuts
 alias v="nvim"
 alias vim="nvim"
+
+# Desktop environment config file edting
 alias zshrc="nvim ~/.zshrc"
 alias bspwmrc="nvim ~/.config/bspwm/bspwmrc"
 alias i3rc="nvim ~/.config/i3/config"
@@ -33,8 +35,51 @@ alias py2="python2"
 alias j="jump"
 alias connect="nmcli dev wifi connect"
 alias checkstyle="python ~/.scripts/checkstyle.py"
-
-# Everything else
 alias code="sh ~/.VSCode/bin/code &"
-#alias co="cc -Wall -ansi -pedantic -o"
-alias lc='colorls -r'
+
+# Functions
+
+# Compiling c file to compiled folder with following flags
+function compile() {
+    cc -Wall -ansi -pedantic -o ../compiled/$1 $2
+}
+
+# List files in a directory as soon as you cd into it.
+function cds() {
+    cd $1 && ls
+}
+
+# Git push
+function gitpu() {
+    git push $1 master
+}
+
+# Git commit
+function gitco() {
+    git commit -m "$1"
+}
+
+# Git add 
+function gitadd() {
+    if ($1 == '') {
+        git add -A
+    } else {
+        git add $1
+    }
+}
+
+
+# a visual recursive list of all files and directories
+function tree() {
+    find . | sed -e 's/[^\/]*\//|--/g' -e 's/-- |/    |/g' | $PAGER
+}
+
+# recursive text search (ack is also nifty)
+function f() {
+    find . -name '*' | xargs grep -l $1
+}
+
+# recursive search and replace (ignoring hidden files and dirs), example: replace foo bar
+function replace()  {
+    find . \( ! -regex '.*/\..*' \) -type f | xargs perl -pi -e "s/$1/$2/g"
+}

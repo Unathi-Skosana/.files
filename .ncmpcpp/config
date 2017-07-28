@@ -2,8 +2,8 @@
 ncmpcpp_directory = ~/.ncmpcpp
 colors_enabled = yes
 main_window_color = blue
-main_window_highlight_color =  1_16
-active_column_color = white
+current_item_prefix = "$(1_16)$r"
+current_item_suffix = "$/r$(end)"
 
 # Playlist look
 playlist_display_mode = classic
