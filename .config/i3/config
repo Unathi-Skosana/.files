@@ -8,7 +8,7 @@ font pango:xos4 terminus 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -183,8 +183,6 @@ bindsym $mod+n exec "pcmanfm"
 bindsym Mod1+s exec "scratchpad"
 
 bindsym Mod1+p exec "lock.sh"
-
-bindsym Mod1+w exec "wal -i $HOME/Pictures/Wallpapers -o wal-set"
 
 # xinitrc
 exec "sh .xinitrc"

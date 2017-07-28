@@ -40,7 +40,7 @@ alias code="sh ~/.VSCode/bin/code &"
 # Functions
 
 # Compiling c file to compiled folder with following flags
-function compile() {
+function cco() {
     cc -Wall -ansi -pedantic -o ../compiled/$1 $2
 }
 
