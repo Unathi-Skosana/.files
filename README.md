@@ -1,8 +1,7 @@
 ## .files
 
-## Preview
+An repo containing an amalgamation of other people's repos.
 
-## Openbox
+## Preview
 ![preview-openbox](https://raw.githubusercontent.com/unathi-skosana/.files/master/preview.png)
 
-<br />
