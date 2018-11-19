@@ -1,10 +1,13 @@
 #! /bin/sh
 
+# Cheers!
+# Addy
+
 # Open Weather Map API code, register to http://openweathermap.org to get one ;)
-API_KEY="xxx"
+API_KEY="8fb17a06a416a3ffd5f7bf00412a8c10"
 
 # Check on http://openweathermap.org/find
-CITY_ID="xxx"
+CITY_ID="964137"
 
 URGENT_LOWER=0
 URGENT_HIGHER=30
