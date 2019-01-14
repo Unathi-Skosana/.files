@@ -1,50 +1,46 @@
-#!/usr/bin/env bash
-#
 # Neofetch config file
 # https://github.com/dylanaraps/neofetch
 
-# Speed up script by not using unicode
-export LC_ALL=C
-export LANG=C
 
 # See this wiki page for more info:
 # https://github.com/dylanaraps/neofetch/wiki/Customizing-Info
 print_info() {
-	#info line_break
-    #info title
-    #info underline
-    #info underline
+    info title
+    info underline
 
-    #info "OS" distro
-    #info "Model" model
+    info "OS" distro
+    info "Host" model
     info "Kernel" kernel
-    #info "Packages" packages
-    #info "Memory" memory
-    #info "Disk" disk
-    #info "Uptime" uptime
-    #info "Terminal" term
-    info "Terminal Font" term_font
+    info "Uptime" uptime
+    info "Packages" packages
     info "Shell" shell
+    info "CPU" cpu
+    #info "WM" wm
+    #info "WM Theme" wm_theme
     #info "Resolution" resolution
     #info "DE" de
-    info "WM" wm
-    #info "WM Theme" wm_theme
-    info "Theme" theme
-    info "Icons" icons
-    #info "CPU" cpu
+    #info "Theme" theme
+    #info "Icons" icons
+    #info "Terminal" term
+    #info "Terminal Font" term_font
     #info "GPU" gpu
-    #info "CPU Usage" cpu_usage
-    #info "Battery" battery
-    #info "Font" font
-    #info "Song" song
-    #info "Local IP" local_ip
-    #info "Public IP" public_ip
-    #info "Users" users
-    #info "Install Date" install_date
+    #info "Memory" memory
+
+    # info "GPU Driver" gpu_driver  # Linux/macOS only
+    # info "CPU Usage" cpu_usage
+    # info "Disk" disk
+    # info "Battery" battery
+    # info "Font" font
+    # info "Song" song
+    # info "Local IP" local_ip
+    # info "Public IP" public_ip
+    # info "Users" users
+    # info "Install Date" install_date
+    # info "Locale" locale  # This only works on glibc systems.
 
     info line_break
     info cols
-    #info line_break
+    info line_break
 }
 
 
@@ -73,7 +69,7 @@ kernel_shorthand="on"
 # Values:   'on', 'off', 'tiny'
 # Flag:     --distro_shorthand
 # Supports: Everything except Windows and Haiku
-distro_shorthand="on"
+distro_shorthand="off"
 
 # Show/Hide OS Architecture.
 # Show 'x86_64', 'x86' and etc in 'Distro:' output.
@@ -85,7 +81,7 @@ distro_shorthand="on"
 # Example:
 # on:  'Arch Linux x86_64'
 # off: 'Arch Linux'
-os_arch="off"
+os_arch="on"
 
 
 # Uptime
@@ -142,19 +138,28 @@ shell_version="on"
 # NOTE: Any file in '/sys/devices/system/cpu/cpu0/cpufreq' can be used as a value.
 speed_type="bios_limit"
 
-# Shorten the output of the CPU function
+# CPU speed shorthand
 #
 # Default: 'off'
-# Values:  'on', 'off', 'tiny', 'name', 'speed'
-# Flag:    --cpu_shorthand
+# Values: 'on', 'off'.
+# Flag:    --speed_shorthand.
+# NOTE: This flag is not supported in systems with CPU speed less than 1 GHz
 #
 # Example:
 # on:    'i7-6500U (4) @ 3.1GHz'
-# off:   'Intel i7-6500U (4) @ 3.1GHz'
-# tiny:  'i7-6500U (4)'
-# name:  'Intel i7-6500U (4)'
-# speed: '3.1GHz'
-cpu_shorthand="off"
+# off:   'i7-6500U (4) @ 3.100GHz'
+speed_shorthand="off"
+
+# Enable/Disable CPU brand in output.
+#
+# Default: 'on'
+# Values:  'on', 'off'
+# Flag:    --cpu_brand
+#
+# Example:
+# on:   'Intel i7-6500U'
+# off:  'i7-6500U (4)'
+cpu_brand="on"
 
 # CPU Speed
 # Hide/Show CPU speed.
@@ -189,7 +194,9 @@ cpu_cores="logical"
 # Default: 'off'
 # Values:  'C', 'F', 'off'
 # Flag:    --cpu_temp
-# Supports: Linux
+# Supports: Linux, BSD
+# NOTE: For FreeBSD and NetBSD-based systems, you'll need to enable
+#       coretemp kernel module. This only supports newer Intel processors.
 #
 # Example:
 # C:   'Intel i7-6500U (4) @ 3.1GHz [27.2°C]'
@@ -259,7 +266,7 @@ refresh_rate="off"
 # Example:
 # on:  'Numix, Adwaita'
 # off: 'Numix [GTK2], Adwaita [GTK3]'
-gtk_shorthand="on"
+gtk_shorthand="off"
 
 
 # Enable/Disable gtk2 Theme / Icons / Font
@@ -282,7 +289,7 @@ gtk2="on"
 # Example:
 # on:  'Numix [GTK2], Adwaita [GTK3]'
 # off: 'Numix [GTK2]'
-gtk3="off"
+gtk3="on"
 
 
 # IP Address
@@ -321,7 +328,7 @@ disk_show=('/')
 # What to append to the Disk subtitle.
 #
 # Default: 'mount'
-# Values:  'mount', 'name'
+# Values:  'mount', 'name', 'dir'
 # Flag:    --disk_subtitle
 #
 # Example:
@@ -330,11 +337,55 @@ disk_show=('/')
 #
 # mount:  'Disk (/): 74G / 118G (66%)'
 #         'Disk (/mnt/Local Disk): 74G / 118G (66%)'
+#         'Disk (/mnt/Videos): 74G / 118G (66%)'
+#
+# dir:    'Disk (/): 74G / 118G (66%)'
+#         'Disk (Local Disk): 74G / 118G (66%)'
+#         'Disk (Videos): 74G / 118G (66%)'
 disk_subtitle="mount"
 
 
 # Song
 
+
+# Manually specify a music player.
+#
+# Default: 'auto'
+# Values:  'auto', 'player-name'
+# Flag:    --music_player
+#
+# Available values for 'player-name':
+#
+# Google Play
+# Spotify
+# amarok
+# audacious
+# banshee
+# bluemindo
+# clementine
+# cmus
+# deadbeef
+# deepin-music
+# elisa
+# exaile
+# gnome-music
+# guayadeque
+# iTunes$
+# juk
+# lollypop
+# mocp
+# mopidy
+# mpd
+# pogo
+# pragha
+# qmmp
+# quodlibet
+# rhythmbox
+# spotify
+# tomahawk
+# xmms2d
+# yarock
+music_player="auto"
 
 # Print the Artist and Title on separate lines
 #
@@ -450,7 +501,7 @@ color_blocks="on"
 # Default:  '3'
 # Values:   'num'
 # Flag:     --block_width
-block_width=4
+block_width=3
 
 # Color block height in lines
 #
@@ -527,12 +578,13 @@ disk_display="off"
 
 # Backend Settings
 
+
 # Image backend.
 #
 # Default:  'ascii'
-# Values:   'ascii', 'caca', 'catimg', 'jp2a', 'iterm2', 'off', 'tycat', 'w3m'
+# Values:   'ascii', 'caca', 'catimg', 'jp2a', 'iterm2', 'off', 'termpix', 'pixterm', 'tycat', 'w3m'
 # Flag:     --backend
-image_backend="w3m"
+image_backend="ascii"
 
 # Image Source
 #
@@ -545,7 +597,7 @@ image_backend="w3m"
 # NOTE: 'auto' will pick the best image source for whatever image backend is used.
 #       In ascii mode, distro ascii art will be used and in an image mode, your
 #       wallpaper will be used.
-#image_source=~/.config/neofetch/arch-froly.png
+image_source="ascii"
 
 
 # Ascii Options
@@ -564,7 +616,7 @@ image_backend="w3m"
 #       Change this to 'Lubuntu', 'Xubuntu', 'Ubuntu-GNOME' or 'Ubuntu-Budgie' to use the flavors.
 # NOTE: Arch, Crux and Gentoo have a smaller logo variant.
 #       Change this to 'arch_small', 'crux_small' or 'gentoo_small' to use the small logos.
-#ascii_distro="arch_old"
+ascii_distro="arch_small"
 
 # Ascii Colors
 #
@@ -588,6 +640,15 @@ ascii_bold="on"
 
 # Image Options
 
+
+# Image loop
+# Setting this to on will make neofetch redraw the image constantly until
+# Ctrl+C is pressed. This fixes display issues in some terminal emulators.
+#
+# Default:  'off'
+# Values:   'on', 'off'
+# Flag:     --loop
+image_loop="off"
 
 # Thumbnail directory
 #
@@ -621,14 +682,14 @@ crop_offset="center"
 # Values:  'auto', '00px', '00%', 'none'
 # Flags:   --image_size
 #          --size
-image_size="158"
+image_size="auto"
 
-# Ggap between image and text
+# Gap between image and text
 #
 # Default: '3'
 # Values:  'num', '-num'
 # Flag:    --gap
-gap=2
+gap=3
 
 # Image offsets
 # Only works with the w3m backend.
@@ -637,8 +698,8 @@ gap=2
 # Values:  'px'
 # Flags:   --xoffset
 #          --yoffset
-yoffset=16
-xoffset=16
+yoffset=0
+xoffset=0
 
 # Image background color
 # Only works with the w3m backend.
@@ -674,16 +735,6 @@ scrot="off"
 # Flag:    --scrot_cmd
 scrot_cmd="auto"
 
-# Screenshot Directory
-# Where to save the screenshots
-#
-# Default: '~/Pictures/'
-# Values:  'dir'
-# Flag:    --scrot_dir
-#
-# Note: Neofetch won't create the directory if it doesn't exist.
-scrot_dir="$HOME/Pictures/"
-
 # Screenshot Filename
 # What to name the screenshots
 #
@@ -706,9 +757,15 @@ image_host="teknik"
 
 # Misc Options
 
+# Stdout mode
+# Turn off all colors and disables image backend (ASCII/Image).
+# Useful for piping into another command.
+# Default: 'off'
+# Values: 'on', 'off'
+stdout="off"
 
 # Config version.
 #
 # NOTE: Don't change this value, neofetch reads this to determine
 # how to handle backwards compatibility.
-config_version="2.1.0"
+config_version="3.4.0"

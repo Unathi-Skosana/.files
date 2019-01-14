@@ -18,7 +18,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
-
+Plug 'Nequo/vim-allomancer'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
@@ -147,7 +147,8 @@ set noswapfile
 
 set fileformats=unix,dos,mac
 
-colorscheme wal
+"set termguicolors
+colorscheme allomancer
 
 if exists('$SHELL')
     set shell=$SHELL
