@@ -1,0 +1,54 @@
+# Put your startup items here (I mean below)
+# I have made some example, just uncomment the line that you need to get it starts on session
+# And add more items if You need
+# Don't forget to add ampersand for process those are running in background ;)
+# And also don't forget, make sure You have the package before uncomment a line :D
+# Cheers
+# Addy
+
+# Note : In this default config, I never use any apps that fill my system tray.
+# Filling my system tray is againts my Rice philosophy :D
+
+
+## tint2 panel, my favourite panel :)
+tint2 &
+
+## Set wallpaper with feh
+feh --bg-fill ~/.config/openbox/wallpaper.png
+
+## Set theme with wal
+wal -i ~/.config/openbox/wallpaper.png
+
+## Some of my apps don't respect fontconfig, I'm using xsettingsd to fix it :)
+xsettingsd &
+
+## Who don't love an eye candy shadow?? Launch compton
+compton -b --config ~/.config/compton.conf &
+
+## Music
+mpd
+
+## Enable power management
+xfce4-power-manager &
+
+## Udiskie
+udiskie &
+
+## Clipboard Manager
+(sleep 3; clipit) &
+
+## I love my wife! Upss typo, I mean wifi
+(sleep 5; nm-applet) &
+
+## Bluetooth system tray
+(sleep 3; blueberry-tray) &
+
+## Volume control for systray
+(sleep 2; volumeicon) &
+
+## Battery monitor
+(sleep 3; cbatticon) &
+
+## Start up dunst
+(sleep 3; dunst) &
+
