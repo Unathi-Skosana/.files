@@ -1,0 +1,30 @@
+/* Removes white loading page */
+
+@-moz-document url(about:blank), url(about:newtab), url(about:home) {
+  html:not(#ublock0-epicker), html:not(#ublock0-epicker) body, #newtab-customize-overlay {
+    background: #333230 !important;
+  }
+}
+
+/* Background image new tab page */
+
+@-moz-document url(about:newtab), url(about:home) { 
+  .outer-wrapper {
+    background-image: url("./light.jpg") !important;             /* <<< IMAGE NAME IN chrome/ folder */
+    background-size: cover !important;
+    background-attachment: fixed !important;
+  }
+
+/* Hide scrollbar */
+
+:root{
+  scrollbar-width: none !important;
+}
+}
+
+@-moz-document url(about:privatebrowsing) { 
+
+:root{
+  scrollbar-width: none !important;
+}
+}

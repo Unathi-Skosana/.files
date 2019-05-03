@@ -1,0 +1,45 @@
+.tab-bottom-line,
+/*.tabbrowser-tab::before,
+.tabbrowser-tab::after,*/
+#alltabs-button {
+  display: none !important;
+}
+
+#navigator-toolbox::after {
+	border-bottom: 0px !important;
+}
+
+/* Selected tab */
+
+.tab-background[selected="true"] {
+  border: none !important;
+  background-image: none !important;
+  background-color: #ECECEC !important;         /* <<< COLOR */
+}
+
+
+/* Navigation bar */
+
+#nav-bar {
+  background-image: none !important;
+  background-color: #ECECEC !important;         /* <<< COLOR */
+  box-shadow: none !important;
+}
+
+#urlbar {
+  border: none !important;
+  background-color: #F5F5F5 !important;         /* <<< URL BAR BACKGROUND COLOR */
+}
+
+/* Inactive tabs */
+
+#TabsToolbar, #browser-panel {
+	background: #ECECEC !important;            /* <<< COLOR */
+}
+
+/* Makes the favicon grayscale to fit better in flat design
+ * Contributor(s): Madis0, Timvde
+ */
+tab .tab-icon, .tab-icon-image {
+  filter: grayscale(1) contrast(1);
+}
