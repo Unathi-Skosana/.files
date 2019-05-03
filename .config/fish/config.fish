@@ -13,9 +13,16 @@ set tacklebox_path ~/.tackle ~/.tacklebox
 # Custom plugins may be added to ~/.tacklebox/plugins/
 # Example format: set tacklebox_plugins python extract
 
+# Suppress fish greeting
+set fish_greeting (motivate)
+
+set -x LOCAL_BIN $HOME/.local/bin/
+set -x GOPATH $HOME/go/bin
+set -x  EDITOR /usr/bin/nvim
+set -x  VISUAL /usr/bin/nvim
+
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish
 
 # Load fish aliases
 . ~/.config/fish/aliases.fish
-

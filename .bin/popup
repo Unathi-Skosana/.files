@@ -2,7 +2,7 @@
 	MUSIC_DIR=/home/nyx/Music
 	COVER=/tmp/cover.png
     BACKGROUND="/home/nyx/.popup/cover.png"
-    
+
     {
     artist="$(mpc --format %artist% current)"
     album="$(mpc --format %album% current)"
@@ -13,16 +13,15 @@
 
     covers="$(find "$album_dir" -type d -exec find {} -maxdepth 1 -type f -iregex ".*/.*\(${album}\|cover\|folder\|artwork\|front\).*[.]\(jpe?g\|png\|gif\|bmp\)" \; )"
 
-    if [ -z "$cover" ]
+    if [ -z "$covers" ]
     then
-        sacad "$artist" "$album" 600 $album_dir/cover.jpg > /dev/null 2>&1
-        covers="$(find "$album_dir" -type d -exec find {} -maxdepth 1 -type f -iregex ".*/.*\(${album}\|cover\|folder\|artwork\|front\).*[.]\(jpe?g\|png\|gif\|bmp\)" \; )"
+        sacad "$artist" "$album" 600 "$album_dir/cover.jpg" && covers="$(find "$album_dir" -type d -exec find {} -maxdepth 1 -type f -iregex ".*/.*\(${album}\|cover\|folder\|artwork\|front\).*[.]\(jpe?g\|png\|gif\|bmp\)" \; )"
     fi
 
 
 
     src="$(echo -n "$covers" | head -n1)"
-    rm -f "$COVER" 
+    rm -f "$COVER"
     convert "$src" -resize 150 "$COVER"
     n30f -b -x 2600 -y 50 -d ${BACKGROUND}
     n30f -b -x 2625 -y 75 -d ${COVER}

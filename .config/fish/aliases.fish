@@ -1,9 +1,13 @@
 # git commands
 alias gcot 'git commit -m'
 alias ga 'git add'
+alias gall 'git add -A'
 alias gp 'git push'
+alias gc 'git commit -m'
 alias gam 'git commit --amend'
 alias gre 'git remote add'
+alias gst 'git status'
+alias glog 'git log'
 
 # fasd
 alias a 'fasd -a'        # any
@@ -19,7 +23,12 @@ alias wa 'f -e mpv'
 # general commands
 alias py 'python'
 alias py2 'python2'
-alias connect 'nmcli dev wifi connect'
+alias v 'nvim'
+alias cat 'bat'
+alias vrc 'nvim $HOME/.config/nvim/init.vim'
+alias frc 'nvim $HOME/.config/fish/config.fish'
+alias ydl 'youtube-dl'
+alias gcl 'git clone'
 
 # pacman aliases
 alias pac 'pacman -S'        # install
@@ -30,8 +39,13 @@ alias paci 'pacman -Si'      # info
 alias paclo 'pacman -Qdt'    # list orphans
 alias pacc 'pacman -Scc'    # clean cache
 alias paclf 'pacman -Ql'    # list files
-alias yaur 'yaourt'
 
 function pacro
     paclo; and sudo pacman -Rns (pacman -Qtdq);
+end
+
+function copy_template
+    set cur (pwd)
+    cp -R $cur/$argv[1] $cur/$argv[2]
+    echo "Done!"
 end

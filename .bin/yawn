@@ -1,0 +1,94 @@
+#!/bin/bash
+#
+# yawn - sleepyti.me for the command line
+# 
+# Determine the best times to fall asleep or wake up.
+#
+# By Jico Baligod
+# www.baligod.com
+
+# Average time to fall asleep in seconds
+fall=$((14*60))
+
+# Sleep CYCLE in seconds
+CYCLE=5400
+PLATFORM=`uname`
+NOW=`date "+%s"`
+
+# Spectrum of colors (from first cycle to last)
+# LGRAY LGRAY CYAN LCYAN LGREEN LGREEN
+colors=( "\033[0;37m" "\033[0;37m" "\033[0;36m" "\033[1;36m" "\033[1;32m" "\033[1;32m" )
+
+# Convert a UNIX timestamp to a date
+function tsToDate {
+  if [ $PLATFORM = "Darwin" ]; then
+    echo `date -r $1 "+%I:%M%p"`
+  else
+    echo `date -d @$1 "+%I:%M%p"`
+  fi
+}
+
+# When are good times to wake up if one were to go to bed now
+function optimalWake {
+  for (( i=0,j=$((NOW + fall + CYCLE));i<6;i++,j=$((j+CYCLE)))); do
+    tsToDate $j
+  done
+}
+
+# When are good times to go to bed in order to wake up at time hh:mm
+function optimalSleep {
+  if [ $PLATFORM = "Darwin" ]; then
+    target=`date -j -f "%l:%M%p" $1 "+%s"`
+  else
+    target=`date -d $1 "+%s"`
+  fi
+  
+  # Bump to next day if so
+  if [[ "$target" < "$NOW" ]]; then
+    target=$((target + 24*60*60))
+  fi
+  
+  numCycles=$(( (target - NOW) / CYCLE ))
+  limit=6
+  if [[ "$numCycles" < "$limit" ]]; then
+    limit=$numCycles
+  fi
+
+  echo -e "Go to bed at:"
+  for (( i=0,j=$(($target-$fall-$CYCLE));i<6;i++,j=$(($j-$CYCLE)))); do
+    echo -ne "${colors[${i}]}~ "
+    tsToDate $j
+    echo -ne "\033[0m"
+  done
+}
+
+# Run modes
+DEFAULT="-n"
+case "${1:-$DEFAULT}" in
+  -n|--now)
+    optimalWake
+    ;;
+  -w|--wake)
+    optimalSleep $2
+    ;;
+  -h|--help)
+    echo "yawn --- bedtime calculator
+  * Calculations based on 90 minutes sleep cycles.
+  * Average time to fall asleep is 14 minutes. All
+    estimates include this time.
+    (No need to add/subract this time)
+    
+Example usage:
+yawn [-n|--now]
+  Determine best times to wake up if you were to 
+  go to bed now (and fall asleep in average time).
+  
+yawn [-w|--wake] HH:MM(am|pm)
+  Determine when to go to bed.
+  Includes average time to fall asleep (14 minutes).
+  i.e. yawn -w 8:00am"
+    ;;
+  *)
+    echo "illegal option $1: --help for usage info"
+    ;;
+esac

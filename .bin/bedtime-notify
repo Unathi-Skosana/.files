@@ -1,0 +1,3 @@
+#!/usr/bin/sh
+output=$(./yawn)
+notify-send "Sleep times" "$output" -u critical -i alarm && paplay ./notify.ogg
