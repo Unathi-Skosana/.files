@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+#
+# Home Directory Backup Script
+#
+
+tar --listed-incremental=/media/backup/snapshot.file -cJpf
+/media/backup/home-backup-`date +%d-%m-%Y`.tar.xz
+/home/user/{Documents,Downloads,Pictures,Music,Templates,Repositories,Fun,.config,.mpd,.ncmpcpp,.mozilla}
