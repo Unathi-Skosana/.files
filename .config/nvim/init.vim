@@ -36,8 +36,7 @@ Plug 'xuhdev/vim-latex-live-preview'
 Plug 'lervag/vimtex'
 Plug 'rhysd/vim-clang-format'
 Plug 'kana/vim-operator-user'
-Plug 'dracula/vim'
-Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'ntk148v/vim-horizon'
 
 
 if isdirectory('/usr/local/opt/fzf')
@@ -135,16 +134,16 @@ set noswapfile
 
 set fileformats=unix,dos,mac
 
+
 set background=dark
 set termguicolors
-colorscheme deep-space
+colorscheme horizon
 
-let g:deepspace_italics=1
 
 if exists('$SHELL')
     set shell=$SHELL
 else
-    set shell=/usr/bin/zsh
+    set shell=/usr/bin/fish
 endif
 
 " session management

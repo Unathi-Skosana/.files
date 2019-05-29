@@ -1,5 +1,5 @@
 URxvt.cursorBlink         :1
-URxvt*font                :xft:Iosevka:size=12
+URxvt*font                :xft:Hermit:size=12
 URxvt.lineSpace           : 1
 URxvt.letterSpace         : 1
 URxvt.scrollBar           : false
