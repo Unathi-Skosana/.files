@@ -8,6 +8,7 @@ alias gam 'git commit --amend'
 alias gre 'git remote add'
 alias gst 'git status'
 alias glog 'git log'
+alias gcl 'git clone'
 
 # fasd
 alias a 'fasd -a'        # any
@@ -28,7 +29,9 @@ alias cat 'bat'
 alias vrc 'nvim $HOME/.config/nvim/init.vim'
 alias frc 'nvim $HOME/.config/fish/config.fish'
 alias ydl 'youtube-dl'
-alias gcl 'git clone'
+alias j 'jump'
+alias m 'mark'
+
 
 # pacman aliases
 alias pac 'pacman -S'        # install
