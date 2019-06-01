@@ -1,3 +1,7 @@
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval (eval /opt/anaconda/bin/conda "shell.fish" "hook" $argv)
+# <<< conda initialize <<<
 
 # Paths to your tackle
 set tacklebox_path ~/.tackle ~/.tacklebox
@@ -16,8 +20,11 @@ set tacklebox_path ~/.tackle ~/.tacklebox
 # Suppress fish greeting
 set fish_greeting (motivate)
 
-set -x LOCAL_BIN $HOME/.local/bin/
-set -x GOPATH $HOME/go/bin
+# PATHS
+set -gx PATH $PATH /home/nyx/.local/bin/
+set -gx PATH $PATH /opt/anaconda/bin
+set -gx PATH $PATH /home/nyx/go/bin
+
 set -x  EDITOR /usr/bin/nvim
 set -x  VISUAL /usr/bin/nvim
 
@@ -26,3 +33,5 @@ set -x  VISUAL /usr/bin/nvim
 
 # Load fish aliases
 . ~/.config/fish/aliases.fish
+
+

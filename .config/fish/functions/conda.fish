@@ -1,0 +1,1 @@
+/opt/anaconda/etc/fish/conf.d/conda.fish

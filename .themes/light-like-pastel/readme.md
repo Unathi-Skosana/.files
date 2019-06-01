@@ -1,1 +1,0 @@
-### Light Like Pastel theme
