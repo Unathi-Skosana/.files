@@ -1,0 +1,25 @@
+README for physics.sty
+
+physics 1.3
+Created by Sergio C. de la Barrera
+Updated December 12, 2012
+
+E-mail comments and suggestions to: physics.tex@gmail.com
+
+This material is subject to the LaTeX Project Public License.
+See http://www.ctan.org/tex-archive/help/Catalogue/licenses.lppl.html for 
+the details of that license.
+
+This packages defines simple, yet flexible macros for typesetting equations via:
+*Automatic bracing
+*Vector notation
+*Derivatives
+*Dirac bra-ket notation
+*Matrix macros
+*Additional trig functions and other convenient operators
+*Flat fractions and other useful miscellaneous math macros
+
+The goal of this package is to make typesetting equations for physics simpler, 
+faster, and more human-readable. To that end, the commands included in this package 
+have names that make the purpose of each command immediately obvious and remove any 
+ambiguity while reading and editing code for physics equations.
