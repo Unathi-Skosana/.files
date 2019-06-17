@@ -9,9 +9,6 @@ endif
 
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
 
-let g:vim_bootstrap_langs = "c,go,haskell,javascript,python"
-let g:vim_bootstrap_editor = "nvim"				" nvim or vim
-
 " Required:
 call plug#begin(expand('~/.config/nvim/plugged'))
 
@@ -28,15 +25,12 @@ Plug 'vim-scripts/CSApprox'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'Raimondi/delimitMate'
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
+Plug 'sjl/gundo.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
-Plug 'xuhdev/vim-latex-live-preview'
 Plug 'lervag/vimtex'
-Plug 'rhysd/vim-clang-format'
-Plug 'kana/vim-operator-user'
-Plug 'ntk148v/vim-horizon'
+Plug 'dracula/vim'
 
 
 if isdirectory('/usr/local/opt/fzf')
@@ -137,9 +131,7 @@ set fileformats=unix,dos,mac
 
 set background=dark
 set termguicolors " Enable true color support.
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-colorscheme horizon
+colorscheme dracula
 
 
 if exists('$SHELL')
@@ -178,24 +170,18 @@ let g:indentLine_concealcursor = 0
 let g:indentLine_char = '┆'
 let g:indentLine_faster = 1
 
-
-
-"" Disable the blinking cursor.
-set gcr=a:blinkon0
-set scrolloff=3
-
 "" Status bar
+set statusline=%=%P\ %f\ %m
+set fillchars=vert:\ ,stl:\ ,stlnc:\ 
 set laststatus=2
+set noshowmode
+hi Statusline guifg=white guibg=NONE
+hi StatuslineNC guifg=white guibg=NONE
 
 "" Use modeline overrides
 set modeline
 set modelines=10
 
-set title
-set titleold="Terminal"
-set titlestring=%F
-
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
@@ -245,11 +231,7 @@ let g:vimshell_user_prompt = 'fnamemodify(getcwd(), ":~")'
 let g:vimshell_prompt =  '$ '
 
 " terminal emulation
-if g:vim_bootstrap_editor == 'nvim'
-  nnoremap <silent> <leader>sh :terminal<CR>
-else
-  nnoremap <silent> <leader>sh :VimShellCreate<CR>
-endif
+nnoremap <silent> <leader>sh :terminal<CR>
 
 "*****************************************************************************
 "" Functions
@@ -291,6 +273,7 @@ augroup vimrc-make-cmake
 augroup END
 
 set autoread
+set autochdir
 
 "*****************************************************************************
 "" Mappings
@@ -358,14 +341,8 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
-" syntastic
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=1
-let g:syntastic_aggregate_errors = 1
+" Gundo
+nnoremap <F5> :GundoToggle<CR>
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
@@ -444,9 +421,6 @@ let g:jedi#show_call_signatures = "0"
 let g:jedi#completions_command = "<C-Space>"
 let g:jedi#smart_auto_mappings = 0
 
-" syntastic
-let g:syntastic_python_checkers=['python', 'flake8']
-
 " Syntax highlight
 " Default highlight is better than polyglot
 let g:polyglot_disabled = ['python']
@@ -462,8 +436,20 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 
-" Clang format
-map <Leader>_  <Plug>(operator-clang-format)
+"ale
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
 
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%dW %dE',
+    \   all_non_errors,
+    \   all_errors
+    \)
+endfunction
+
+set statusline+=%{LinterStatus()}
 
 "*****************************************************************************

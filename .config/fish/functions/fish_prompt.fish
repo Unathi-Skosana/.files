@@ -1,1 +1,0 @@
-/home/nyx/.local/share/omf/themes/tomita/fish_prompt.fish

@@ -18,7 +18,6 @@ set tacklebox_path ~/.tackle ~/.tacklebox
 # Example format: set tacklebox_plugins python extract
 
 # Suppress fish greeting
-set fish_greeting (motivate)
 
 # PATHS
 set -gx PATH $PATH /home/nyx/.local/bin/
@@ -33,5 +32,7 @@ set -x  VISUAL /usr/bin/nvim
 
 # Load fish aliases
 . ~/.config/fish/aliases.fish
+
+#. /usr/share/fzf/fzf-extras.bash
 
 
