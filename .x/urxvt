@@ -1,3 +1,5 @@
+! URxvt
+
 URxvt.cursorBlink         :1
 URxvt*font                :xft:Hermit:size=12
 URxvt.lineSpace           : 1

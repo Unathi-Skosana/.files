@@ -26,7 +26,7 @@ SETUVAR fish_color_search_match:bryellow\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
-SETUVAR fish_greeting:Welcome\x20to\x20fish\x2c\x20the\x20friendly\x20interactive\x20shell
+SETUVAR fish_greeting:\x1b\x5b1\x3b36m\x22Life\x20has\x20a\x20way\x20of\x20testing\x20a\x20person\u2019s\x20will\x2c\x20either\x20by\x20having\x20nothing\x20happen\x20at\x20all\x20or\x20by\x20having\x20everything\x20happen\x20at\x20once\x2e\x22\x1b\x5b1\x3bm\x1e\x09\x09\x1b\x5b1\x3b35m\x2d\x2dPaulo\x20Coelho\x1b\x5b1\x3bm\x1b\x5b0m
 SETUVAR fish_key_bindings:fish_default_key_bindings
 SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
