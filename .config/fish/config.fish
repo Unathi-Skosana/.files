@@ -24,12 +24,22 @@ set fish_greeting (motivate)
 set -gx PATH $PATH /home/nyx/.local/bin/
 set -gx PATH $PATH /opt/anaconda/bin
 set -gx PATH $PATH /home/nyx/go/bin
+set -gx PATH $PATH /home/nyx/.gem/ruby/2.6.0/bin
+set -gx PATH $PATH /home/nyx/.gem/ruby/2.6.0/bin
+set -gx PATH $PATH /home/nyx/simpatico/bin
+set -gx PATH $PATH /home/nyx/.npm-global/bin
+set -gx PATH $PATH /home/nyx/.bin
 
-set -x  EDITOR /usr/bin/nvim
-set -x  VISUAL /usr/bin/nvim
+
+# ENV VARIABLES
+set -gx  EDITOR /usr/bin/gedit
+set -gx  VISUAL /usr/bin/nvim
+set -gx  VIMPATH /home/nyx/.config/nvim/init.vim
+set -gx  PYTHONPATH /home/nyx/simpatico/scripts/python
 
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish
+
 
 # Load fish aliases
 . ~/.config/fish/aliases.fish

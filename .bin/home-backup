@@ -1,9 +1,5 @@
 #!/usr/bin/bash
 
-#
 # Home Directory Backup Script
-#
 
-tar --listed-incremental=/media/backup/snapshot.file -cJpf
-/media/backup/home-backup-`date +%d-%m-%Y`.tar.xz
-/home/user/{Documents,Downloads,Pictures,Music,Templates,Repositories,Fun,.config,.mpd,.ncmpcpp,.mozilla}
+tar --listed-incremental=/run/media/nyx/06B6E0D9B6E0CA6F/backup/snapshot.file -cJpf /run/media/nyx/06B6E0D9B6E0CA6F/backup/home-backup-`date +%d-%m-%Y`.tar.xz /home/nyx/{Documents,Downloads,Applications,Pictures,Music,Templates,.config,go,texmf,.texlive,.bin}

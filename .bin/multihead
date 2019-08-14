@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ xrandr --auto --output DP1-2  --above eDP1

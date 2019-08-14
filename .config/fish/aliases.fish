@@ -26,11 +26,14 @@ alias py 'python'
 alias py2 'python2'
 alias v 'nvim'
 alias cat 'bat'
-alias vrc 'nvim $HOME/.config/nvim/init.vim'
-alias frc 'nvim $HOME/.config/fish/config.fish'
+alias vrc 'nvim $HOME/.config/nvim'
+alias frc 'nvim $HOME/.config/fish'
+alias xrc 'nvim $HOME/.x'
 alias ydl 'youtube-dl'
+alias gdl 'gitdir'
 alias j 'jump'
 alias m 'mark'
+alias junb 'jupyter notebook'
 
 
 # pacman aliases

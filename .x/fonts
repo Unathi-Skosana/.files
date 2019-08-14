@@ -1,8 +1,9 @@
 ! Fonts
 
 
-Xft.dpi       : 192
-Xft.antialias : true
+
+Xft.dpi       : 100
+Xft.antialias : false
 Xft.autohint  : false
 Xft.rgba      : rgb
 Xft.hinting   : true

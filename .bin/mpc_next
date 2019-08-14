@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mpc next
+notify_mpd

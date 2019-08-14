@@ -4,9 +4,9 @@
 !
 #include ".x/fonts"
 #include ".x/urxvt"
-#include ".x/themes"
 #include ".x/sxiv"
 #include ".x/rofi"
 #include ".x/xclock"
 #include ".x/xscreensaver"
 #include ".x/st"
+#include ".x-themes/challenger_deep"

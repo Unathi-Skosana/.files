@@ -1,5 +1,5 @@
 [options]
-font = M +1mn 11
+font = Iosevka 10
 allow_bold = false
 audible_bell = false
 browser = xdg-open
