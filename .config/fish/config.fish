@@ -26,7 +26,6 @@ set -gx PATH $PATH /opt/anaconda/bin
 set -gx PATH $PATH /home/nyx/go/bin
 set -gx PATH $PATH /home/nyx/.gem/ruby/2.6.0/bin
 set -gx PATH $PATH /home/nyx/.gem/ruby/2.6.0/bin
-set -gx PATH $PATH /home/nyx/simpatico/bin
 set -gx PATH $PATH /home/nyx/.npm-global/bin
 set -gx PATH $PATH /home/nyx/.bin
 
@@ -35,7 +34,6 @@ set -gx PATH $PATH /home/nyx/.bin
 set -gx  EDITOR /usr/bin/gedit
 set -gx  VISUAL /usr/bin/nvim
 set -gx  VIMPATH /home/nyx/.config/nvim/init.vim
-set -gx  PYTHONPATH /home/nyx/simpatico/scripts/python
 
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish
@@ -43,4 +41,3 @@ set -gx  PYTHONPATH /home/nyx/simpatico/scripts/python
 
 # Load fish aliases
 . ~/.config/fish/aliases.fish
-

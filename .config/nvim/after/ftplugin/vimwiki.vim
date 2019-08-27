@@ -22,8 +22,12 @@ nnoremap <buffer> <localleader>C :Calendar<CR>
 
 " Create meeting notes template
 function! Meeting()
- :read ~/.config/nvim/templates/meeting.md 
+ :read ~/.config/nvim/templates/meeting.md
 endfunction
 
-" live preview of markdown in brower
+function! Summary()
+    :read ~/.config/nvim/templates/summary.tex
+endfunction
+
+" live preview of markdown in browser
 nnoremap <buffer> <localleader>ld :LivedownPreview<CR>

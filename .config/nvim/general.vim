@@ -1,4 +1,6 @@
 syntax enable
+filetype plugin on
+
 
 " Colors and styling {{{
 highlight Comment cterm=italic
@@ -15,10 +17,7 @@ let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 "}}}
 
-set spell
-set spell spelllang=en_us
-set nobackup
-set noswapfile
+set spell spelllang=en_us spellfile=$VIM_PATH/spell/en.utf-8.add
 set autoread
 set autowrite
 set confirm
@@ -43,7 +42,6 @@ set timeoutlen=500
 set ttimeoutlen=10
 set updatetime=100
 set undofile
-set undodir=~/.tmp/undo
 set relativenumber
 set backspace=2
 set backspace=indent,eol,start
@@ -84,18 +82,15 @@ set cpoptions-=m    " showmatch will wait 0.5s or until a char is typed
 set grepprg=rg\ --vimgrep\ $*
 set wildignore+=*.so,*~,*/.git/*,*/.svn/*,*/.DS_Store,*/tmp/*
 
+
+set backupdir=~/.config/nvim/backup//
+set directory=~/.config/nvim/swap//
+set undodir=~/.config/nvim/undo//
+
 if has('conceal')
 	set conceallevel=3 concealcursor=niv
 endif
 
-" Vim Directories {{{
-" ---------------
-set undofile swapfile nobackup
-set directory=$DATA_PATH/swap//,$DATA_PATH,~/tmp,/var/tmp,/tmp
-set undodir=$DATA_PATH/undo//,$DATA_PATH,~/tmp,/var/tmp,/tmp
-set backupdir=$DATA_PATH/backup/,$DATA_PATH,~/tmp,/var/tmp,/tmp
-set viewdir=$DATA_PATH/view/
-set spell spellfile=$VIM_PATH/spell/en.utf-8.add
 
 " History saving
 if has('nvim')
@@ -159,3 +154,15 @@ let g:vimtex_compiler_latexmk = {
     \ ],
     \}
 let g:tex_conceal = ""
+
+"" Abbreviations
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall

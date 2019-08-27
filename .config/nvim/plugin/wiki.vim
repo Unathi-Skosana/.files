@@ -1,18 +1,24 @@
 " Vim wiki stuff
 let code_wiki = {}
-let code_wiki.path = '~/Dropbok/wiki/Coding'
+let code_wiki.path = '~/Dropbox/wiki/coding/'
 let code_wiki.syntax = 'markdown'
 let code_wiki.ext = '.md'
 let code_wiki.auto_diary_index = 1
-let code_wiki.nested_syntaxes = {'js': 'javascript', 'javascript': 'javascript', 'golang': 'golang'}
+let code_wiki.nested_syntaxes = {'js': 'javascript', 'javascript': 'javascript', 'golang': 'golang', 'c': 'c', 'py': 'python', 'python': 'python'}
 
 let personal_wiki = {}
-let personal_wiki.path = '~/Dropbox/wiki/Personal'
+let personal_wiki.path = '~/Dropbox/wiki/personal_wiki/'
 let personal_wiki.syntax = 'markdown'
 let personal_wiki.ext = '.md'
 let personal_wiki.auto_diary_index = 1
 
-let g:vimwiki_list = [code_wiki, personal_wiki]
+let academics_wiki = {}
+let academics_wiki.path = '~/Dropbox/wiki/academics/'
+let academics_wiki.syntax = 'markdown'
+let academics_wiki.ext = '.md'
+let academics_wiki.auto_diary_index = 1
+
+let g:vimwiki_list = [code_wiki, personal_wiki, academics_wiki]
 let g:taskwiki_maplocalleader="-"
 let g:taskwiki_markup_syntax = 'markdown'
 
