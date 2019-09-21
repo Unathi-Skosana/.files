@@ -79,6 +79,9 @@ nnoremap <silent> <leader>fw :Rg <C-R><C-W><CR>
 
 " }}
 
+" pydoc {{{
+    nmap <silent> <C-_> <Plug>(pydocstring)
+" }}}
 
 " vim-easy-align {{
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -168,26 +171,3 @@ nnoremap <silent>[              :<c-u>WhichKey  '['<CR>
 nnoremap <silent>]              :<c-u>WhichKey  ']'<CR>
 " }}
 
-
-" grammarous {{
-" Move the cursor to the info window
-nmap <localleader><localleader>m <Plug>(grammarous-move-to-info-window)
-" Open the info window for the error under the cursor
-nmap <localleader><localleader>o <Plug>(grammarous-open-info-window)
-" Reset the current check
-nmap <localleader><localleader>r <Plug>(grammarous-reset)
-" Fix the error under the cursor automatically
-nmap <localleader><localleader>f <Plug>(grammarous-fixit)
-" Fix all the errors in a current buffer automatically
-nmap <localleader><localleader>fa <Plug>(grammarous-fixall)
-" Close the information window from checked buffer
-nmap <localleader><localleader>c <Plug>(grammarous-close-info-window)
-" Remove the error under the cursor
-nmap <localleader><localleader>re <Plug>(grammarous-remove-error)
-" Disable the grammar rule under the cursor
-nmap <localleader><localleader>dr <Plug>(grammarous-disable-rule)
-" Move cursor to the next error
-nmap <localleader><localleader><F5> <Plug>(grammarous-move-to-next-error)
-" Move cursor to the previous error
-nmap <localleader><localleader><F4> <Plug>(grammarous-move-to-previous-error)
-" }}

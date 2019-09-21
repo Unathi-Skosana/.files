@@ -29,7 +29,8 @@ call minpac#add('t9md/vim-choosewin')
 
 
 " Themes
-call minpac#add('challenger-deep-theme/vim', { 'name': 'challenger-deep' })
+call minpac#add('kaicataldo/material.vim')
+call minpac#add('challenger-deep-theme/vim', { 'name': 'challenger-deep',  'type': 'opt'})
 " Made optional so that we can load vim faster
 " See SwitchColorScheme for function that loads these when swapping scheme
 call minpac#add('ayu-theme/ayu-vim', {'type': 'opt'})
@@ -37,8 +38,6 @@ call minpac#add('ayu-theme/ayu-vim', {'type': 'opt'})
 call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('shime/vim-livedown')
 call minpac#add('sainnhe/lightline_foobar.vim')
-call minpac#add('othree/yajs.vim')
-call minpac#add('moll/vim-node')
 call minpac#add('vim-scripts/SyntaxComplete')
 call minpac#add('tiagofumo/vim-nerdtree-syntax-highlight')
 call minpac#add('janko/vim-test')
@@ -58,8 +57,6 @@ call minpac#add('jiangmiao/auto-pairs')
 call minpac#add('w0rp/ale')
 call minpac#add('yuttie/comfortable-motion.vim')
 call minpac#add('wakatime/vim-wakatime')
-call minpac#add('mxw/vim-jsx')
-call minpac#add('heavenshell/vim-jsdoc')
 call minpac#add('ryanoasis/vim-devicons')
 
 " My additions
@@ -68,9 +65,8 @@ call minpac#add('lervag/vimtex')
 call minpac#add('mhinz/vim-startify')
 call minpac#add('junegunn/fzf')
 call minpac#add('Yggdroot/indentLine')
-call minpac#add('kana/vim-operator-use')
 call minpac#add('kana/vim-operator-replace')
 call minpac#add('simnalamburt/vim-mundo')
 call minpac#add('tyru/caw.vim')
 call minpac#add('neoclide/vim-easygit')
-call minpac#add('rhysd/vim-grammarous')
+call minpac#add('heavenshell/vim-pydocstring')

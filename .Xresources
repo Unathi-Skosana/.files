@@ -3,10 +3,8 @@
 ! ╹ ╹╹┗╸┗━╸┗━┛┗━┛┗━┛╹┗╸┗━╸┗━╸┗━┛
 !
 #include ".x/fonts"
-#include ".x/urxvt"
 #include ".x/sxiv"
 #include ".x/rofi"
 #include ".x/xclock"
 #include ".x/xscreensaver"
-#include ".x/st"
-#include ".x-themes/challenger_deep"
+#include ".x-themes/palenight.Xresources"

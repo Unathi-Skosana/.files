@@ -49,7 +49,7 @@ nnoremap  [b :bn<CR>
 "delete buffer
 nnoremap <C-x>  :bd<CR>
 
-"switch windw
+"switch window
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <C-j> <C-w>j
@@ -76,6 +76,7 @@ nmap <C-w>] :vertical resize +3<CR>
 " Remove spaces at the end of lines
 nnoremap <silent> ,<Space> :<C-u>silent! keeppatterns %substitute/\s\+$//e<CR>
 
+
 " a command which  edit PLugin config easy
 nnoremap <leader>p :EditPluginSetting <Space>
 
@@ -99,4 +100,5 @@ noremap <expr> <C-b> max([winheight(0) - 2, 1])
 	\ ."\<C-u>".(line('w0') <= 1 ? "H" : "M")
 noremap <expr> <C-e> (line("w$") >= line('$') ? "j" : "3\<C-e>")
 noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "3\<C-y>")
+
 

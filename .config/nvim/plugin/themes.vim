@@ -72,6 +72,7 @@ function! ColorScheme()
     let g:material_theme_style = 'palenight'
     let g:material_terminal_italics = 1
     colorscheme material
+    let g:lightline.colorscheme = 'material_vim' 
   endif
 
   if g:VIM_COLOR_SCHEME ==# 'dracula'
@@ -107,4 +108,4 @@ function! ColorScheme()
 endfunction
 
 " The Defaults
-:call SwitchColorScheme('challenger_deep')
+:call SwitchColorScheme('material-palenight')

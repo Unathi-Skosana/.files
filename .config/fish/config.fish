@@ -29,11 +29,11 @@ set -gx PATH $PATH /home/nyx/.gem/ruby/2.6.0/bin
 set -gx PATH $PATH /home/nyx/.npm-global/bin
 set -gx PATH $PATH /home/nyx/.bin
 
-
 # ENV VARIABLES
-set -gx  EDITOR /usr/bin/gedit
-set -gx  VISUAL /usr/bin/nvim
-set -gx  VIMPATH /home/nyx/.config/nvim/init.vim
+set -gx PROJECT_PATHS ~/Repositories ~/playground ~/go/src/github.com ~/Dropbox/Hons\ Quantum\ Graph\ Theory/
+set -gx EDITOR /usr/bin/gedit
+set -gx VISUAL /usr/bin/nvim
+set -gx VIMPATH /home/nyx/.config/nvim/init.vim
 
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish

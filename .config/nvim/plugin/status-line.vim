@@ -63,15 +63,10 @@ function! StatusDiagnostic() abort
 endfunction
 
 let g:lightline = {}
-let g:lightline.colorscheme = 'challenger_deep'
 let g:lightline.active = { 
       \ 'left': [ ['mode', 'readonly'], ['filename_with_icon', 'modified' ] ],
       \ 'right': [ ['lineinfo'], ['testing_status', 'status_diagnostic'] ]
       \ }
-let g:lightline.separator = { 'left': "\ue0b8", 'right': "\ue0be " }
-let g:lightline.subseparator = { 'left': "\ue0b9", 'right': "\ue0b9" }
-let g:lightline.tabline_separator = { 'left': "\ue0bc", 'right': "\ue0ba " }
-let g:lightline.tabline_subseparator = { 'left': "\ue0bb", 'right': "\ue0bb" }
 let g:lightline#gitdiff#indicator_added = "\uf055 "
 let g:lightline#gitdiff#indicator_deleted = "\uf057 "
 let g:lightline#gitdiff#indicator_modified = "\uf056 "
