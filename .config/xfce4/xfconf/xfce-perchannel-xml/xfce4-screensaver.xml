@@ -19,7 +19,7 @@
     </property>
     <property name="embedded-keyboard" type="empty">
       <property name="enabled" type="bool" value="true"/>
-      <property name="displayed" type="bool" value="true"/>
+      <property name="displayed" type="bool" value="false"/>
     </property>
   </property>
 </channel>

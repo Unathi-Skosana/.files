@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=xfce-keyboard-settings.desktop,xfce-ui-settings.desktop,xst.desktop,xfce4-terminal-settings.desktop,firefox.desktop,xfce-session-settings.desktop,xfce4-screensaver-preferences.desktop,kitty.desktop,xfce-wm-settings.desktop,inkscape.desktop
+recent=spotify.desktop,pcmanfm.desktop,xfce-ui-settings.desktop,wolfram-mathematica11.desktop,firefox.desktop,vscodium-bin.desktop,simplescreenrecorder.desktop,xfce-session-settings.desktop,xfce-keyboard-settings.desktop,hwmixvolume.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=true

@@ -41,3 +41,6 @@ set -gx VIMPATH /home/nyx/.config/nvim/init.vim
 
 # Load fish aliases
 . ~/.config/fish/aliases.fish
+
+#
+setxkbmap -option "caps:escape"

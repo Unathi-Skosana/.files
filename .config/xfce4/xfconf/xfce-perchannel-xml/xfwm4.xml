@@ -56,10 +56,10 @@
     <property name="snap_to_windows" type="bool" value="false"/>
     <property name="snap_width" type="int" value="15"/>
     <property name="sync_to_vblank" type="bool" value="true"/>
-    <property name="theme" type="string" value="Dots Black"/>
+    <property name="theme" type="string" value="victory-gtk-theme-18.07"/>
     <property name="tile_on_move" type="bool" value="true"/>
     <property name="title_alignment" type="string" value="center"/>
-    <property name="title_font" type="string" value="Segoe UI 6"/>
+    <property name="title_font" type="string" value="SF Mono Medium 8"/>
     <property name="title_horizontal_offset" type="int" value="0"/>
     <property name="titleless_maximize" type="bool" value="true"/>
     <property name="title_shadow_active" type="string" value="false"/>

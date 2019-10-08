@@ -8,7 +8,7 @@
       <property name="position" type="string" value="p=6;x=0;y=0"/>
       <property name="length" type="uint" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="30"/>
+      <property name="size" type="uint" value="35"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="7"/>
         <value type="int" value="8"/>
@@ -28,6 +28,7 @@
       <property name="icon-size" type="uint" value="0"/>
       <property name="span-monitors" type="bool" value="false"/>
       <property name="mode" type="uint" value="0"/>
+      <property name="nrows" type="uint" value="1"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -56,7 +57,7 @@
         <value type="string" value="audio-recorder"/>
       </property>
       <property name="show-frame" type="bool" value="false"/>
-      <property name="size-max" type="uint" value="52"/>
+      <property name="size-max" type="uint" value="24"/>
       <property name="names-hidden" type="array">
         <value type="string" value="audio-recorder"/>
         <value type="string" value="safeeyes"/>
@@ -70,6 +71,31 @@
       <property name="names-ordered" type="array">
         <value type="string" value="bluetooth enabled
 &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="thunar"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="simplescreenrecorder"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="caja"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="bluetooth enabled"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
+        <value type="string" value="keybase"/>
+        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
         <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
         <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
         <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
@@ -94,7 +120,7 @@
     <property name="plugin-7" type="string" value="whiskermenu"/>
     <property name="plugin-1" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="spotify"/>
+      <property name="mpris-players" type="string" value="chromium.instance809349;spotify"/>
     </property>
     <property name="plugin-2" type="string" value="pager">
       <property name="rows" type="uint" value="1"/>

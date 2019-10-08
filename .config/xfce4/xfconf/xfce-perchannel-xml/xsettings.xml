@@ -2,34 +2,34 @@
 
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
-    <property name="ThemeName" type="string" value="Materia-dark-compact"/>
-    <property name="IconThemeName" type="string" value="Qogir-dark"/>
+    <property name="ThemeName" type="string" value="victory-gtk-theme-18.07"/>
+    <property name="IconThemeName" type="string" value="Tela"/>
     <property name="DoubleClickTime" type="empty"/>
     <property name="DoubleClickDistance" type="empty"/>
     <property name="DndDragThreshold" type="empty"/>
     <property name="CursorBlink" type="empty"/>
     <property name="CursorBlinkTime" type="empty"/>
     <property name="SoundThemeName" type="empty"/>
-    <property name="EnableEventSounds" type="empty"/>
-    <property name="EnableInputFeedbackSounds" type="empty"/>
+    <property name="EnableEventSounds" type="bool" value="true"/>
+    <property name="EnableInputFeedbackSounds" type="bool" value="true"/>
   </property>
   <property name="Xft" type="empty">
-    <property name="DPI" type="int" value="150"/>
+    <property name="DPI" type="int" value="111"/>
     <property name="Antialias" type="int" value="1"/>
-    <property name="Hinting" type="int" value="0"/>
-    <property name="HintStyle" type="string" value="hintnone"/>
-    <property name="RGBA" type="string" value="none"/>
+    <property name="Hinting" type="int" value="1"/>
+    <property name="HintStyle" type="string" value="hintfull"/>
+    <property name="RGBA" type="string" value="rgb"/>
   </property>
   <property name="Gtk" type="empty">
-    <property name="CanChangeAccels" type="bool" value="false"/>
+    <property name="CanChangeAccels" type="bool" value="true"/>
     <property name="ColorPalette" type="empty"/>
-    <property name="FontName" type="string" value="Segoe UI 8"/>
-    <property name="MonospaceFontName" type="string" value="Segoe UI 8"/>
+    <property name="FontName" type="string" value="SF Mono 8"/>
+    <property name="MonospaceFontName" type="string" value="SF Mono Medium 9"/>
     <property name="IconSizes" type="empty"/>
     <property name="KeyThemeName" type="empty"/>
     <property name="ToolbarStyle" type="empty"/>
     <property name="ToolbarIconSize" type="empty"/>
-    <property name="MenuImages" type="bool" value="false"/>
+    <property name="MenuImages" type="bool" value="true"/>
     <property name="ButtonImages" type="bool" value="false"/>
     <property name="MenuBarAccel" type="empty"/>
     <property name="CursorThemeName" type="string" value="capitaine-cursors-light"/>
@@ -37,9 +37,9 @@
     <property name="DecorationLayout" type="string" value=":minimize,maximize,close"/>
   </property>
   <property name="Gdk" type="empty">
-    <property name="WindowScalingFactor" type="empty"/>
+    <property name="WindowScalingFactor" type="int" value="1"/>
   </property>
   <property name="Xfce" type="empty">
-    <property name="LastCustomDPI" type="int" value="150"/>
+    <property name="LastCustomDPI" type="int" value="111"/>
   </property>
 </channel>

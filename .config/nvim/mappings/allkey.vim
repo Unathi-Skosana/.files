@@ -80,7 +80,7 @@ nnoremap <silent> <leader>fw :Rg <C-R><C-W><CR>
 " }}
 
 " pydoc {{{
-    nmap <silent> <C-_> <Plug>(pydocstring)
+   nmap <silent> <C-_> <Plug>(pydocstring)
 " }}}
 
 " vim-easy-align {{
