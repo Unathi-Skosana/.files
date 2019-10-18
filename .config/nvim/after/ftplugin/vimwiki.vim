@@ -20,7 +20,6 @@ nnoremap <buffer> <localleader>/ :VimwikiSearchTags<SPACE>
 " Pop open calendar
 nnoremap <buffer> <localleader>C :Calendar<CR>
 
-" Create meeting notes template
 function! Meeting()
  :read ~/.config/nvim/templates/meeting.md
 endfunction
@@ -28,6 +27,16 @@ endfunction
 function! Summary()
     :read ~/.config/nvim/templates/summary.tex
 endfunction
+
+function! Homework()
+    :read ~/.config/nvim/templates/homework.tex
+endfunction
+
+function! Presentation()
+    :read ~/.config/nvim/templates/presentation.tex
+endfunction
+
+
 
 " live preview of markdown in browser
 nnoremap <buffer> <localleader>ld :LivedownPreview<CR>
