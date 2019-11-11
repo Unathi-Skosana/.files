@@ -17,26 +17,6 @@ nnoremap <buffer> <localleader><UP> :VimwikiDiaryPrevDay<CR>
 " Search tags
 nnoremap <buffer> <localleader>/ :VimwikiSearchTags<SPACE>
 
-" Pop open calendar
-nnoremap <buffer> <localleader>C :Calendar<CR>
-
-function! Meeting()
- :read ~/.config/nvim/templates/meeting.md
-endfunction
-
-function! Summary()
-    :read ~/.config/nvim/templates/summary.tex
-endfunction
-
-function! Homework()
-    :read ~/.config/nvim/templates/homework.tex
-endfunction
-
-function! Presentation()
-    :read ~/.config/nvim/templates/presentation.tex
-endfunction
-
-
 
 " live preview of markdown in browser
 nnoremap <buffer> <localleader>ld :LivedownPreview<CR>

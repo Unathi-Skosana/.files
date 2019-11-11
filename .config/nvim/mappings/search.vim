@@ -32,14 +32,19 @@ endif
 nnoremap <BS> :b#<CR>
 
 
-" supertab completions
+"  supertab completions
 " This is how I got it so that tabbing moves down the completion list
 " from top to bottom instead of upwards
 let g:SuperTabMappingForward = '<s-tab>'
 let g:SuperTabMappingBackward = '<tab>'
 
-" -------------- NERDtree -----------------
-nnoremap <leader>b :NERDTreeToggle<CR>
+
+" FZF
+noremap <silent> <C-p> :call fzf#vim#files('.', {'options': '--prompt ""'})<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+
+" NERDtree -----------------
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " TODO: I need to find a better place for this config
 " ------------ Projectionist ----------------

@@ -79,7 +79,6 @@ set showmatch       " Jump to matching bracket
 set matchpairs+=<:> " Add HTML brackets to pair matching
 set matchtime=1     " Tenths of a second to show the matching paren
 set cpoptions-=m    " showmatch will wait 0.5s or until a char is typed
-set grepprg=rg\ --vimgrep\ $*
 set wildignore+=*.so,*~,*/.git/*,*/.svn/*,*/.DS_Store,*/tmp/*
 
 
@@ -135,6 +134,35 @@ autocmd BufReadPost *
     \   exe "normal! g`\"" |
     \ endif
 
+
+" Startify
+let g:startify_bookmarks=['~/.bashrc', '~/.config/nvim/init.vim', '~/.config/awesome', '~/Projects']
+let g:startify_lists = [
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ { 'type': 'files',     'header': ['   Recent Files']   },
+          \ { 'type': 'dir',       'header': ['   Recent Files in: '. getcwd()] },
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ { 'type': 'commands',  'header': ['   Commands']       },
+          \ ]
+ 
+let g:startify_custom_header = systemlist('motivate --no-colors')
+ 
+cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <C-o> :Buffers<CR>
+nnoremap <silent> <C-f> :BLines<CR>
+nnoremap <silent> <leader>f :Lines<CR>
+nnoremap <silent> <leader>t :BTags<CR>
+nnoremap <silent> <C-p> :call fzf#vim#files('.', {'options': '--prompt ""'})<CR>
+"Recovery commands from history through FZF
+nmap <leader>y :History:<CR>
+ 
+" snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsEditSplit="vertical"
+
 " google calendar_google_calendar
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
@@ -142,7 +170,6 @@ let g:calendar_google_task = 1
 " vim-tex
 let g:tex_flavor = 'latex'
 let g:tex_conceal = ""
-
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_view_automatic = 0
 let g:vimtex_latexmk_callback = 1
@@ -152,6 +179,16 @@ let g:vimtex_quickfix_ignored_warnings = [ 'Underfull', 'Overfull', 'specifier c
 let g:vimtex_quickfix=2 
 let g:vimtex_fold_automatic=0
 let g:vimtex_fold_enabled=1
+let g:vimtex_compiler_latexmk = { 
+        \ 'executable' : 'latexmk',
+        \ 'options' : [ 
+        \   '-xelatex',
+        \   '-file-line-error',
+        \   '-synctex=1',
+        \   '-interaction=nonstopmode',
+        \ ],
+        \}
+autocmd BufReadPre *.tex let b:vimtex_main = 'main.tex'
 
 "" Abbreviations
 cnoreabbrev W! w!
@@ -164,3 +201,23 @@ cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
+
+
+
+" functions for templates
+function! Meeting()
+ :read ~/.config/nvim/templates/meeting.md
+endfunction
+
+function! Summary()
+    :read ~/.config/nvim/templates/summary.tex
+endfunction
+
+function! Homework()
+    :read ~/.config/nvim/templates/homework.tex
+endfunction
+
+function! Presentation()
+    :read ~/.config/nvim/templates/presentation.tex
+endfunction
+
