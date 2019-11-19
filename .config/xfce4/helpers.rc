@@ -1,3 +1,4 @@
 MailReader=custom-MailReader
 TerminalEmulator=custom-TerminalEmulator
+TerminalEmulatorDismissed=true
 

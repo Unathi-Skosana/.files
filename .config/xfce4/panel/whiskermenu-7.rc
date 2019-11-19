@@ -1,5 +1,5 @@
 favorites=exo-terminal-emulator.desktop,exo-file-manager.desktop,exo-mail-reader.desktop,exo-web-browser.desktop
-recent=spotify.desktop,pcmanfm.desktop,xfce-ui-settings.desktop,wolfram-mathematica11.desktop,firefox.desktop,vscodium-bin.desktop,simplescreenrecorder.desktop,xfce-session-settings.desktop,xfce-keyboard-settings.desktop,hwmixvolume.desktop
+recent=xfce-keyboard-settings.desktop,pavucontrol.desktop,desktopeditors.desktop,mailspring.desktop,firefox.desktop,exo-mail-reader.desktop,inkscape.desktop,vscodium-bin.desktop,gparted.desktop,wolfram-mathematica11.desktop
 button-title=Applications
 button-icon=distributor-logo-archlinux
 button-single-row=true

@@ -35,4 +35,10 @@
   <property name="chooser" type="empty">
     <property name="AlwaysDisplay" type="bool" value="true"/>
   </property>
+  <property name="security" type="empty">
+    <property name="EnableTcp" type="bool" value="true"/>
+  </property>
+  <property name="shutdown" type="empty">
+    <property name="LockScreen" type="bool" value="true"/>
+  </property>
 </channel>

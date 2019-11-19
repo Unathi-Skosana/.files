@@ -14,7 +14,7 @@
     <property name="EnableInputFeedbackSounds" type="bool" value="true"/>
   </property>
   <property name="Xft" type="empty">
-    <property name="DPI" type="int" value="111"/>
+    <property name="DPI" type="int" value="130"/>
     <property name="Antialias" type="int" value="1"/>
     <property name="Hinting" type="int" value="1"/>
     <property name="HintStyle" type="string" value="hintfull"/>
@@ -24,7 +24,7 @@
     <property name="CanChangeAccels" type="bool" value="true"/>
     <property name="ColorPalette" type="empty"/>
     <property name="FontName" type="string" value="SF Mono 8"/>
-    <property name="MonospaceFontName" type="string" value="SF Mono Medium 9"/>
+    <property name="MonospaceFontName" type="string" value="SF Mono Medium 8"/>
     <property name="IconSizes" type="empty"/>
     <property name="KeyThemeName" type="empty"/>
     <property name="ToolbarStyle" type="empty"/>
@@ -40,6 +40,6 @@
     <property name="WindowScalingFactor" type="int" value="1"/>
   </property>
   <property name="Xfce" type="empty">
-    <property name="LastCustomDPI" type="int" value="111"/>
+    <property name="LastCustomDPI" type="int" value="130"/>
   </property>
 </channel>

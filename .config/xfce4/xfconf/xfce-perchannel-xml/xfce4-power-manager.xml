@@ -18,5 +18,6 @@
     <property name="inactivity-sleep-mode-on-ac" type="uint" value="1"/>
     <property name="critical-power-action" type="uint" value="1"/>
     <property name="inactivity-sleep-mode-on-battery" type="uint" value="1"/>
+    <property name="lock-screen-suspend-hibernate" type="bool" value="true"/>
   </property>
 </channel>

@@ -1,8 +1,8 @@
 app=feh
 last_user=
-screenshot_dir=file:/home/nyx/Pictures
+screenshot_dir=file:/home/nyx/Dropbox/Hons Quantum Graph Theory/Summaries/Hardware/figs
 action=1
 delay=0
-region=2
-show_mouse=0
+region=3
+show_mouse=1
 
