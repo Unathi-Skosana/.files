@@ -2,13 +2,13 @@
 
 
 
-Xft.dpi       : 100
-Xft.antialias : false
-Xft.autohint  : false
+Xft.dpi       : 160
+Xft.antialias : true
+Xft.autohint  : true
 Xft.rgba      : rgb
 Xft.hinting   : true
 Xft.hintstyle : hintslight
 Xft.lcdfilter : lcddefault
 
 ! Cursor
-Xcursor.size: 20
+Xcursor.size: 25
