@@ -1,0 +1,18 @@
+VteTerminal,
+TerminalScreen,
+vte-terminal {
+    padding: 10px 10px 10px 10px;
+    -VteTerminal-inner-border: 10px 10px 10px 10px;
+}
+
+#xfce4-clipman-plugin { padding: 4px; }
+#xfce4-power-manager-plugin { padding: 3px; }
+#pulseaudio-button {
+    color: #DFDFDF;
+    background-color: #282828; 
+}
+
+#pulseaudio-button * {
+    -gtk-icon-transform: scale(.7);
+}
+
