@@ -1,0 +1,15 @@
+aaron-bond.better-comments
+auchenberg.vscode-browser-preview
+CoenraadS.bracket-pair-colorizer
+eamodio.gitlens
+esbenp.prettier-vscode
+jaspernorth.vscode-pigments
+jolaleye.horizon-theme-vscode
+ms-python.python
+ms-vscode.Go
+oderwat.indent-rainbow
+vincaslt.highlight-matching-tag
+vscode-icons-team.vscode-icons
+vscodevim.vim
+WakaTime.vscode-wakatime
+yatki.vscode-surround

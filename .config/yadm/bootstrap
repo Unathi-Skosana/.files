@@ -1,0 +1,97 @@
+#!/bin/bash
+    echo "Installing yadm"
+
+    if hash yadm 2>/dev/null; then
+        echo "yadm appears to be installed"
+    else
+        echo "installing git"
+        sudo pacman -S git
+
+        echo "installing yadm"
+        sudo /usr/bin/curl -fLo /usr/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm && chmod a+x /usr/bin/yadm
+    fi
+
+    # Have ensured that yadm is available
+    hash yadm 2>/dev/null || (echo "yadm install failed" && exit 1)
+
+    # Install pip packages
+    if [ -f "$HOME/.yadm/bootstrap-files/pip.txt" ]; then
+        echo "Installing pip packages"
+        /usr/bin/pip install -r $HOME/.yadm/bootstrap-files/pip.txt --user
+    fi
+
+    # Setup VSCode
+    if [ -d "/usr/bin/code" ]; then
+        mkdir -p "$HOME/.config/VSCodium/User"
+        [ -f "$HOME/.yadm/bootstrap-files/vscode-settings.json" ] && ln -s
+        "$HOME/.yadm/bootstrap-files/vscode-settings.json"
+        "$HOME/.config/VSCodium/User/settings.json"
+
+        # Install VSCode extensions
+        input="$HOME/.yadm/boostrap-files/code.txt"
+        while IFS= read -r line
+        do
+            /usr/bin/code --install-extension $line
+        done < "$input"
+    fi
+
+    # Setup fish
+    if grep -Fxq "/usr/bin/fish" /etc/shells
+    then
+        echo "fish already in /etc/shells"
+    else
+        [ -f "/usr/bin/fish" ] && sudo sh -c "echo $(which fish) >> /etc/shells" &&
+            chsh -s /usr/bin/fish && echo "ZSH added to /etc/shells"
+    fi
+
+
+    # Install tacklebox 
+    /usr/bin/curl -L "https://raw.githubusercontent.com/justinmayer/tacklebox/master/tools/install.fish" | fish
+
+
+    # Install oh-my-fish
+    echo "Download oh-my-fish"
+    /usr/bin/curl -L https://get.oh-my.fish | fish
+    input="$HOME/.yadm/boostrap-files/omf.tx"
+    while IFS= read -r line
+    do
+        omf install "$line"
+    done < "$input"
+
+
+    # Install pacman packages
+   if [-d "/usr/bin/pacman" ]; then
+        #  Install packages from pacman
+        echo "Install pacman packages"
+        /usr/bin/pacman -S --needed $(comm -12 <(/usr/bin/pacman -Slq | sort) <(sort
+        $HOME/.yadm/boostrap-files/pkglist.txt))
+   fi
+
+   # Remove yay for update pacman
+
+    if [ -d "/usr/bin/yay" ]; then
+        # Update pacman
+        sudo pacman -S pacman
+        # Install yay from git
+        cd /tmp
+        git clone https://aur.archlinux.org/yay.git
+        cd yay
+        makepkg -si
+        cd ..
+        # clean /tmp folder
+        rm -rf yay
+    fi
+
+    # Clone dotfiles
+    ssh-add -L | grep "AAAAB3NzaC1yc" || (echo "SSH key not loaded" && exit 1)
+
+    # fresh clone if required
+    yadm clone git@github.com:Unathi-Skosana/.files.git
+
+    # always checkout and update
+    yadm checkout -f && \
+    yadm pull --rebase && \
+    yadm submodule && \
+    yadm submodule update --init --recursive && \
+    yadm alt && \
+    yadm perms
