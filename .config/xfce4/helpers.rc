@@ -1,4 +1,4 @@
 MailReader=custom-MailReader
 TerminalEmulator=custom-TerminalEmulator
-TerminalEmulatorDismissed=true
+FileManager=custom-FileManager
 

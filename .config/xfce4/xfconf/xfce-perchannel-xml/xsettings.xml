@@ -3,7 +3,7 @@
 <channel name="xsettings" version="1.0">
   <property name="Net" type="empty">
     <property name="ThemeName" type="string" value="victory-gtk-theme-18.07"/>
-    <property name="IconThemeName" type="string" value="Tela"/>
+    <property name="IconThemeName" type="string" value="korla"/>
     <property name="DoubleClickTime" type="empty"/>
     <property name="DoubleClickDistance" type="empty"/>
     <property name="DndDragThreshold" type="empty"/>
@@ -14,16 +14,16 @@
     <property name="EnableInputFeedbackSounds" type="bool" value="true"/>
   </property>
   <property name="Xft" type="empty">
-    <property name="DPI" type="int" value="130"/>
+    <property name="DPI" type="int" value="160"/>
     <property name="Antialias" type="int" value="1"/>
     <property name="Hinting" type="int" value="1"/>
     <property name="HintStyle" type="string" value="hintfull"/>
-    <property name="RGBA" type="string" value="rgb"/>
+    <property name="RGBA" type="string" value="none"/>
   </property>
   <property name="Gtk" type="empty">
     <property name="CanChangeAccels" type="bool" value="true"/>
     <property name="ColorPalette" type="empty"/>
-    <property name="FontName" type="string" value="SF Mono 8"/>
+    <property name="FontName" type="string" value="SF Mono Medium 8"/>
     <property name="MonospaceFontName" type="string" value="SF Mono Medium 8"/>
     <property name="IconSizes" type="empty"/>
     <property name="KeyThemeName" type="empty"/>
@@ -33,13 +33,13 @@
     <property name="ButtonImages" type="bool" value="false"/>
     <property name="MenuBarAccel" type="empty"/>
     <property name="CursorThemeName" type="string" value="capitaine-cursors-light"/>
-    <property name="CursorThemeSize" type="int" value="21"/>
+    <property name="CursorThemeSize" type="int" value="30"/>
     <property name="DecorationLayout" type="string" value=":minimize,maximize,close"/>
   </property>
   <property name="Gdk" type="empty">
     <property name="WindowScalingFactor" type="int" value="1"/>
   </property>
   <property name="Xfce" type="empty">
-    <property name="LastCustomDPI" type="int" value="130"/>
+    <property name="LastCustomDPI" type="int" value="160"/>
   </property>
 </channel>

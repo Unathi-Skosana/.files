@@ -8,8 +8,7 @@ vte-terminal {
 #xfce4-clipman-plugin { padding: 4px; }
 #xfce4-power-manager-plugin { padding: 3px; }
 #pulseaudio-button {
-    color: #DFDFDF;
-    background-color: #282828; 
+    color: #fff;
 }
 
 #pulseaudio-button * {

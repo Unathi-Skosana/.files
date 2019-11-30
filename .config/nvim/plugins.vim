@@ -56,7 +56,6 @@ call minpac#add('ryanoasis/vim-devicons')
 
 " My additions
 call minpac#add('fatih/vim-go')
-call minpac#add('lervag/vimtex')
 call minpac#add('mhinz/vim-startify')
 call minpac#add('Yggdroot/indentLine')
 call minpac#add('kana/vim-operator-replace')

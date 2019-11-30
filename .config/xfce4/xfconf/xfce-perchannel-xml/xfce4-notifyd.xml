@@ -8,5 +8,5 @@
   <property name="do-not-disturb" type="bool" value="true"/>
   <property name="initial-opacity" type="double" value="1.000000"/>
   <property name="do-slideout" type="bool" value="true"/>
-  <property name="theme" type="string" value="victory-gtk-theme-18.07"/>
+  <property name="theme" type="string" value="Victory-17.04"/>
 </channel>

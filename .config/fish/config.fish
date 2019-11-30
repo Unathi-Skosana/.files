@@ -34,6 +34,7 @@ set -gx PROJECT_PATHS ~/Repositories ~/playground ~/go/src/github.com ~/Dropbox/
 set -gx EDITOR /usr/bin/gedit
 set -gx VISUAL /usr/bin/nvim
 set -gx VIMPATH /home/nyx/.config/nvim/init.vim
+set -x -U GOPATH $HOME/go
 
 # Load Tacklebox configuration
 . ~/.tacklebox/tacklebox.fish

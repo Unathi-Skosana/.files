@@ -53,13 +53,13 @@
     <property name="show_popup_shadow" type="bool" value="false"/>
     <property name="snap_resist" type="bool" value="false"/>
     <property name="snap_to_border" type="bool" value="true"/>
-    <property name="snap_to_windows" type="bool" value="false"/>
+    <property name="snap_to_windows" type="bool" value="true"/>
     <property name="snap_width" type="int" value="15"/>
     <property name="sync_to_vblank" type="bool" value="true"/>
     <property name="theme" type="string" value="victory-gtk-theme-18.07"/>
     <property name="tile_on_move" type="bool" value="true"/>
     <property name="title_alignment" type="string" value="center"/>
-    <property name="title_font" type="string" value="SF Mono Medium 8"/>
+    <property name="title_font" type="string" value="SF Mono Medium 7"/>
     <property name="title_horizontal_offset" type="int" value="0"/>
     <property name="titleless_maximize" type="bool" value="true"/>
     <property name="title_shadow_active" type="string" value="false"/>
@@ -69,7 +69,7 @@
     <property name="toggle_workspaces" type="bool" value="true"/>
     <property name="unredirect_overlays" type="bool" value="true"/>
     <property name="urgent_blink" type="bool" value="false"/>
-    <property name="use_compositing" type="bool" value="true"/>
+    <property name="use_compositing" type="bool" value="false"/>
     <property name="workspace_count" type="int" value="5"/>
     <property name="wrap_cycle" type="bool" value="true"/>
     <property name="workspace_names" type="array">
@@ -84,11 +84,15 @@
     </property>
     <property name="wrap_layout" type="bool" value="true"/>
     <property name="wrap_resistance" type="int" value="10"/>
-    <property name="wrap_windows" type="bool" value="true"/>
+    <property name="wrap_windows" type="bool" value="false"/>
     <property name="wrap_workspaces" type="bool" value="false"/>
     <property name="zoom_desktop" type="bool" value="true"/>
     <property name="cycle_raise" type="bool" value="false"/>
     <property name="frame_border_top" type="int" value="0"/>
     <property name="vblank_mode" type="string" value="auto"/>
+    <property name="margin_left" type="int" value="0"/>
+    <property name="margin_right" type="int" value="0"/>
+    <property name="margin_top" type="int" value="0"/>
+    <property name="margin_bottom" type="int" value="0"/>
   </property>
 </channel>

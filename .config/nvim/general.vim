@@ -163,33 +163,6 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
-" google calendar_google_calendar
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
-
-" vim-tex
-let g:tex_flavor = 'latex'
-let g:tex_conceal = ""
-let g:vimtex_view_method = 'zathura'
-let g:vimtex_view_automatic = 0
-let g:vimtex_latexmk_callback = 1
-let g:vimtex_latexmk_continuous = 1
-let g:vimtex_quickfix_ignore_all_warnings=0
-let g:vimtex_quickfix_ignored_warnings = [ 'Underfull', 'Overfull', 'specifier changed to',]
-let g:vimtex_quickfix=2 
-let g:vimtex_fold_automatic=0
-let g:vimtex_fold_enabled=1
-let g:vimtex_compiler_latexmk = { 
-        \ 'executable' : 'latexmk',
-        \ 'options' : [ 
-        \   '-xelatex',
-        \   '-file-line-error',
-        \   '-synctex=1',
-        \   '-interaction=nonstopmode',
-        \ ],
-        \}
-autocmd BufReadPre *.tex let b:vimtex_main = 'main.tex'
-
 "" Abbreviations
 cnoreabbrev W! w!
 cnoreabbrev Q! q!

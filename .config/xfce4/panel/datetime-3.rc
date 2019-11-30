@@ -1,0 +1,6 @@
+layout=3
+date_font=Cascadia Code 13
+time_font=Cascadia Code 14
+date_format=%d/%m/%Y
+time_format=%H:%M:%S
+

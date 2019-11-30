@@ -44,10 +44,11 @@
       <property name="&lt;Shift&gt;Return" type="empty">
         <property name="startup-notify" type="bool" value="true"/>
       </property>
-      <property name="&lt;Super&gt;n" type="string" value="pcmanfm"/>
       <property name="&lt;Super&gt;m" type="string" value="/home/nyx/.bin/rofiapps">
         <property name="startup-notify" type="bool" value="true"/>
       </property>
+      <property name="&lt;Super&gt;Escape" type="string" value="xfce4-session-logout"/>
+      <property name="&lt;Super&gt;n" type="string" value="nemo"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
