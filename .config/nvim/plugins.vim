@@ -52,7 +52,6 @@ call minpac#add('jiangmiao/auto-pairs')
 call minpac#add('w0rp/ale')
 call minpac#add('yuttie/comfortable-motion.vim')
 call minpac#add('wakatime/vim-wakatime')
-call minpac#add('ryanoasis/vim-devicons')
 
 " My additions
 call minpac#add('fatih/vim-go')
