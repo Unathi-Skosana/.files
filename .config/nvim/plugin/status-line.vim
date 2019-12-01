@@ -8,10 +8,6 @@ function! TestingStatus() abort
   endif
 endfunction
 
-function! FileNameWithIcon() abort
-  return winwidth(0) > 70  ? " " . WebDevIconsGetFileTypeSymbol() . ' ' . expand('%:t') : '' 
-endfunction
-
 function! FileNameWithParent(f) abort
   if expand('%:t') ==# ''
     return expand('%:p:h:t')
@@ -89,11 +85,9 @@ let g:lightline.tab_component_function = {
             \ 'modified': 'lightline#tab#modified',
             \ 'readonly': 'lightline#tab#readonly',
             \ 'tabnum': 'lightline#tab#tabnum',
-            \ 'filename_with_parent': 'FileNameWithParent'
             \ }
 
 let g:lightline.component = {
-        \ 'filename_with_icon': '%{FileNameWithIcon()}',
         \ 'lineinfo': "%2{Line_percent()}\uf295 %3{Line_num()}:%-2{Col_num()}",
         \ 'vim_logo': "\ue7c5",
         \ 'git_branch': '%{Git_branch()}',

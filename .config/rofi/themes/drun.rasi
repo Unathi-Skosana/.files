@@ -1,7 +1,7 @@
 configuration {
   show-icons:                     true;
   icon-theme:                     "korla";
-  font:                           "Cascadia Code Bold 12";
+  font:                           "Victor Mono 16";
   drun-display-format:            "{name}";
 }
 

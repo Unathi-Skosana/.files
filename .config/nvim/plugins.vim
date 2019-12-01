@@ -26,15 +26,7 @@ call minpac#add('liuchengxu/vista.vim')
 call minpac#add('majutsushi/tagbar')
 call minpac#add('junegunn/goyo.vim')
 call minpac#add('t9md/vim-choosewin')
-
-
-" Themes
-call minpac#add('kaicataldo/material.vim')
-call minpac#add('challenger-deep-theme/vim', { 'name': 'challenger-deep',  'type': 'opt'})
-" Made optional so that we can load vim faster
-" See SwitchColorScheme for function that loads these when swapping scheme
-call minpac#add('ayu-theme/ayu-vim', {'type': 'opt'})
-
+call minpac#add('challenger-deep-theme/vim', { 'name': 'challenger-deep' })
 call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('shime/vim-livedown')
 call minpac#add('sainnhe/lightline_foobar.vim')
