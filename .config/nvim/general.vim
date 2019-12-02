@@ -11,10 +11,13 @@ hi Type gui=italic
 hi htmlArg cterm=italic
 hi Comment cterm=italic
 hi Type cterm=italic
-"  Italic garbage
+set termguicolors
+"" "}}}
+
+
+"  Italic garbage {{{
 let &t_8f="\<Esc>[38;2%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-set termguicolors
 "}}}
 
 set spell spelllang=en_us spellfile=$VIM_PATH/spell/en.utf-8.add
@@ -136,7 +139,7 @@ autocmd BufReadPost *
 
 
 " Startify
-let g:startify_bookmarks=['~/.bashrc', '~/.config/nvim/init.vim', '~/.config/awesome', '~/Projects']
+let g:startify_bookmarks=['~/.config/kitty/kitty.conf', '~/.config/nvim/init.vim', '~/Repositories/', '~/Dropbox/']
 let g:startify_lists = [
           \ { 'type': 'sessions',  'header': ['   Sessions']       },
           \ { 'type': 'files',     'header': ['   Recent Files']   },
@@ -157,13 +160,14 @@ nnoremap <silent> <C-p> :call fzf#vim#files('.', {'options': '--prompt ""'})<CR>
 "Recovery commands from history through FZF
 nmap <leader>y :History:<CR>
  
-" snippets
+" snippets {{{
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
+"" }}}
 
-"" Abbreviations
+" Abbreviations {{{
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
 cnoreabbrev Qall! qall!
@@ -174,13 +178,32 @@ cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
+" }}}
 
 
-
-" functions for templates
-function! Meeting()
- :read ~/.config/nvim/templates/meeting.md
-endfunction
+""" vimtex {{{
+let g:tex_flavor = 'latex'
+let g:tex_conceal = ""
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_view_automatic = 0
+let g:vimtex_latexmk_callback = 1
+let g:vimtex_latexmk_continuous = 1
+let g:vimtex_quickfix_ignore_all_warnings=0
+let g:vimtex_quickfix_ignored_warnings = [ 'Underfull', 'Overfull', 'specifier changed to',]
+let g:vimtex_quickfix=2 
+let g:vimtex_fold_automatic=0
+let g:vimtex_fold_enabled=1
+let g:vimtex_compiler_latexmk = { 
+        \ 'executable' : 'latexmk',
+        \ 'options' : [ 
+        \   '-xelatex',
+        \   '-file-line-error',
+        \   '-synctex=1',
+        \   '-interaction=nonstopmode',
+        \ ],
+        \}
+autocmd BufReadPre *.tex let b:vimtex_main = 'main.tex'
+"""}}}
 
 function! Summary()
     :read ~/.config/nvim/templates/summary.tex

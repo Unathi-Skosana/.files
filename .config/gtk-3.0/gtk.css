@@ -5,6 +5,11 @@ vte-terminal {
     -VteTerminal-inner-border: 10px 10px 10px 10px;
 }
 
+.xfce4-panel.background {
+  background-color: rgba(0,0,0,0.0);
+  }
+
+
 #xfce4-clipman-plugin { padding: 4px; }
 #xfce4-power-manager-plugin { padding: 3px; }
 #pulseaudio-button {

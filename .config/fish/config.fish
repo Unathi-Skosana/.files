@@ -30,7 +30,7 @@ set -gx PATH $PATH /home/nyx/.npm-global/bin
 set -gx PATH $PATH /home/nyx/.bin
 
 # ENV VARIABLES
-set -gx PROJECT_PATHS ~/Repositories ~/playground ~/go/src/github.com ~/Dropbox/Hons\ Quantum\ Graph\ Theory/
+set -gx PROJECT_PATHS ~/Repositories ~/playground ~/go/src/github.com ~/Dropbox/Hons\ Quantum\ Graph\ Theory/ ~/.config/
 set -gx EDITOR /usr/bin/gedit
 set -gx VISUAL /usr/bin/nvim
 set -gx VIMPATH /home/nyx/.config/nvim/init.vim

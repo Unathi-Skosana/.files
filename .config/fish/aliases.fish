@@ -23,16 +23,14 @@ alias wa 'f -e mpv'
 
 # general commands
 alias py 'python'
-alias py2 'python2'
 alias v 'nvim'
 alias cat 'bat'
 alias vrc 'nvim $HOME/.config/nvim'
 alias frc 'nvim $HOME/.config/fish'
 alias xrc 'nvim $HOME/.x'
+alias termrc 'nvim $HOME/.config/kitty/kitty.conf'
 alias ydl 'youtube-dl'
 alias gdl 'gitdir'
-alias j 'jump'
-alias m 'mark'
 alias junb 'jupyter notebook'
 
 
