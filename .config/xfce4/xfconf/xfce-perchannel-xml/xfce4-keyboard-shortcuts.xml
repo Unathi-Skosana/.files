@@ -49,6 +49,8 @@
       </property>
       <property name="&lt;Super&gt;Escape" type="string" value="xfce4-session-logout"/>
       <property name="&lt;Super&gt;n" type="string" value="nemo"/>
+      <property name="&lt;Super&gt;f" type="string" value="/home/nyx/.bin/snap &quot;full&quot;"/>
+      <property name="&lt;Super&gt;a" type="string" value="/home/nyx/.bin/snap &quot;area&quot;"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
