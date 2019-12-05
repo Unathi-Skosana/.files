@@ -70,6 +70,8 @@
         <value type="string" value="telegram-desktop"/>
       </property>
       <property name="names-ordered" type="array">
+        <value type="string" value="bluetooth enabled
+&lt;b&gt;1 active connection&lt;/b&gt;"/>
         <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
         <value type="string" value="bluetooth disabled"/>
         <value type="string" value="volumeicon"/>

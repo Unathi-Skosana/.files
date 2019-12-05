@@ -30,8 +30,8 @@ set -gx PATH $PATH /home/nyx/.npm-global/bin
 set -gx PATH $PATH /home/nyx/.bin
 
 # ENV VARIABLES
-set -gx PROJECT_PATHS ~/Repositories ~/playground ~/go/src/github.com ~/Dropbox/Hons\ Quantum\ Graph\ Theory/ ~/.config/
-set -gx EDITOR /usr/bin/gedit
+set -gx PROJECT_PATHS ~/Repositories ~/playground ~/go/src/github.com ~/Dropbox/hons-quantum-graph-theory
+set -gx EDITOR /usr/bin/nvim
 set -gx VISUAL /usr/bin/nvim
 set -gx VIMPATH /home/nyx/.config/nvim/init.vim
 set -x -U GOPATH $HOME/go
@@ -42,6 +42,3 @@ set -x -U GOPATH $HOME/go
 
 # Load fish aliases
 . ~/.config/fish/aliases.fish
-
-# remap caps key
-setxkbmap -option "caps:escape"
