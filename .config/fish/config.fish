@@ -42,3 +42,13 @@ set -x -U GOPATH $HOME/go
 
 # Load fish aliases
 . ~/.config/fish/aliases.fish
+
+# xsecurelock
+set -gx XSECURELOCK_AUTH auth_x11
+set -gx XSECURELOCK_SAVER saver_xscreensaver
+set -gx XSECURELOCK_PASSWORD_PROMPT asterisks
+set -gx XSECURELOCK_SHOW_USERNAME 1
+set -gx XSECURELOCK_SHOW_HOSTNAME 1
+set -gx XSECURELOCK_SHOW_DATETIME 1
+set -gx XSECURELOCK_SINGLE_AUTH_WINDOW 1
+
