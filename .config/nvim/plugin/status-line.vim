@@ -1,11 +1,16 @@
 function! TestingStatus() abort
   if g:TESTING_STATUS == 'passing'
-    return "\ue342"
+    return "  "
   elseif g:TESTING_STATUS == 'running'
-    return "\uf499"
+    return " "
   elseif g:TESTING_STATUS == 'failing'
-    return "\uf528"
+    return " "
   endif
+endfunction
+
+
+function! FileNameWithIcon() abort
+  return winwidth(0) > 70  ?  WebDevIconsGetFileTypeSymbol() . ' ' . expand('%:t') : '' 
 endfunction
 
 function! FileNameWithParent(f) abort
@@ -16,29 +21,9 @@ function! FileNameWithParent(f) abort
   endif
 endfunction
 
-function! Line_num() abort
-  return string(line('.'))
-endfunction
-
-function! Active_tab_num(n) abort
-    return " " . a:n . " \ue0bb"
-endfunction
-
-function! Inactive_tab_num(n) abort
-  return " " . a:n . " \ue0bb "
-endfunction
-
-function! Line_percent() abort
-  return string((100*line('.'))/line('$'))
-endfunction
-
-function! Col_num() abort
-    return string(getcurpos()[2])
-endfunction
-
 function! Git_branch() abort
   if fugitive#head() !=# ''
-    return fugitive#head() .  " " . "\ue702"
+    return  fugitive#head() . " "
   else
     return "\uf468"
   endif
@@ -55,49 +40,45 @@ function! StatusDiagnostic() abort
     return info['warning'] . "\uf421"
   endif
 
-  return "\uf42e" 
+  return "\uf42e " 
 endfunction
 
 let g:lightline = {}
 let g:lightline.active = { 
-      \ 'left': [ ['mode', 'readonly'], ['filename_with_icon', 'modified' ] ],
-      \ 'right': [ ['lineinfo'], ['testing_status', 'status_diagnostic'] ]
+      \ 'left': [ ['mode', 'readonly'], ['filename_with_icon', 'modified']],
+      \ 'right': [['lineinfo'], ['testing_status', 'status_diagnostic'] ]
       \ }
-let g:lightline#gitdiff#indicator_added = "\uf055 "
-let g:lightline#gitdiff#indicator_deleted = "\uf057 "
-let g:lightline#gitdiff#indicator_modified = "\uf056 "
+let g:lightline.separator = { 'left': "", 'right': "" }
+let g:lightline.tabline_separator = { 'left': "", 'right': "" }
+let g:lightline.tabline_subseparator = { 'left': "/", 'right': "/" }
+let g:lightline.subseparator = { 'left': '\\', 'right': '\\' }
 
 let g:lightline.tabline = {
-            \ 'left': [ [ 'vim_logo', 'tabs' ] ],
-            \ 'right': [ [ 'git_branch' ], [ 'gitdiff' ]]
+            \ 'left': [ [ 'vim_logo'], [ 'tabs' ] ],
+            \ 'right': [ [ 'git_branch' ]]
             \ }
 let g:lightline.tab = {
-        \ 'active': ['artify_activetabnum', 'filename_with_parent'],
-        \ 'inactive': ['artify_inactivetabnum', 'filename']
+        \ 'active': ['filename_with_parent'],
+        \ 'inactive': ['filename']
         \ }
 
 let g:lightline.tab_component = {}
 let g:lightline.tab_component_function = {
-            \ 'artify_activetabnum': 'Active_tab_num',
-            \ 'artify_inactivetabnum': 'Inactive_tab_num',
             \ 'artify_filename': 'lightline_tab_filename',
             \ 'filename': 'lightline#tab#filename',
             \ 'modified': 'lightline#tab#modified',
             \ 'readonly': 'lightline#tab#readonly',
             \ 'tabnum': 'lightline#tab#tabnum',
+            \ 'filename_with_parent': 'FileNameWithParent'
             \ }
 
 let g:lightline.component = {
-        \ 'lineinfo': "%2{Line_percent()}\uf295 %3{Line_num()}:%-2{Col_num()}",
-        \ 'vim_logo': "\ue7c5",
+        \ 'filename_with_icon': '%{FileNameWithIcon()}',
+        \ 'vim_logo': "\ue7c5 ",
         \ 'git_branch': '%{Git_branch()}',
         \ 'filename_with_parent': '%t',
         \ 'status_diagnostic': '%{StatusDiagnostic()}',
         \ 'testing_status': '%{TestingStatus()}'
         \ }
 
-let g:lightline.component_expand = { 'gitdiff': 'lightline#gitdiff#get' }
-
-let g:lightline.component_function = {
-        \ }
 

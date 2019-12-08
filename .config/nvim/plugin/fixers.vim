@@ -1,10 +1,21 @@
 " Ale stuff
 let g:ale_fixers = {
-\ 'javascript': ['prettier', 'eslint']
+\    'javascript': ['prettier'],
+\    'tex': ['textlint'],
+\    'go': ['gofmt'],
+\    'c': ['clangtidy'],
+\    'python': ['autopep8']
 \}
 let g:ale_linters = {
-\    'javascript': ['eslint'],
-\    'javascript.jsx': ['eslint']
+\    'c': ['ccls'],
+\    'bib': ['bibclean'],
+\    'fish': ['fish'],
+\    'go'  : ['gofmt'],
+\    'markdown': ['proselint', 'textlint'],
+\    'json': ['jsonlint'],
+\    'make': ['checkmake'],
+\    'python': ['pylint'],
+\    'tex': ['textlint']
 \}
 
 let g:ale_fix_on_save = 1
@@ -14,7 +25,7 @@ let g:ale_completion_enabled = 0
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_javascript_eslint_use_local_config = 1
 let g:ale_sign_error = '●'
-let g:ale_sign_warning = "\uf49f"
+let g:ale_sign_warning = ""
 let g:ale_virtualtext_cursor = 1
 
 " Test support
@@ -28,6 +39,8 @@ let g:neomake_warning_sign = {
 let g:neomake_error_sign = {
   \   'text': '◉'
   \ }
+
+let g:dispatch_compilers = {'go': 'gotest', 'python': 'pytest'}
 
 let g:TESTING_STATUS = 'passing'
 
@@ -56,14 +69,4 @@ augroup END
 """""""""""""""""""""
 " vim-test extensions
 """""""""""""""""""""
-function! ElixirUmbrellaTransform(cmd) abort
-  if match(a:cmd, 'apps/') != -1
-    return substitute(a:cmd, 'mix test apps/\([^/]*/\)', 'cd apps/\1 \&\& mix test ', '')
-  else
-    return a:cmd
-  end
-endfunction
-
-
 let g:test#preserve_screen = 0
-
