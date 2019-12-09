@@ -100,5 +100,3 @@ noremap <expr> <C-b> max([winheight(0) - 2, 1])
 	\ ."\<C-u>".(line('w0') <= 1 ? "H" : "M")
 noremap <expr> <C-e> (line("w$") >= line('$') ? "j" : "3\<C-e>")
 noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "3\<C-y>")
-
-

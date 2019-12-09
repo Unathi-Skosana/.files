@@ -61,26 +61,24 @@ nnoremap <silent> <leader>cm ::CocSearch -w
 nmap <leader>x  <Plug>(coc-cursors-operator)
 
 function! s:show_documentation()
-if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-else
-    call CocAction('doHover')
-endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
 endfunction
-" }}}
+" }}
 
 " fzf mappinps {{{
-
 nnoremap <silent> <leader>fc :Colors<CR>
 nnoremap <silent> <leader>fb :Buffers<CR>
 nnoremap <silent> <leader>ff :call Fzf_dev()<CR>
 nnoremap <silent> <leader>fr :Rg<CR>
 nnoremap <silent> <leader>fw :Rg <C-R><C-W><CR>
-
 " }}
 
 " pydoc {{{
-   nmap <silent> <C-_> <Plug>(pydocstring)
+nmap <silent> <C-_> <Plug>(pydocstring)
 " }}}
 
 " vim-easy-align {{
@@ -120,11 +118,11 @@ nmap <Leader>- :<C-u>ChooseWinSwapStay<CR>
 " }}
  
 
-" comfortable motion
-    nnoremap <silent> <C-d> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 2)<CR>
-    nnoremap <silent> <C-u> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -2)<CR>
-    nnoremap <silent> <C-f> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
-    nnoremap <silent> <C-b> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
+" comfortable motion {{
+nnoremap <silent> <C-d> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 2)<CR>
+nnoremap <silent> <C-u> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -2)<CR>
+nnoremap <silent> <C-f> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
+nnoremap <silent> <C-b> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
 
 " }}
 

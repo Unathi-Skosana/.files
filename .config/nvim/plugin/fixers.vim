@@ -14,7 +14,7 @@ let g:ale_linters = {
 \    'markdown': ['proselint', 'textlint'],
 \    'json': ['jsonlint'],
 \    'make': ['checkmake'],
-\    'python': ['pylint'],
+\    'python': ['pylint', 'pydocstyle'],
 \    'tex': ['textlint']
 \}
 
