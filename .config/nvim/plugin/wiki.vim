@@ -21,4 +21,4 @@ let g:livedown_autorun = 0
 " Open the browser window upon previewing
 let g:livedown_open = 1
 let g:livedown_port = 1337
-
+let g:livedown_browser = "firefox"
