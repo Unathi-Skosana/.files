@@ -18,30 +18,30 @@ set tacklebox_path ~/.tackle ~/.tacklebox
 # Example format: set tacklebox_plugins python extract
 
 # Suppress fish greeting
-set fish_greeting (motivate)
+set fish_greeting ""
 
 # PATHS
-set -gx PATH $PATH /home/nyx/.local/bin/
+set -gx PATH $PATH $HOME/.local/bin/
+set -gx PATH $PATH $HOME/go/bin
+set -gx PATH $PATH $HOME/.gem/ruby/2.6.0/bin
+set -gx PATH $PATH $HOME.gem/ruby/2.6.0/bin
+set -gx PATH $PATH $HOME/.npm-global/bin
+set -gx PATH $PATH $HOME/.bin
 set -gx PATH $PATH /opt/anaconda/bin
-set -gx PATH $PATH /home/nyx/go/bin
-set -gx PATH $PATH /home/nyx/.gem/ruby/2.6.0/bin
-set -gx PATH $PATH /home/nyx/.gem/ruby/2.6.0/bin
-set -gx PATH $PATH /home/nyx/.npm-global/bin
-set -gx PATH $PATH /home/nyx/.bin
 
 # ENV VARIABLES
-set -gx PROJECT_PATHS ~/Repositories ~/playground ~/go/src/github.com ~/Dropbox/hons-quantum-graph-theory
+set -gx PROJECT_PATHS $HOME/Repositories $HOME/playground $HOME/go/src/github.com $HOME/Dropbox/hons-quantum-graph-theory
 set -gx EDITOR /usr/bin/nvim
 set -gx VISUAL /usr/bin/nvim
 set -gx VIMPATH /home/nyx/.config/nvim/init.vim
 set -x -U GOPATH $HOME/go
 
 # Load Tacklebox configuration
-. ~/.tacklebox/tacklebox.fish
+. $HOME/.tacklebox/tacklebox.fish
 
 
 # Load fish aliases
-. ~/.config/fish/aliases.fish
+. $HOME/.config/fish/aliases.fish
 
 # xsecurelock
 set -gx XSECURELOCK_AUTH auth_x11
@@ -52,3 +52,4 @@ set -gx XSECURELOCK_SHOW_HOSTNAME 1
 set -gx XSECURELOCK_SHOW_DATETIME 1
 set -gx XSECURELOCK_SINGLE_AUTH_WINDOW 1
 
+source $HOME/.config/fish/cowsay.fish

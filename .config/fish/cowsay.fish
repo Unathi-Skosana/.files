@@ -1,0 +1,1 @@
+fortune -s | cowsay -f (cowsay -l | tail -n +2  | tr ' ' '\n' | shuf -n 1)
