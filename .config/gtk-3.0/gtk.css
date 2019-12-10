@@ -1,19 +1,32 @@
-VteTerminal,
-TerminalScreen,
-vte-terminal {
-    padding: 10px 10px 10px 10px;
-    -VteTerminal-inner-border: 10px 10px 10px 10px;
+.xfce4-panel.background.panel {
+  background-color: rgba(255,255,255,0.0);
 }
 
-.xfce4-panel.background {
-  background-color: rgba(0,0,0,0.0);
-  }
+
+#xfce-panel-toggle-button:hover,
+#xfce-panel-toggle-button:active,
+#xfce-panel-toggle-button:checked {
+    background: rgba(255,255,255,0.1)
+}
+
+#sn-button:hover,
+#sn-button:active,
+#sn-button:checked * {
+    background: rgba(255,255,255,0.1)
+}
 
 
-#xfce4-clipman-plugin { padding: 4px; }
-#xfce4-power-manager-plugin { padding: 3px; }
-#pulseaudio-button {
+#xfce-panel-toggle-button:hover,
+#xfce-panel-toggle-button:active,
+#xfce-panel-toggle-button:checked {
+    background: rgba(255,255,255,0.1)
+}
+
+#pulseaudio-button:hover,
+#pulseaudio-button:active,
+#pulseaudio-button:checked {
     color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 #pulseaudio-button * {

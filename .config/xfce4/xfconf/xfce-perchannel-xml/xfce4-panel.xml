@@ -15,7 +15,7 @@
         <value type="int" value="15"/>
         <value type="int" value="7"/>
         <value type="int" value="2"/>
-        <value type="int" value="6"/>
+        <value type="int" value="1"/>
       </property>
       <property name="background-alpha" type="uint" value="0"/>
       <property name="autohide-behavior" type="uint" value="1"/>
@@ -41,112 +41,6 @@
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
     </property>
-    <property name="plugin-6" type="string" value="systray">
-      <property name="names-visible" type="array">
-        <value type="string" value="blueman-tray"/>
-        <value type="string" value="safeeyes"/>
-        <value type="string" value="mailspring"/>
-        <value type="string" value="networkmanager applet"/>
-        <value type="string" value="bluetooth enabled"/>
-        <value type="string" value="redshift-gtk"/>
-        <value type="string" value="dropbox"/>
-        <value type="string" value="telegram-desktop"/>
-        <value type="string" value="clipman"/>
-        <value type="string" value="xfce4-power-manager"/>
-        <value type="string" value="orage"/>
-        <value type="string" value="motrix"/>
-        <value type="string" value="audio-recorder"/>
-      </property>
-      <property name="show-frame" type="bool" value="false"/>
-      <property name="size-max" type="uint" value="27"/>
-      <property name="names-hidden" type="array">
-        <value type="string" value="audio-recorder"/>
-        <value type="string" value="safeeyes"/>
-        <value type="string" value="mailspring"/>
-        <value type="string" value="motrix"/>
-        <value type="string" value="clipman"/>
-        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="dropbox"/>
-        <value type="string" value="telegram-desktop"/>
-      </property>
-      <property name="names-ordered" type="array">
-        <value type="string" value="bluetooth enabled
-&lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth disabled"/>
-        <value type="string" value="volumeicon"/>
-        <value type="string" value="pnmixer"/>
-        <value type="string" value="alsa-tray"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="slack"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="vlc"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="thunar"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="simplescreenrecorder"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="caja"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="keybase"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="bluetooth enabled &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="obs"/>
-        <value type="string" value="bluetooth active &lt;b&gt;1 active connection&lt;/b&gt;"/>
-        <value type="string" value="motrix"/>
-        <value type="string" value="dropbox"/>
-        <value type="string" value="mailspring"/>
-        <value type="string" value="safeeyes"/>
-        <value type="string" value="telegram-desktop"/>
-        <value type="string" value="blueman-tray"/>
-        <value type="string" value="audio-recorder"/>
-        <value type="string" value="redshift-gtk"/>
-        <value type="string" value="networkmanager applet"/>
-        <value type="string" value="xfce4-power-manager"/>
-        <value type="string" value="clipman"/>
-      </property>
-      <property name="square-icons" type="bool" value="false"/>
-    </property>
     <property name="plugin-2" type="string" value="pager">
       <property name="rows" type="uint" value="1"/>
       <property name="workspace-scrolling" type="bool" value="false"/>
@@ -161,6 +55,13 @@
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="mpris-players" type="string" value="spotify"/>
       <property name="enable-wnck" type="bool" value="true"/>
+    </property>
+    <property name="plugin-1" type="string" value="statusnotifier">
+      <property name="known-items" type="array">
+        <value type="string" value="redshift"/>
+        <value type="string" value="Mailspring1"/>
+        <value type="string" value="blueman"/>
+      </property>
     </property>
   </property>
 </channel>
