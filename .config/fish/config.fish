@@ -30,7 +30,7 @@ set -gx PATH $PATH $HOME/.bin
 set -gx PATH $PATH /opt/anaconda/bin
 
 # ENV VARIABLES
-set -gx PROJECT_PATHS $HOME/Repositories $HOME/playground $HOME/go/src/github.com $HOME/Dropbox/hons-quantum-graph-theory
+set -gx PROJECT_PATHS $HOME/Repositories $HOME/playground $HOME/go/src/github.com $HOME/Dropbox
 set -gx EDITOR /usr/bin/nvim
 set -gx VISUAL /usr/bin/nvim
 set -gx VIMPATH /home/nyx/.config/nvim/init.vim
