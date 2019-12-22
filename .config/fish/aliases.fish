@@ -25,13 +25,14 @@ alias wa 'f -e mpv'
 alias py 'python'
 alias v 'nvim'
 alias cat 'bat'
+alias ls 'exa'
 alias vrc 'nvim $HOME/.config/nvim'
 alias frc 'nvim $HOME/.config/fish'
 alias xrc 'nvim $HOME/.x'
 alias termrc 'nvim $HOME/.config/kitty/kitty.conf'
 alias ydl 'youtube-dl'
 alias gdl 'gitdir'
-alias junb 'jupyter notebook'
+alias jnb 'jupyter notebook'
 
 
 # pacman aliases

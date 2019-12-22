@@ -15,8 +15,7 @@
         <value type="int" value="15"/>
         <value type="int" value="7"/>
         <value type="int" value="2"/>
-        <value type="int" value="1"/>
-        <value type="int" value="5"/>
+        <value type="int" value="8"/>
       </property>
       <property name="background-alpha" type="uint" value="0"/>
       <property name="autohide-behavior" type="uint" value="1"/>
@@ -54,22 +53,24 @@
     </property>
     <property name="plugin-7" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="spotify"/>
+      <property name="mpris-players" type="string" value="spotify;vlc"/>
       <property name="enable-wnck" type="bool" value="true"/>
     </property>
-    <property name="plugin-1" type="string" value="statusnotifier">
+    <property name="plugin-8" type="string" value="statusnotifier">
       <property name="known-items" type="array">
-        <value type="string" value="dropbox-client-2252"/>
+        <value type="string" value="dropbox-client-5774"/>
+        <value type="string" value="dropbox-client-298481"/>
+        <value type="string" value="dropbox-client-1699"/>
+        <value type="string" value="vlc"/>
+        <value type="string" value="dropbox-client-1706"/>
+        <value type="string" value="Motrix1"/>
+        <value type="string" value="dropbox-client-2247"/>
         <value type="string" value="Slack1"/>
-        <value type="string" value="redshift"/>
         <value type="string" value="Mailspring1"/>
+        <value type="string" value="redshift"/>
         <value type="string" value="blueman"/>
+        <value type="string" value="dropbox-client-2866"/>
       </property>
-      <property name="menu-is-primary" type="bool" value="true"/>
-      <property name="single-row" type="bool" value="true"/>
-      <property name="symbolic-icons" type="bool" value="true"/>
-      <property name="square-icons" type="bool" value="false"/>
     </property>
-    <property name="plugin-5" type="string" value="wavelan"/>
   </property>
 </channel>
