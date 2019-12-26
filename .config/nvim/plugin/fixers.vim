@@ -19,6 +19,12 @@ let g:ale_linters = {
 \}
 
 let g:ale_fix_on_save = 1
+let g:ale_lint_delay = 200
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_filetype_changed = 1
+let g:ale_lint_on_insert_leave = 0
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
 " Letting coc.vim do the completion instead of all
 let g:ale_completion_enabled = 0
 " use projects prettier and eslint settings
