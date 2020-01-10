@@ -35,7 +35,16 @@ function! ColorScheme()
     let g:lightline.colorscheme = 'dracula'
   endif
 
+ if g:VIM_COLOR_SCHEME ==# 'ayu'
+    packadd ayu-vim
+    let ayucolor='dark'
+    colorscheme ayu
+    let g:lightline.colorscheme = 'ayu'
+  endif
+
+
+
 endfunction
 
 " The Defaults
-:call SwitchColorScheme('challenger_deep')
+:call SwitchColorScheme('ayu')
