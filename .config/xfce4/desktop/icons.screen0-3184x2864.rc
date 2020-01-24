@@ -1,19 +1,31 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
-[google-drive://ukskosana@gmail.com/]
+[/home/nyx/Desktop/currently-reading]
+row=4
+col=20
+
+[/home/nyx/Desktop/cities-za.json]
+row=5
+col=19
+
+[/home/nyx/Desktop/bekar_com_bd___resume_download_free.png]
+row=3
+col=17
+
+[541a710e-afcf-432e-bcea-0010c0281e67]
 row=0
-col=3
+col=20
 
 [Trash]
-row=0
-col=2
+row=1
+col=0
 
 [/]
-row=0
+row=2
 col=0
 
 [/home/nyx]
-row=0
-col=1
+row=3
+col=0
 

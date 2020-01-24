@@ -16,6 +16,7 @@
         <value type="int" value="7"/>
         <value type="int" value="2"/>
         <value type="int" value="8"/>
+        <value type="int" value="5"/>
       </property>
       <property name="background-alpha" type="uint" value="0"/>
       <property name="autohide-behavior" type="uint" value="1"/>
@@ -58,6 +59,23 @@
     </property>
     <property name="plugin-8" type="string" value="statusnotifier">
       <property name="known-items" type="array">
+        <value type="string" value="dropbox-client-252208"/>
+        <value type="string" value="dropbox-client-1887"/>
+        <value type="string" value="dropbox-client-1954"/>
+        <value type="string" value="dropbox-client-2567"/>
+        <value type="string" value="dropbox-client-1892"/>
+        <value type="string" value="dropbox-client-1942"/>
+        <value type="string" value="dropbox-client-1935"/>
+        <value type="string" value="dropbox-client-2131"/>
+        <value type="string" value="dropbox-client-1872"/>
+        <value type="string" value="dropbox-client-1881"/>
+        <value type="string" value="dropbox-client-1864"/>
+        <value type="string" value="dropbox-client-1719"/>
+        <value type="string" value="dropbox-client-2556"/>
+        <value type="string" value="dropbox-client-2226"/>
+        <value type="string" value="dropbox-client-1663"/>
+        <value type="string" value="dropbox-client-1955"/>
+        <value type="string" value="dropbox-client-1898"/>
         <value type="string" value="dropbox-client-5395"/>
         <value type="string" value="dropbox-client-254440"/>
         <value type="string" value="dropbox-client-4487"/>
@@ -85,5 +103,6 @@
         <value type="string" value="dropbox-client-2866"/>
       </property>
     </property>
+    <property name="plugin-5" type="string" value="battery"/>
   </property>
 </channel>
