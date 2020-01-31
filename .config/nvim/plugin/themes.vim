@@ -42,9 +42,12 @@ function! ColorScheme()
     let g:lightline.colorscheme = 'ayu'
   endif
 
-
-
+ if g:VIM_COLOR_SCHEME ==# 'nightfly'
+    packadd vim-nightfly-guicolors
+    colorscheme nightfly
+    let g:lightline.colorscheme = 'nightfly'
+  endif
 endfunction
 
 " The Defaults
-:call SwitchColorScheme('ayu')
+:call SwitchColorScheme('nightfly')

@@ -35,7 +35,7 @@
       <property name="Reflection" type="string" value="0"/>
       <property name="Primary" type="bool" value="false"/>
       <property name="Position" type="empty">
-        <property name="X" type="int" value="695"/>
+        <property name="X" type="int" value="1280"/>
         <property name="Y" type="int" value="0"/>
       </property>
       <property name="EDID" type="string" value="12cc5ad59ce91d6f4645c803423331aa88c6b4a9"/>

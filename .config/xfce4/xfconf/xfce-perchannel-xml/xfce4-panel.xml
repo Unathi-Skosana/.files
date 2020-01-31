@@ -59,6 +59,9 @@
     </property>
     <property name="plugin-8" type="string" value="statusnotifier">
       <property name="known-items" type="array">
+        <value type="string" value="dropbox-client-4669"/>
+        <value type="string" value="dropbox-client-4060"/>
+        <value type="string" value="dropbox-client-3887"/>
         <value type="string" value="dropbox-client-252208"/>
         <value type="string" value="dropbox-client-1887"/>
         <value type="string" value="dropbox-client-1954"/>
