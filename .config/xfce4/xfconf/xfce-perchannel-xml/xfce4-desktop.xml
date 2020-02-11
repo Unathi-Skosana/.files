@@ -6,8 +6,8 @@
       <property name="monitoreDP1" type="empty">
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/nyx/Pictures/papes/71-PbPYzVD.jpg"/>
+          <property name="image-style" type="int" value="1"/>
+          <property name="last-image" type="string" value="/home/nyx/Pictures/papes/23-GkrOOuJ.png"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -71,7 +71,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/nyx/Pictures/papes/33-PbPYzVD.jpg"/>
+          <property name="last-image" type="string" value="/home/nyx/Pictures/papes/56-QOdUp2E.png"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -170,9 +170,9 @@
     <property name="primary" type="bool" value="true"/>
     <property name="use-custom-font-size" type="bool" value="true"/>
     <property name="single-click" type="bool" value="true"/>
-    <property name="icon-size" type="uint" value="70"/>
+    <property name="icon-size" type="uint" value="30"/>
     <property name="gravity" type="int" value="3"/>
-    <property name="font-size" type="double" value="8.000000"/>
+    <property name="font-size" type="double" value="6.000000"/>
     <property name="tooltip-size" type="double" value="135.000000"/>
     <property name="style" type="int" value="2"/>
     <property name="show-hidden-files" type="bool" value="false"/>

@@ -8,7 +8,7 @@
       <property name="position" type="string" value="p=6;x=0;y=0"/>
       <property name="length" type="uint" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="46"/>
+      <property name="size" type="uint" value="24"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="4"/>
         <value type="int" value="3"/>
@@ -35,6 +35,7 @@
         <value type="double" value="0.211765"/>
         <value type="double" value="1.000000"/>
       </property>
+      <property name="length-adjust" type="bool" value="false"/>
     </property>
   </property>
   <property name="plugins" type="empty">
@@ -59,52 +60,25 @@
     </property>
     <property name="plugin-8" type="string" value="statusnotifier">
       <property name="known-items" type="array">
-        <value type="string" value="dropbox-client-4669"/>
-        <value type="string" value="dropbox-client-4060"/>
-        <value type="string" value="dropbox-client-3887"/>
-        <value type="string" value="dropbox-client-252208"/>
-        <value type="string" value="dropbox-client-1887"/>
-        <value type="string" value="dropbox-client-1954"/>
-        <value type="string" value="dropbox-client-2567"/>
-        <value type="string" value="dropbox-client-1892"/>
-        <value type="string" value="dropbox-client-1942"/>
-        <value type="string" value="dropbox-client-1935"/>
-        <value type="string" value="dropbox-client-2131"/>
-        <value type="string" value="dropbox-client-1872"/>
-        <value type="string" value="dropbox-client-1881"/>
-        <value type="string" value="dropbox-client-1864"/>
-        <value type="string" value="dropbox-client-1719"/>
-        <value type="string" value="dropbox-client-2556"/>
-        <value type="string" value="dropbox-client-2226"/>
-        <value type="string" value="dropbox-client-1663"/>
-        <value type="string" value="dropbox-client-1955"/>
-        <value type="string" value="dropbox-client-1898"/>
-        <value type="string" value="dropbox-client-5395"/>
-        <value type="string" value="dropbox-client-254440"/>
-        <value type="string" value="dropbox-client-4487"/>
-        <value type="string" value="dropbox-client-5601"/>
-        <value type="string" value="dropbox-client-5636"/>
-        <value type="string" value="dropbox-client-5231"/>
-        <value type="string" value="dropbox-client-8373"/>
-        <value type="string" value="dropbox-client-5843"/>
-        <value type="string" value="dropbox-client-5510"/>
-        <value type="string" value="dropbox-client-9774"/>
-        <value type="string" value="dropbox-client-5254"/>
-        <value type="string" value="dropbox-client-5582"/>
-        <value type="string" value="dropbox-client-5361"/>
-        <value type="string" value="dropbox-client-5774"/>
-        <value type="string" value="dropbox-client-298481"/>
-        <value type="string" value="dropbox-client-1699"/>
-        <value type="string" value="vlc"/>
-        <value type="string" value="dropbox-client-1706"/>
-        <value type="string" value="Motrix1"/>
-        <value type="string" value="dropbox-client-2247"/>
+        <value type="string" value="dropbox-client-5913"/>
+        <value type="string" value="dropbox-client-5728"/>
+        <value type="string" value="dropbox-client-5245"/>
+        <value type="string" value="CMST - Connman System Tray"/>
         <value type="string" value="Slack1"/>
         <value type="string" value="Mailspring1"/>
         <value type="string" value="redshift"/>
         <value type="string" value="blueman"/>
-        <value type="string" value="dropbox-client-2866"/>
       </property>
+      <property name="icon-size" type="int" value="13"/>
+      <property name="single-row" type="bool" value="true"/>
+      <property name="square-icons" type="bool" value="false"/>
+      <property name="symbolic-icons" type="bool" value="false"/>
+      <property name="menu-is-primary" type="bool" value="true"/>
+      <property name="hidden-items" type="array">
+        <value type="string" value="dropbox-client-5913"/>
+        <value type="string" value="dropbox-client-5728"/>
+      </property>
+      <property name="mode-whitelist" type="bool" value="true"/>
     </property>
     <property name="plugin-5" type="string" value="battery"/>
   </property>

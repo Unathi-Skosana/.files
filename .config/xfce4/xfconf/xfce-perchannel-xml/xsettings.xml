@@ -14,7 +14,7 @@
     <property name="EnableInputFeedbackSounds" type="bool" value="true"/>
   </property>
   <property name="Xft" type="empty">
-    <property name="DPI" type="int" value="130"/>
+    <property name="DPI" type="int" value="85"/>
     <property name="Antialias" type="int" value="1"/>
     <property name="Hinting" type="int" value="1"/>
     <property name="HintStyle" type="string" value="hintslight"/>
@@ -23,8 +23,8 @@
   <property name="Gtk" type="empty">
     <property name="CanChangeAccels" type="bool" value="true"/>
     <property name="ColorPalette" type="empty"/>
-    <property name="FontName" type="string" value="SF Mono 8"/>
-    <property name="MonospaceFontName" type="string" value="SF Mono 8"/>
+    <property name="FontName" type="string" value="JetBrains Mono 6"/>
+    <property name="MonospaceFontName" type="string" value="JetBrains Mono 6"/>
     <property name="IconSizes" type="empty"/>
     <property name="KeyThemeName" type="empty"/>
     <property name="ToolbarStyle" type="empty"/>
@@ -37,9 +37,9 @@
     <property name="DecorationLayout" type="string" value=":minimize,maximize,close"/>
   </property>
   <property name="Gdk" type="empty">
-    <property name="WindowScalingFactor" type="int" value="1"/>
+    <property name="WindowScalingFactor" type="int" value="2"/>
   </property>
   <property name="Xfce" type="empty">
-    <property name="LastCustomDPI" type="int" value="130"/>
+    <property name="LastCustomDPI" type="int" value="85"/>
   </property>
 </channel>
