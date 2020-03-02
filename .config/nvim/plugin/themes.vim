@@ -29,7 +29,7 @@ function! ColorScheme()
   endif
 
   if g:VIM_COLOR_SCHEME ==# 'dracula'
-    packadd dracula
+    packadd! dracula
     set background=dark
     colorscheme dracula
     let g:lightline.colorscheme = 'dracula'
@@ -42,12 +42,12 @@ function! ColorScheme()
     let g:lightline.colorscheme = 'ayu'
   endif
 
- if g:VIM_COLOR_SCHEME ==# 'nightfly'
-    packadd vim-nightfly-guicolors
-    colorscheme nightfly
-    let g:lightline.colorscheme = 'nightfly'
+ if g:VIM_COLOR_SCHEME ==# 'onedark'
+    packadd onedark
+    colorscheme onedark
+    let g:lightline.colorscheme = 'onedark'
   endif
 endfunction
 
 " The Defaults
-:call SwitchColorScheme('nightfly')
+:call SwitchColorScheme('challenger_deep')

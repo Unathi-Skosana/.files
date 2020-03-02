@@ -19,7 +19,7 @@ set guioptions ""
 
 # zathurarc-dark
 
-set font "Cascadia Code 15"
+set font "SF Pro Display 20"
 set default-bg "#000000" #00
 set default-fg "#F7F7F6" #01
 

@@ -4,7 +4,3 @@
 !
 #include ".x/fonts"
 #include ".x/sxiv"
-#include ".x/rofi"
-#include ".x/xclock"
-#include ".x/xscreensaver"
-#include ".x-themes/palenight.Xresources"

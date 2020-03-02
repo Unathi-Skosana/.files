@@ -1,9 +1,0 @@
-! Xclock colors.
-
-XClock*foreground: #dbf0ef
-XClock*background: #2d2f39
-XClock*majorColor:  rgba:db/f0/ef/ff
-XClock*minorColor:  rgba:db/f0/ef/ff
-XClock*hourColor:   rgba:db/f0/ef/ff
-XClock*minuteColor: rgba:db/f0/ef/ff
-XClock*secondColor: rgba:db/f0/ef/ff

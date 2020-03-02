@@ -1,227 +1,243 @@
-/**
- * Most of the UI modifications come from https://www.reddit.com/r/FirefoxCSS/comments/a9vgxl/minimalist_theme/ by u/griam
- */
+html#main-window {
+	--color-bg: #1e1f29;
+	--toolbar-bgcolor: var(--color-bg) !important;
 
-@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+	--gap-between-tabs: 5px;
+	--margin-after-tab-list: 8x;
+	--margin-before-tab-list: 8px;
+	--tab-font: "Cantarell", sans-serif;
+	--tab-font-weight: 700;
+	--tab-height: 32px;
+	--tabs-container-height: 140px;
 
-toolbarbutton#alltabs-button {
-  -moz-binding: url("userChrome.xml#js");
+	--urlbar-container-margin: 5px;
+	--urlbar-list-width: 60%;
+	--urlbar-text-font: "mononoki", sans-serif;
+	--urlbar-text-size: 15pt;
+	--urlbar-text-weight: 700;
+
+	/* Firefox variables */
+	--lwt-toolbar-field-focus-color: #a1ffb6 !important;
+	--lwt-toolbar-field-color: #fefefa !important;
+	--lwt-toolbar-field-background-color: var(--color-bg) !important;
+
+	--arrowpanel-background: #1e1f29 !important;
+	--arrowpanel-color: white !important;
+	--arrowpanel-border-color: transparent !important;
 }
 
-:root {
-  --tabs-border: transparent !important;
-  /* active tab left & right borders - not working in 58?*/
-  --toolbox-border-bottom-color: transparent !important;
-  /* 1px line under background tabs */
-  --chrome-nav-bar-controls-border-color: transparent !important;
-  /* border around url bar */
-}
-
-:root:-moz-lwtheme {
-  --toolbox-border-bottom-color: rgba(0, 0, 0, 0) !important;
-}
-
-:-moz-any(.tabs-newtab-button, #new-tab-button, #alltabs-button) .toolbarbutton-icon {
-  transform: scale(0.5, 0.5) !important;
-  margin-top: 1px !important;
-}
-
-
-/* Padding/border adjustements */
-#nav-bar {
-  border: none !important;
-  padding: 0px 8px !important;
-}
-
-/* 'Show your bookmarks' toolbar button. */
-#bookmarks-menu-button {
-  list-style-image: url('bookmarks.svg') !important;
-}
-
-/* Shadow above content */
-#navigator-toolbox {
-  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.2) !important;
-}
-
-/* Hide the back button unless we can actually go back. */
-#back-button[disabled="true"] {
-  display: none;
-}
-
-/* Hide the forward button always */
-#forward-button {
-  display: none;
-}
-
-/* Hide/re-order the menu button. */
-#PanelUI-button {
-  overflow: hidden;
-  width: 0;
-/*   display: none !important; */
-}
-
-#appMenu-notification-popup {
-/*   position: fixed; */
-  margin-top: 90px;
-  margin-right: 20px !important;
-}
-
-#appMenu-notification-popup .panel-arrowbox {
-  display: none !important;
-  visibility: collapse;
-  
-}
-
-/* #PanelUI-button, */
-#customization-panel-container,
-#customization-panelWrapper .panel-arrow {
-  -moz-box-ordinal-group: 0 !important;
-  margin-right: -2px !important;
-}
-
-/* Tab borders stuff */
-.tabbrowser-tab::after,
-.tabbrowser-tab::before {
-  border: none !important;
-  color: grey !important;
-  opacity: .2 !important;
-}
-
-.tabbrowser-tab[visuallyselected="true"] {
-  box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.33);
-}
-
-.tab-line {
-  display: none !important;
-}
-
-/* URL Bar */
-#urlbar[focused="true"],
-#urlbar:hover,
-.searchbar-textbox:hover {
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-  outline: none !important;
-}
-
-#urlbar,
-.searchbar-textbox,
-#urlbar:hover,
-.searchbar-textbox:hover {
-  background: transparent !important;
-  height: 32px !important;
-  padding: 0px !important;
-  font-size: 1.1em !important;
-  outline: none !important;
-  box-shadow: none !important;
-  border: none !important;
-  -moz-appearance: none;
-  margin: 4px 0px !important;
-  min-height: 24px !important;
-  cursor: default;
-}
-
-/* Hide bookmark button, page actions, security labels and extension icons */
-#star-button-box,
-#pageActionButton,
-#blocked-permissions-container,
-#identity-icon-labels,
-#extension-icon {
-  display: none !important;
-  background: transparent !important;
-}
-
-/* Borders inside URL bar */
-#identity-box {
-  border: 0 !important;
-  padding: 0 4px !important;
-}
-
-#identity-box #identity-icon {
-  margin-right: -20px !important;
-  opacity: 0 !important;
-}
-
-/* Spacing. */
-#TabsToolbar .titlebar-placeholder[type="pre-tabs"] {
-  width: 1.22em !important;
-  border-right: none !important;
-}
-
-.titlebar-placeholder[type="post-tabs"] {
-  width: 8px !important;
-}
-
-#PersonalToolbar {
-  max-height: none !important;
-  /* Otherwise it's limited to 4em */
-  height: 2.5em;
-  /* Just some ridiculous size so you know it works. */
-}
-
-
-/* Hide titlebar spaces */
-.titlebar-spacer {
-  display: none;
-}
-
-
-/* White GitHub favicon */
-.tabbrowser-tab[image^="data:image/x-icon;base64,AAABAAIAEBAAAAEAIAAoBQAAJgAAACAgAAABACAAKBQAAE4FAAAoAAAAEAAAACAAAAABACAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERE3YTExPFDg4OEgAAAAAAAAAADw8PERERFLETExNpAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQUFJYTExT8ExMU7QAAABkAAAAAAAAAAAAAABgVFRf/FRUX/xERE4UAAAAAAAAAAAAAAAAAAAAAAAAAABEREsETExTuERERHhAQEBAAAAAAAAAAAAAAAAAAAAANExMU9RUVF/8VFRf/EREUrwAAAAAAAAAAAAAAABQUFJkVFRf/BgYRLA4ODlwPDw/BDw8PIgAAAAAAAAAADw8PNBAQEP8VFRf/FRUX/xUVF/8UFBSPAAAAABAQEDAPDQ//AAAA"] .tab-icon-image {
-  filter: invert(1.0) !important;
-}
-
-/* Put tabs below the nav bar. */
+/* This positions the tabs under the navaigator container */
 #titlebar {
-  -moz-box-ordinal-group: 1 !important;
-  /*   background: var(--toolbar-bgcolor) !important; */
+	-moz-box-ordinal-group: 3 !important;
 }
 
-/* Put nav bar above the tab bar and make a space for traffic lights. */
-#nav-bar {
-  -moz-box-ordinal-group: 0 !important;
-  padding-left: 75px !important;
+/* *******************************************************************
+	Toolbar Elements
+*/
+.browser-toolbar {
+	padding-left: 10px !important;
+	padding-top: 10px !important;
+	padding-right: 10px !important;
 }
 
-
-/* Requires https://addons.mozilla.org/en-US/firefox/addon/tab-count-in-window-title/ */
-/* Hides tab bar when there's only one tab. */
-#main-window[titlepreface^="[1] "] .toolbar-items {
-  visibility: collapse;
+/* Bookmarks bar tweaks */
+#PlacesToolbar {
+	align-items: center !important;
+	display: flex !important;
+	font-family: "mononoki", sans-serif !important;
+	font-size: 12pt !important;
+	font-weight: 700 !important;
+	justify-content: center !important;
 }
 
-#main-window[titlepreface^="[1] "] #TabsToolbar {
-  min-height: 0 !important;
+/* Custom back and forward buttons */
+#back-button {
+	list-style-image: url("left-arrow.svg") !important;
 }
 
-#navigator-toolbox[readeractive="true"] {
-  box-shadow: none !important;
+#forward-button {
+	list-style-image: url("right-arrow.svg") !important;
 }
 
-#navigator-toolbox[readeractive="true"]::after {
-  height: 0 !important;
+#navigator-toolbox {
+	--tabs-border-color: var(--color-bg) !important;
+	background-color: var(--color-bg) !important;
+	border: none !important;
+	box-shadow: none !important;
+	max-height: var(		--tabs-container-height	) !important;
+	min-height: var(		--tabs-container-height	) !important;
 }
 
-#reader-mode-button {
-  opacity: 0 !important;
-  visibility: collapse !important;
+/* *******************************************************************
+	Urlbar
+*/
+
+/* Url bar suggestions list container */
+.urlbarView {
+	background-color: var(--color-bg) !important;
+	border-radius: 0 8px 8px !important;
+	box-shadow: 0px 0px 40px rgba(0, 0, 0, 35%) !important;
+	box-shadow: none !important;
+	margin: auto !important;
+	width: var(--urlbar-list-width) !important;
 }
 
-#reader-mode-button[readeractive="true"] {
-  opacity: 1 !important;
-  visibility: visible !important;
+/* Url bar suggestions' selected row */
+.urlbarView:not(.megabar) .urlbarView-row:not([type="tip"])[selected],
+.urlbarView.megabar .urlbarView-row:not([type="tip"])[selected] > .urlbarView-row-inner {
+	background: #f9ff99 !important;
+	color: black !important;
+	fill-opacity: 1;
 }
 
-#pageActionSeparator {
-  opacity: 0 !important;
-  margin-right: 2px !important;
-  margin-left: 2px !important;
+/* The text that says 'Search with ...' */
+.urlbarView-action {
+	color: black !important;
 }
 
-
-/* Move traffic lights in the space carved above. */
-.titlebar-buttonbox-container {
-  position: absolute;
-  margin-top: -40px
+/* Url bar suggestions' row that is being hovered over */
+.urlbarView-row:hover {
+	background-color: none !important;
+	background-image: linear-gradient(77deg, #ffc386, #ff8989) !important;
+	color: black !important;
 }
+
+/* Text that says: This time, search with: */
+#urlbar-one-offs-header-label {
+	font-family: "Cantarell", sans-serif !important;
+	font-size: 14pt !important;
+	font-weight: 700 !important;
+}
+
+#urlbar-background,
+#urlbar-container,
+.urlbar-input-box {
+	background-color: var(--color-bg) !important;
+	background-image: none !important;
+}
+
+#urlbar:not(.megabar),
+#urlbar.megabar > #urlbar-background,
+#searchbar {
+	border: none !important;
+	box-shadow: none !important;
+}
+
+/* Hacky way to make the url input bar centered */
+input#urlbar-input {
+	caret-color: transparent !important;
+	font-family: var(--urlbar-text-font) !important;
+	font-size: var(--urlbar-text-size) !important;
+	font-weight: var(--urlbar-text-weight) !important;
+	text-align: center !important;
+	width: 99999px !important;
+}
+
+.urlbarView-favicon,
+.urlbar-history-dropmarker,
+#star-button,
+#identity-box {
+	display: none !important;
+}
+
+#tracking-protection-icon-container,
+#urlbar-search-button {
+	background-color: none !important;
+	background-image: none !important;
+	border: none !important;
+}
+
+/* *******************************************************************
+	Browser tabs
+*/
+
+/* Hide some bloat */
+.tab-close-button,
+.tab-line,
+.tabbrowser-tab::before,
+.tabbrowser-tab::after,
+.tabbrowser-tab .tab-icon-image {
+	display: none !important;
+}
+
+/* Regular browser tabs */
+.tabbrowser-tab {
+	background-color: #1e1f29 !important;
+	background-image: linear-gradient(to left, var(--color-tab-normal-start), var(--color-tab-normal-end)) !important;
+	border-radius: var(--tab-height) !important;
+	margin-inline-end: var(--gap-between-tabs) !important;
+	max-height: var(--tab-height) !important;
+	min-height: var(--tab-height) !important;
+}
+
+.tabbrowser-tab:hover {
+	background-color: none !important;
+	background-image: linear-gradient(to left, #c97dff, #ff8989) !important;
+	color: black !important;
+}
+
+.tabbrowser-tab[selected="true"] {
+	background-color: none !important;
+	background-image: linear-gradient(to left, #a1ffb6, #f9ff99) !important;
+	color: black !important;
+	font-weight: var(--tab-font-weight) !important;
+}
+
+.tab-content {
+	background-color: none !important;
+	background-image: none !important;
+	font-family: var(--tab-font) !important;
+}
+
+/* pinned browser tabs */
+/* TODO: Find a way to add spacing between the pinned tabs when tab list scrolling is triggered. Adding a margin just screws everything up */
+.tabbrowser-tab:hover[pinned="true"] {
+	background-image: linear-gradient(to left, #ff8989, #ff8989) !important;
+}
+
+.tabbrowser-tab[pinned="true"][selected="true"] {
+	background-image: linear-gradient(to left, #a1ffb6, #a1ffb6) !important;
+}
+
+.tabbrowser-tab[pinned="true"] {
+	background-image: linear-gradient(to left, #ffc386, #ffc386) !important;
+	color: #1d1d1d !important;
+	max-width: var(--tab-height) !important;
+	min-width: var(--tab-height) !important;
+}
+
+.tabbrowser-tab[pinned="true"] .tab-icon-image {
+	align-items: center !important;
+	display: inline-block !important;
+	min-height: var(--pinned-tab-favicon-dim) !important;
+	min-width: var(--pinned-tab-favicon-dim) !important;
+}
+
+.tabbrowser-tab[pinned="true"] .tab-label-container {
+	display: none !important;
+}
+
+.tab-stack {
+	display: flex !important;
+	justify-content: center !important;
+}
+
+/* Modify these values to tweak the start point of the tab list */
+.tabbrowser-arrowscrollbox {
+	margin-inline-start: var(--margin-before-tab-list) !important;
+	margin-inline-end: var(--margin-after-tab-list) !important;
+}
+
+/* *******************************************************************
+	Settings menu pop-up
+*/
+.panel-arrowbox {
+	margin: 0 !important;
+	display: none !important;
+}
+
+.panel-arrowcontent {
+	opacity: 1 !important;
+	margin: 0 !important;
+}
+
