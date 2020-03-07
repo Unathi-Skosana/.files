@@ -1,5 +1,5 @@
 let mapleader=" "
-let maplocalleader="-"
+let maplocalleader="="
 
 nnoremap ; :
 nnoremap : ;

@@ -2,4 +2,4 @@
 ## Bedtime notification with sleeping times.
 output=$(/home/nyx/.bin/yawn)
 /usr/bin/aplay /home/nyx/.bin/notify.wav
-/usr/bin/notify-send "Sleep times" "$output" -u critical -t 4000
+/usr/bin/notify-send "Sleep times" -t 10000 "$output"
