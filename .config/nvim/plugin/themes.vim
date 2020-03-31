@@ -7,7 +7,6 @@ endfunction
 
 function! ColorScheme()
  if g:VIM_COLOR_SCHEME ==# 'palenight'
-    set background=dark
     colorscheme palenight
  endif
 

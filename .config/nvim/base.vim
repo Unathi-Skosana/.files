@@ -1,7 +1,17 @@
 " Syntax, colors and styling {{
-
 syntax enable
-set termguicolors
+filetype off
+filetype plugin on
+syntax on
+filetype plugin indent on
+
+" Enable true color 启用终端24位色
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
 highlight Comment cterm=italic
 hi link xmlEndTag xmlTag
 hi htmlArg gui=italic
@@ -33,7 +43,7 @@ hi StatusLineNC   ctermbg=NONE ctermfg=8
 " }}
 
 
-" status {{
+" statusline {{
 let g:currentmode={
     \ 'n'  : 'NORMAL ',
     \ 'no' : 'N',
