@@ -7,7 +7,7 @@ eval (eval /opt/anaconda/bin/conda "shell.fish" "hook" $argv)
 set tacklebox_path ~/.tackle ~/.tacklebox
 
 # Theme
-#set tacklebox_theme entropy
+set tacklebox_theme entropy
 
 # Which modules would you like to load? (modules can be found in ~/.tackle/modules/*)
 # Custom modules may be added to ~/.tacklebox/modules/
@@ -30,11 +30,15 @@ set -gx PATH $PATH $HOME/.bin
 set -gx PATH $PATH /opt/anaconda/bin
 
 # ENV VARIABLES
-set -gx PROJECT_PATHS $HOME/Repositories $HOME/playground $HOME/go/src/github.com $HOME/Dropbox
+set -gx PROJECT_PATHS $HOME/Repositories $HOME/playground $HOME/go/src/github.com $HOME/Dropbox $HOME/.config
 set -gx EDITOR /usr/bin/nvim
 set -gx VISUAL /usr/bin/nvim
 set -gx VIMPATH /home/nyx/.config/nvim/init.vim
 set -x -U GOPATH $HOME/go
+set -gx LC_ALL en_US.UTF-8
+set -gx LANG en_US.UTF-8
+set -gx JUPYTERLAB_DIR $HOME/.local/share/jupyter/lab
+
 
 # Load Tacklebox configuration
 . $HOME/.tacklebox/tacklebox.fish
