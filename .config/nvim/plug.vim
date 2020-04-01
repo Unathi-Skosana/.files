@@ -14,6 +14,7 @@ else
   call minpac#add('k-takata/minpac', {'type': 'opt'})
 endif
 
+call minpac#add('christoomey/vim-tmux-navigator')
 call minpac#add('easymotion/vim-easymotion')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-commentary')
