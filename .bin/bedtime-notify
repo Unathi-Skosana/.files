@@ -1,5 +1,5 @@
 #!/usr/bin/sh
 ## Bedtime notification with sleeping times.
-output=$(/home/nyx/.bin/yawn)
-/usr/bin/aplay /home/nyx/.bin/notify.wav
-/usr/bin/notify-send "Sleep times" -t 10000 "$output"
+output=$($HOME/.bin/yawn)
+/usr/bin/aplay $HOME/.bin/notify.wav
+/usr/bin/notify-send "Sleep times" -t 8000 "$output"

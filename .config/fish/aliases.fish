@@ -33,7 +33,8 @@ alias termrc 'nvim $HOME/.config/kitty/kitty.conf'
 alias ydl 'youtube-dl'
 alias gdl 'gitdir'
 alias jnb 'jupyter notebook'
-
+alias m='python $HOME/.bin/t.py --task-dir ~/tasks --list miscellaneous'
+alias a='python ~/path/to/t.py --task-dir ~/tasks --list academics'
 
 # pacman aliases
 alias pac 'pacman -S'        # install

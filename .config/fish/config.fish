@@ -20,6 +20,9 @@ set tacklebox_theme entropy
 # Suppress fish greeting
 set fish_greeting ""
 
+# Remove path underline
+set fish_color_valid_path
+
 # PATHS
 set -gx PATH $PATH $HOME/.local/bin/
 set -gx PATH $PATH $HOME/go/bin
