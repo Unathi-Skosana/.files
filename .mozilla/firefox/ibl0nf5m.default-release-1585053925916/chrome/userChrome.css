@@ -1,5 +1,5 @@
 :root{
-  --uc-window-control-width: 138px; /* Space reserved for window controls */
+  --uc-window-control-width: 0px; /* Space reserved for window controls */
   --uc-window-drag-space-width: 4px; /* Extra space reserved on both sides of the nav-bar to be able to drag the window */
 }
 
@@ -83,99 +83,14 @@ toolbar#nav-bar::after{ width: calc(var(--uc-window-control-width) + var(--uc-wi
   }
 
   /* Place sidebar header at the bottom */
-  /*
   #sidebar-box {
     flex-direction: column-reverse;
   }
-  */
 
   /* Hide sidebar header */
-  /*
   #sidebar-header {
     display: none;
   }
-  */
-}
-
-#pocket-button-box,
-#pageActionButton,
-#pageActionSeparator,
-.urlbar-go-button
-{
-    display: none !important;
-}
-
-toolbarspring { -moz-box-flex: unset !important;}
-
-/* Remove back button circle */
-#back-button:not(:hover),
-#back-button:not(:hover) > .toolbarbutton-icon {
-background: transparent !important;
-border: none !important;
-box-shadow: none !important;
-}
-
-#back-button:hover,
-#back-button:hover > .toolbarbutton-icon {
-border: none !important;
-border-radius: 2px !important;
-}  
-
-#back-button {
-	fill-opacity: 1 !important;
-	padding-top: 0px !important;
-	padding-bottom: 0px !important;
-}
-.toolbarbutton-1 { opacity: 1 !important;}
-
-
-/* URL Bar */
-#urlbar[focused="true"],
-#urlbar:hover,
-.searchbar-textbox:hover {
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
-  outline: none !important;
-}
-
-#urlbar,
-.searchbar-textbox,
-#urlbar:hover,
-.searchbar-textbox:hover {
-  background: transparent !important;
-  height: 32px !important;
-  padding: 0px !important;
-  font-size: 1.1em !important;
-  outline: none !important;
-  box-shadow: none !important;
-  border: none !important;
-  -moz-appearance: none;
-  margin: 4px 0px !important;
-  min-height: 24px !important;
-  cursor: default;
-}
-
-/* Hide bookmark button, page actions, security labels and extension icons */
-#star-button-box,
-#pageActionButton,
-#blocked-permissions-container,
-#identity-icon-labels,
-#extension-icon {
-  display: none !important;
-  background: transparent !important;
-}
-
-/* Borders inside URL bar */
-#identity-box {
-  border: 0 !important;
-  padding: 0 4px !important;
-}
-
-#identity-box #identity-icon {
-  margin-right: -20px !important;
-  opacity: 0 !important;
-}
 
 /*Night Owl*/
 

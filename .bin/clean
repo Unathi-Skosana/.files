@@ -1,12 +1,12 @@
 #!/bin/bash
 
-tar -cjf /store/bak/pacman-database.tar.bz2 /var/lib/pacman/local
 pacman -Syy
 sync
 sh -c "echo 3 > /proc/sys/vm/drop_caches"
 updatedb
-pacman -Sc
-pacman -Rns $(pacman -Qtdq)
-/usr/bin/python3.8 /home/lynx/.bin/rmshit.py
+yes | pacman -Sc
+yes | pacman -Rns $(pacman -Qtdq)
+yes | /usr/bin/python3.8 /home/lynx/.bin/rmshit.py
+
 exit 0
 

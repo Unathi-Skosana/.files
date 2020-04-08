@@ -12,3 +12,4 @@ let g:vimtex_compiler_latexmk = {
     \ ],
     \}
 let g:tex_conceal = ""
+let g:vimtex_fold_enabled =1
