@@ -50,8 +50,7 @@ function pacro
     paclo; and sudo pacman -Rns (pacman -Qtdq);
 end
 
-function copy_template
-    set cur (pwd)
-    cp -R $cur/$argv[1] $cur/$argv[2]
-    echo "Done!"
+function new_folder_from_template
+    mkdir -p $argv[2]
+    cp -RT $HOME/Templates/$argv[1] $argv[2]
 end

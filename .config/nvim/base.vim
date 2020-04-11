@@ -1,11 +1,14 @@
 " Syntax, colors and styling {{
 syntax enable
-filetype off
-filetype plugin on
-syntax on
-filetype plugin indent on
 
-
+highlight Comment cterm=italic
+hi link xmlEndTag xmlTag
+hi htmlArg gui=italic
+hi Comment gui=italic
+hi Type gui=italic
+hi htmlArg cterm=italic
+hi Comment cterm=italic
+hi Type cterm=italic
 
 " Enable true color 启用终端24位色
 if exists('+termguicolors')
@@ -14,9 +17,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-set background=dark
 colorscheme base16-tomorrow-night
-
 
 hi LineNr         guibg=NONE guifg=NONE
 hi Normal         guibg=NONE guifg=NONE
@@ -31,9 +32,6 @@ hi SpellBad       guibg=NONE    guifg=#F56565
 hi ColorColumn    guibg=NONE guifg=#718096
 hi SignColumn     guibg=NONE guifg=NONE
 " }}
-
-
-
 
 " statusline {{
 let g:currentmode={
@@ -69,6 +67,4 @@ set statusline+=%#PrimaryBlock#
 set statusline+=\ %Y\ 
 set statusline+=%#SecondaryBlock#
 set statusline+=\ %p
-
-
 "}}

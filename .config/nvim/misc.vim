@@ -30,9 +30,8 @@ set backspace=indent,eol,start
 set hidden
 set shortmess=aFc
 set signcolumn=yes
-set completefunc=emoji#complete
+set complete-=i
 set completeopt=longest,menu,menuone,preview,noselect,noinsert
-set completeopt-=preview
 set list
 set ignorecase      " Search ignoring case
 set smartcase       " Keep case when searching with *
@@ -72,17 +71,3 @@ cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
-
-
-" templatates
-function! Summary()
-    :read ~/.config/nvim/templates/summary.tex
-endfunction
-
-function! Homework()
-    :read ~/.config/nvim/templates/homework.tex
-endfunction
-
-function! Presentation()
-    :read ~/.config/nvim/templates/presentation.tex
-endfunction

@@ -280,3 +280,9 @@ nnoremap <silent> <leader>tn :TestNearest<CR>
 nnoremap <silent> <leader>t. :TestLast<CR>
 nnoremap <silent> <leader>tv :TestVisit<CR>
 " }}
+"
+"
+" UltiSnips {{
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+"}}
