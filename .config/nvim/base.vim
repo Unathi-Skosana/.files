@@ -19,18 +19,21 @@ endif
 
 colorscheme base16-tomorrow-night
 
-hi LineNr         guibg=NONE guifg=NONE
-hi Normal         guibg=NONE guifg=NONE
-hi CursorLine     guibg=NONE    guifg=NONE
-hi CursorLineNr   guibg=NONE    guifg=NONE
-hi PrimaryBlock   guibg=NONE guifg=#4A5568
-hi ModeBlock      guibg=NONE guifg=#FBD38D
-hi SecondaryBlock guibg=NONE guifg=#4A5568
-hi TeritaryBlock  guibg=NONE guifg=#FC8181
-hi Blanks         guibg=NONE
-hi SpellBad       guibg=NONE    guifg=#F56565
-hi ColorColumn    guibg=NONE guifg=#718096
-hi SignColumn     guibg=NONE guifg=NONE
+hi LineNr         guibg=NONE     guifg=NONE
+hi Normal         guibg=NONE     guifg=NONE
+hi CursorLine     guibg=NONE     guifg=NONE
+hi CursorLineNr   guibg=NONE     guifg=NONE
+hi PrimaryBlock   guibg=NONE     guifg=#4A5568
+hi ModeBlock      guibg=NONE     guifg=#FBD38D
+hi SecondaryBlock guibg=NONE     guifg=#4A5568
+hi TeritaryBlock  guibg=NONE     guifg=#FC8181
+hi Blanks         guibg=NONE     guifg=NONE
+hi SpellBad       guibg=NONE     guifg=#F56565
+hi ColorColumn    guibg=NONE     guifg=#718096
+hi SignColumn     guibg=NONE     guifg=NONE
+hi VertSplit      guibg=NONE     guifg=#718096
+hi StatusLineNC   guibg=NONE     guifg=#718096
+
 " }}
 
 " statusline {{
@@ -39,6 +42,7 @@ let g:currentmode={
     \ 'no' : 'NO',
     \ 'v'  : 'V ',
     \ 'V'  : 'V ',
+    \ ''  : 'V ',
     \ '' : 'V ',
     \ 's'  : 'S ',
     \ 'S'  : 'S ',
