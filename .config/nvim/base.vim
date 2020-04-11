@@ -69,4 +69,6 @@ set statusline+=%#PrimaryBlock#
 set statusline+=\ %Y\ 
 set statusline+=%#SecondaryBlock#
 set statusline+=\ %p
+
+
 "}}
