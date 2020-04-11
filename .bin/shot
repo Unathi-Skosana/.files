@@ -14,6 +14,10 @@ case $1 in
     "f")
         maim $FNAME
     ;;
+    "s")
+        maim -st 9999999 | convert - \( +clone -background black -shadow \
+        80x3+5+5 \) +swap -background none -layers merge +repage $FNAME
+    ;;
 esac
 
 if [ -f "$FNAME" ]; then
