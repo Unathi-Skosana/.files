@@ -6,15 +6,16 @@ FNAME="$DIR/$(date +%s).png"
 case $1 in
     "w")
         maim -i $(xdotool getactivewindow) $FNAME
-        notify-send -t 2000 "Window screenshot successfully saved to $FNAME"
     ;;
 
     "a")
         maim -s $FNAME
-        notify-send -t 2000 "Area screenshot successfully saved to $FNAME"
     ;;
     "f")
         maim $FNAME
-        notify-send -t 2000 "Full screenshot successfully saved to $FNAME"
     ;;
 esac
+
+if [ -f "$FNAME" ]; then
+    notify-send -t 2000 "Screenshot successfully saved to $FNAME"
+fi
