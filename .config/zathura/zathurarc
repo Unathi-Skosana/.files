@@ -7,19 +7,18 @@ set adjust-open "best-fit"
 # One page per row by default
 set pages-per-row 1
 
-#stop at page boundries
+# stop at page boundries
 set scroll-page-aware "true"
-set smooth-scroll "true"
 set scroll-full-overlap 0.01
 set scroll-step 100
 
-#zoom settings
+# zoom settings
 set zoom-min 10
 set guioptions ""
 
 # zathurarc-dark
 
-set font "SF Pro Display 20"
+set font "Iosevka Term Bold"
 set default-bg "#000000" #00
 set default-fg "#F7F7F6" #01
 

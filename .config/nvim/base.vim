@@ -1,14 +1,9 @@
+set nocompatible
+
 " Syntax, colors and styling {{
 syntax enable
-
-highlight Comment cterm=italic
-hi link xmlEndTag xmlTag
-hi htmlArg gui=italic
-hi Comment gui=italic
-hi Type gui=italic
-hi htmlArg cterm=italic
-hi Comment cterm=italic
-hi Type cterm=italic
+filetype plugin on
+syntax on
 
 " Enable true color 启用终端24位色
 if exists('+termguicolors')
@@ -19,10 +14,7 @@ endif
 
 colorscheme base16-tomorrow-night
 
-hi LineNr         guibg=NONE     guifg=NONE
-hi Normal         guibg=NONE     guifg=NONE
-hi CursorLine     guibg=NONE     guifg=NONE
-hi CursorLineNr   guibg=NONE     guifg=NONE
+hi LineNr         guibg=NONE
 hi PrimaryBlock   guibg=NONE     guifg=#4A5568
 hi ModeBlock      guibg=NONE     guifg=#FBD38D
 hi SecondaryBlock guibg=NONE     guifg=#4A5568
@@ -30,9 +22,9 @@ hi TeritaryBlock  guibg=NONE     guifg=#FC8181
 hi Blanks         guibg=NONE     guifg=NONE
 hi SpellBad       guibg=NONE     guifg=#F56565
 hi ColorColumn    guibg=NONE     guifg=#718096
-hi SignColumn     guibg=NONE     guifg=NONE
 hi VertSplit      guibg=NONE     guifg=#718096
 hi StatusLineNC   guibg=NONE     guifg=#718096
+hi Folded         guibg=NONE
 
 " }}
 
@@ -72,3 +64,4 @@ set statusline+=\ %Y\
 set statusline+=%#SecondaryBlock#
 set statusline+=\ %p
 "}}
+"
