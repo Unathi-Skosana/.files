@@ -1,4 +1,3 @@
-" ---------- Ctrl-P stuff --------------
 "  Put ctrl p at the bottom ordererf from top to bottom
 let g:ctrlp_match_window='bottom,order:ttb'
 " use rg as our ctrlp finder

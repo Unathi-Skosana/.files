@@ -207,12 +207,6 @@ noremap <silent> <leader>s :Startify<CR>
 nnoremap <silent><localleader>t :TagbarToggle<CR>
 " }}
 
-" ale {{
-nmap [a <Plug>(ale_next_wrap)
-nmap ]a <Plug>(ale_previous_wrap)
-" }}
-
-
 " vim-operator-replace {{
 xmap p <Plug>(operator-replace)
 " }}
@@ -223,7 +217,6 @@ nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gb :Gblame<CR>
 " }}
-
 
 " language server 
 nmap <leader>ld <Plug>(coc-definition)
@@ -286,24 +279,3 @@ nnoremap <silent> <leader>tv :TestVisit<CR>
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 "}}
-
-
-" Neosnippet
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif

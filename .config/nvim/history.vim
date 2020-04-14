@@ -1,3 +1,7 @@
+set backupdir=~/.config/nvim/backup//
+set directory=~/.config/nvim/swap//
+set undodir=~/.config/nvim/undo//
+
 set shada='300,<50,@100,s10,h
 
 " If sudo, disable vim swap/backup/undo/shada/viminfo writing

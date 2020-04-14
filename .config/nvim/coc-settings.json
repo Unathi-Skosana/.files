@@ -1,4 +1,7 @@
 {
+    "diagnostic.errorSign": "●",
+    "diagnostic.warningSign": "",
+    "diagnostic.infoSign": "◉",
     "prettier.requireConfig": true,
     "coc.preferences.formatOnSaveFiletypes": [
         "css",
@@ -7,7 +10,7 @@
         "javascript",
         "javascriptreact"
     ],
- "  languageserver": {
+    "languageserver": {
         "bash": {
             "command": "bash-language-server",
             "args": ["start"],
