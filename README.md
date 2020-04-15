@@ -2,7 +2,7 @@
     <h1>.files</h1><br>
 </div>
 
-![Screenshot](https://i.imgur.com/LPXalIk.png)
+![Screenshot](https://i.imgur.com/ReVz33i.png)
 
 ## System configuration
 
