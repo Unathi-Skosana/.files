@@ -166,11 +166,11 @@ endfunction
 " }}
 
 " fzf mappinps {{{
+noremap  <silent> <C-p> :FZF<CR>
+nnoremap <silent> <leader>ff :Files<CR>
 nnoremap <silent> <leader>fc :Colors<CR>
 nnoremap <silent> <leader>fb :Buffers<CR>
-nnoremap <silent> <leader>ff :call Fzf_dev()<CR>
 nnoremap <silent> <leader>fr :Rg<CR>
-nnoremap <silent> <leader>fw :Rg <C-R><C-W><CR>
 " }}
 
 
@@ -185,7 +185,6 @@ nnoremap <silent> <LocalLeader>gs :GoCallstack<CR>
 " mundo {{
 nnoremap <silent> <leader>m :MundoToggle<CR>
 " }}
-
 
 " comfortable motion {{
 nnoremap <silent> <C-d> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 2)<CR>
@@ -234,7 +233,7 @@ nnoremap <silent> <leader>cp :cprev<CR>
 nnoremap <silent> <RIGHT> :cnext<CR>
 nnoremap <silent> <LEFT> :cprev<CR>
 
-" Make many of the jump commands also center on search term
+" Make many of the jump commands also center on search term {{
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap <C-o> <C-o>zz
@@ -250,6 +249,7 @@ if executable('rg')
   set grepprg=rg\ --vimgrep
 endif
 nnoremap <BS> :b#<CR>
+" }}
 
 
 " Supertab {{
@@ -257,25 +257,15 @@ let g:SuperTabMappingForward = '<s-tab>'
 let g:SuperTabMappingBackward = '<tab>'
 " }}
 
-" FZF {{
-noremap <silent> <C-p> :call fzf#vim#files('.', {'options': '--prompt ""'})<CR>
-nnoremap <silent> <leader>b :Buffers<CR>
-" }}
-
-" NERDtree {{
-nnoremap <leader>n :NERDTreeToggle<CR>
-" }}
-
-
 " Test {{
 nnoremap <silent> <leader>tt :TestFile<CR>
 nnoremap <silent> <leader>tn :TestNearest<CR>
 nnoremap <silent> <leader>t. :TestLast<CR>
 nnoremap <silent> <leader>tv :TestVisit<CR>
 " }}
-"
-"
+
+
 " UltiSnips {{
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
-"}}
+" }}

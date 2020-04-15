@@ -66,3 +66,10 @@ set foldlevel=1
 set foldlevelstart=10
 set foldnestmax=10
 " }}
+
+
+" misc {{
+set confirm
+set autoread
+set autowrite
+" }}

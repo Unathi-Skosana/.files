@@ -1,0 +1,1 @@
+/home/lynx/.local/share/omf/themes/zephyr/fish_prompt.fish

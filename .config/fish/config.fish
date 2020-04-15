@@ -41,13 +41,18 @@ set -x -U GOPATH $HOME/go
 set -gx LC_ALL en_US.UTF-8
 set -gx LANG en_US.UTF-8
 set -gx JUPYTERLAB_DIR $HOME/.local/share/jupyter/lab
-
+set -gx FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
 
 # Load Tacklebox configuration
 . $HOME/.tacklebox/tacklebox.fish
 
-
 # Load fish aliases
 . $HOME/.config/fish/aliases.fish
+
+# Load custom functions
+. $HOME/.config/fish/functions/misc.fish
+
+# Load bindings
+. $HOME/.config/fish/bindings.fish
 
 #source $HOME/.config/fish/cowsay.fish

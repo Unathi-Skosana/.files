@@ -22,10 +22,14 @@ alias zz 'fasd_cd -d -i' # cd with interactive selection
 alias wa 'f -e mpv'
 
 # general commands
+alias c 'clear'
 alias py 'python'
 alias v 'nvim'
 alias cat 'bat'
 alias ls 'exa'
+alias l 'exa'
+alias j 'pj'
+alias t 'tree -L 1'
 alias vrc 'nvim $HOME/.config/nvim'
 alias frc 'nvim $HOME/.config/fish'
 alias xrc 'nvim $HOME/.x'
@@ -33,8 +37,8 @@ alias termrc 'nvim $HOME/.config/kitty/kitty.conf'
 alias ydl 'youtube-dl'
 alias gdl 'gitdir'
 alias jnb 'jupyter notebook'
-alias m='python $HOME/.bin/t.py --task-dir ~/tasks --list miscellaneous'
-alias a='python $HOME/.bin/t.py --task-dir ~/tasks --list academics'
+alias m 'python $HOME/.bin/t.py --task-dir ~/tasks --list miscellaneous'
+alias s 'python $HOME/.bin/t.py --task-dir ~/tasks --list school'
 
 # pacman aliases
 alias pac 'pacman -S'        # install
@@ -45,12 +49,3 @@ alias paci 'pacman -Si'      # info
 alias paclo 'pacman -Qdt'    # list orphans
 alias pacc 'pacman -Scc'    # clean cache
 alias paclf 'pacman -Ql'    # list files
-
-function pacro
-    paclo; and sudo pacman -Rns (pacman -Qtdq);
-end
-
-function new_folder_from_template
-    mkdir -p $argv[2]
-    cp -RT $HOME/Templates/$argv[1] $argv[2]
-end
