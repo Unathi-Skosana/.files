@@ -23,8 +23,14 @@ let books_wiki.syntax = 'markdown'
 let books_wiki.ext = '.md'
 let books_wiki.auto_diary_index = 1
 
+let cheats_wiki = {}
+let cheats_wiki.path = '~/Dropbox/wiki/cheats'
+let cheats_wiki.syntax = 'markdown'
+let cheats_wiki.ext = '.md'
+let cheats_wiki.auto_diary_index = 1
+
 let g:vimwiki_table_mappings=0
-let g:vimwiki_list = [code_wiki,personal_wiki,academics_wiki,books_wiki]
+let g:vimwiki_list = [books_wiki,code_wiki,personal_wiki,academics_wiki,cheats_wiki]
 let g:taskwiki_maplocalleader="-"
 let g:taskwiki_markup_syntax = 'markdown'
 

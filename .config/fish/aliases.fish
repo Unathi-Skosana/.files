@@ -10,6 +10,18 @@ alias gst 'git status'
 alias glog 'git log'
 alias gcl 'git clone'
 
+# yadm
+alias ycot 'yadm commit -m'
+alias ya 'yadm add'
+alias yall 'yadm add -A'
+alias yp 'yadm push'
+alias yc 'yadm commit -m'
+alias yam 'yadm commit --amend'
+alias yre 'yadm remote add'
+alias yst 'yadm status'
+alias ylog 'yadm log'
+alias ycl 'yadm clone'
+
 # fasd
 alias a 'fasd -a'        # any
 alias s 'fasd -si'       # show / search / select
@@ -32,11 +44,9 @@ alias j 'pj'
 alias t 'tree -L 1'
 alias vrc 'nvim $HOME/.config/nvim'
 alias frc 'nvim $HOME/.config/fish'
-alias xrc 'nvim $HOME/.x'
 alias termrc 'nvim $HOME/.config/kitty/kitty.conf'
 alias ydl 'youtube-dl'
 alias gdl 'gitdir'
-alias jnb 'jupyter notebook'
 alias m 'python $HOME/.bin/t.py --task-dir ~/tasks --list miscellaneous'
 alias s 'python $HOME/.bin/t.py --task-dir ~/tasks --list school'
 

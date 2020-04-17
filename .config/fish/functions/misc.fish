@@ -14,7 +14,7 @@ end
 
 function cd_with_fzf
     cd $HOME
-    cd (fd -t d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)
+    cd (fd -t f -H d | fzf --preview="tree -L 1 {}" --bind="space:toggle-preview" --preview-window=:hidden)
 end
 
 function pacs

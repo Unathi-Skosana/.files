@@ -41,7 +41,7 @@ set -x -U GOPATH $HOME/go
 set -gx LC_ALL en_US.UTF-8
 set -gx LANG en_US.UTF-8
 set -gx JUPYTERLAB_DIR $HOME/.local/share/jupyter/lab
-set -gx FZF_DEFAULT_COMMAND 'ag --hidden --ignore .git -g ""'
+set -gx FZF_DEFAULT_COMMAND 'fd -H'
 
 # Load Tacklebox configuration
 . $HOME/.tacklebox/tacklebox.fish
