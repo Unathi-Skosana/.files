@@ -22,29 +22,16 @@ alias yst 'yadm status'
 alias ylog 'yadm log'
 alias ycl 'yadm clone'
 
-# fasd
-alias a 'fasd -a'        # any
-alias s 'fasd -si'       # show / search / select
-alias d 'fasd -d'        # directory
-alias f 'fasd -f'        # file
-alias sd 'fasd -sid'     # interactive directory selection
-alias sf 'fasd -sif'     # interactive file selection
-alias z 'fasd_cd -d'     # cd, same functionality as j in autojump
-alias zz 'fasd_cd -d -i' # cd with interactive selection
-alias wa 'f -e mpv'
-
 # general commands
+alias v 'nvim'
+alias vo 'nvim (fzf --preview="cat {}" --preview-window=right:70%:wrap)'
 alias c 'clear'
 alias py 'python'
-alias v 'nvim'
 alias cat 'bat'
-alias ls 'exa'
+alias cf 'source $HOME/.config/fish/config.fish;clear'
 alias l 'exa'
 alias j 'pj'
-alias t 'tree -L 1'
-alias vrc 'nvim $HOME/.config/nvim'
-alias frc 'nvim $HOME/.config/fish'
-alias termrc 'nvim $HOME/.config/kitty/kitty.conf'
+alias t 'exa --tree -L 1'
 alias ydl 'youtube-dl'
 alias gdl 'gitdir'
 alias m 'python $HOME/.bin/t.py --task-dir ~/tasks --list miscellaneous'

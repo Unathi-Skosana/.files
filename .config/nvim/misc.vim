@@ -20,20 +20,9 @@ set incsearch       " Incremental search
 set hlsearch        " Highlight search results
 set wrapscan        " Searches wrap around the end of the file
 set showmatch       " Jump to matching bracket
-set matchpairs+=<:> " Add HTML brackets to pair matching
 set matchtime=1     " Tenths of a second to show the matching paren
 set cpoptions-=m    " showmatch will wait 0.5s or until a char is typed
 " }}
-
-if has('conceal')
-    set conceallevel=3 concealcursor=niv
-endif
-
-" Return to last edit position when opening files
-autocmd BufReadPost *
-            \ if line("'\"") > 0 && line("'\"") <= line("$") |
-            \   exe "normal! g`\"" |
-            \ endif
 
 set laststatus=2
 set noshowmode
@@ -72,7 +61,6 @@ set foldnestmax=10
 set confirm
 set autoread
 set autowrite
-
-autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR
+set conceallevel=0
 " }}
+

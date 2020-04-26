@@ -7,4 +7,3 @@ set smarttab
 set autoindent
 set smartindent
 set shiftround
-

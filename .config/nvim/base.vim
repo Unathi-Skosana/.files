@@ -1,10 +1,4 @@
-set nocompatible
-
 " Syntax, colors and styling {{
-syntax enable
-filetype plugin on
-syntax on
-
 " Enable true color 启用终端24位色
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -64,4 +58,9 @@ set statusline+=\ %Y\
 set statusline+=%#SecondaryBlock#
 set statusline+=\ %p
 "}}
-"
+
+
+"" Supertab {{
+let g:SuperTabMappingForward = '<s-tab>'
+let g:SuperTabMappingBackward = '<tab>'
+" }}

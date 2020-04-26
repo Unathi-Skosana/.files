@@ -6,3 +6,4 @@ let g:indentLine_concealcursor = 'niv'
 let g:indentLine_color_term = 96
 let g:indentLine_color_gui= '#725972'
 let g:indentLine_showFirstIndentLevel =1
+autocmd FileType markdown let g:indentLine_enabled=0
