@@ -1,4 +1,4 @@
-" Syntax, colors and styling {{
+" Syntax, colors and styling {{{
 " Enable true color 启用终端24位色
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -6,7 +6,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-colorscheme base16-tomorrow-night
+colorscheme base16-ocean
 
 hi LineNr         guibg=NONE
 hi PrimaryBlock   guibg=NONE     guifg=#4A5568
@@ -19,10 +19,11 @@ hi ColorColumn    guibg=NONE     guifg=#718096
 hi VertSplit      guibg=NONE     guifg=#718096
 hi StatusLineNC   guibg=NONE     guifg=#718096
 hi Folded         guibg=NONE
+hi SignColumn     guibg=NONE
 
-" }}
+" }}}
 
-" statusline {{
+" statusline {{{
 let g:currentmode={
     \ 'n'  : 'N ',
     \ 'no' : 'NO',
@@ -57,10 +58,11 @@ set statusline+=%#PrimaryBlock#
 set statusline+=\ %Y\ 
 set statusline+=%#SecondaryBlock#
 set statusline+=\ %p
-"}}
+"}}}
 
-
-"" Supertab {{
+"" Supertab {{{
 let g:SuperTabMappingForward = '<s-tab>'
 let g:SuperTabMappingBackward = '<tab>'
-" }}
+" }}}
+
+" vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

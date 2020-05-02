@@ -84,7 +84,11 @@ noremap <expr> <C-b> max([winheight(0) - 2, 1])
 noremap <expr> <C-e> (line("w$") >= line('$') ? "j" : "3\<C-e>")
 noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "3\<C-y>")
 
-
+" folding
+inoremap <F9> <C-O>za
+nnoremap <F9> za
+onoremap <F9> <C-C>za
+vnoremap <F9> zf
 
 
 if dein#tap('coc.nvim') " Coc {{{
@@ -172,7 +176,7 @@ nnoremap <silent> <leader>cp :cprev<CR>
 nnoremap <silent> <RIGHT> :cnext<CR>
 nnoremap <silent> <LEFT> :cprev<CR>
 
-" Make many of the jump commands also center on search term {{
+" Make many of the jump commands also center on search term {{{
 nnoremap n nzz
 nnoremap N Nzz
 nnoremap <C-o> <C-o>zz
@@ -188,14 +192,15 @@ nnoremap <leader>cc :ccl<CR>
 if executable('rg') 
   set grepprg=rg\ --vimgrep
 endif
-" }}
+" }}}
 
-if dein#tap('defx.nvim')
+if dein#tap('defx.nvim') " {{{
 	nnoremap <silent> <LocalLeader>e
 		\ :<C-u>Defx -toggle `getcwd()` -buffer-name=tab`tabpagenr()`<CR>
 	nnoremap <silent> <LocalLeader>a
 		\ :<C-u>Defx `getcwd()` -search=`expand('%:p')` -buffer-name=tab`tabpagenr()`<CR>
 endif
+"}}}
 
 if dein#tap('fzf.vim') " {{{
     noremap  <silent> <C-p> :FZF<CR>
@@ -279,9 +284,9 @@ if dein#tap('vim-easy-align') " {{{
 endif
 " }}}
 
-
 if dein#tap('vimwiki') " {{{
 	nnoremap <silent> <Leader>W :<C-u>VimwikiIndex<CR>
 endif
 " }}}
 
+" vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

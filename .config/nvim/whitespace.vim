@@ -1,9 +1,8 @@
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=-1
 set textwidth=80
 set smarttab
 set autoindent
-set smartindent
 set shiftround

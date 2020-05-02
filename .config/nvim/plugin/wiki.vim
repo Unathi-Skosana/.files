@@ -34,7 +34,8 @@ let cheats_wiki.syntax = 'markdown'
 let cheats_wiki.ext = '.md'
 let cheats_wiki.auto_diary_index = 1
 
-let g:vimwiki_table_mappings=0
+let g:vimwiki_table_mappings = 0
+let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [default_wiki,books_wiki,code_wiki,personal_wiki,academics_wiki,cheats_wiki]
-let g:taskwiki_maplocalleader="-"
 let g:taskwiki_markup_syntax = 'markdown'
+let g:vimwiki_ext2syntax = {}

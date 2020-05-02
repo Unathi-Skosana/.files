@@ -1,5 +1,54 @@
-# created by KDE Plasma, Sat Apr 25 23:25:34 2020
+# created by KDE Plasma, Sat May 2 00:53:04 2020
 #
 
 gtk-alternative-button-order = 1
+
+style "default"
+{
+  bg[NORMAL] = { 0.173, 0.180, 0.200 }
+  bg[SELECTED] = { 0.000, 0.808, 0.600 }
+  bg[INSENSITIVE] = { 0.173, 0.180, 0.200 }
+  bg[ACTIVE] = { 0.157, 0.161, 0.180 }
+  bg[PRELIGHT] = { 0.173, 0.180, 0.200 }
+
+  base[NORMAL] = { 0.192, 0.200, 0.220 }
+  base[SELECTED] = { 0.000, 0.808, 0.600 }
+  base[INSENSITIVE] = { 0.173, 0.180, 0.200 }
+  base[ACTIVE] = { 0.000, 0.808, 0.600 }
+  base[PRELIGHT] = { 0.000, 0.808, 0.600 }
+
+  text[NORMAL] = { 0.918, 0.918, 0.918 }
+  text[SELECTED] = { 1.000, 1.000, 1.000 }
+  text[INSENSITIVE] = { 0.157, 0.161, 0.180 }
+  text[ACTIVE] = { 1.000, 1.000, 1.000 }
+  text[PRELIGHT] = { 1.000, 1.000, 1.000 }
+
+  fg[NORMAL] = { 0.918, 0.918, 0.918 }
+  fg[SELECTED] = { 1.000, 1.000, 1.000 }
+  fg[INSENSITIVE] = { 0.157, 0.161, 0.180 }
+  fg[ACTIVE] = { 0.918, 0.918, 0.918 }
+  fg[PRELIGHT] = { 0.918, 0.918, 0.918 }
+}
+
+class "*" style "default"
+
+style "ToolTip"
+{
+  bg[NORMAL] = { 0.129, 0.137, 0.161 }
+  base[NORMAL] = { 0.129, 0.137, 0.161 }
+  text[NORMAL] = { 0.867, 0.867, 0.867 }
+  fg[NORMAL] = { 0.867, 0.867, 0.867 }
+}
+
+widget "gtk-tooltip" style "ToolTip"
+widget "gtk-tooltips" style "ToolTip"
+widget "gtk-tooltip*" style "ToolTip"
+
+style "MenuItem"
+{
+  bg[PRELIGHT] = { 0.000, 0.808, 0.600 }
+  fg[PRELIGHT] = { 1.000, 1.000, 1.000 }
+}
+
+class "*MenuItem" style "MenuItem"
 

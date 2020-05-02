@@ -5,14 +5,13 @@ if has('vim_starting')
     scriptencoding UTF-8
 endif
 
-
-"" Completion {{
+"" Completion {{{
 set complete-=i
 set completeopt=longest,menu,menuone,preview,noselect,noinsert
 set list
-" }}
+" }}}
 
-" Search {{
+" Search {{{
 set ignorecase      " Search ignoring case
 set smartcase       " Keep case when searching with *
 set infercase       " Adjust case in insert completion mode
@@ -22,8 +21,10 @@ set wrapscan        " Searches wrap around the end of the file
 set showmatch       " Jump to matching bracket
 set matchtime=1     " Tenths of a second to show the matching paren
 set cpoptions-=m    " showmatch will wait 0.5s or until a char is typed
-" }}
+" }}}
 
+" Misc {{{
+set shortmess=a
 set laststatus=2
 set noshowmode
 set nowrap
@@ -35,9 +36,17 @@ set updatetime=300
 set undofile
 set relativenumber
 set hidden
+set confirm
+set autoread
+set autowrite
+set conceallevel=0
 
+if &shell =~# 'fish$'
+    set shell=sh
+endif
+" }}}
 
-" Abbreviations
+" Abbreviations {{{
 cnoreabbrev W! w!
 cnoreabbrev Q! q!
 cnoreabbrev Qall! qall!
@@ -48,19 +57,13 @@ cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
+" }}}
 
-" folds {{
+" folds {{{
 set foldenable
 set foldlevel=1
 set foldlevelstart=10
 set foldnestmax=10
-" }}
+" }}}
 
-
-" misc {{
-set confirm
-set autoread
-set autowrite
-set conceallevel=0
-" }}
-
+" vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

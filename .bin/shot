@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DIR=$HOME/Pictures/snaps/
-FNAME="$DIR/$(date +%s).png"
+FNAME="$DIR/$(date +%m_%d_%Y_%H_%M_%S).png"
 
 case $1 in
     "w")

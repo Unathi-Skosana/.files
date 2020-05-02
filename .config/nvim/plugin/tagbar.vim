@@ -1,6 +1,6 @@
 "Settings for TagBar
 "autocmd BufReadPost *.cpp,*.c,*.h,*.go,*.cc,*.py call tagbar#autoopen()
-let g:tagbar_width=25
+let g:tagbar_width=50
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds' : [
