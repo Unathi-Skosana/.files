@@ -40,8 +40,8 @@ function _gen_fzf_default_opts
   set -l color0F  '#ab7967'
 
   set -gx FZF_DEFAULT_OPTS "
-    --color=bg+:(color01),bg:(color00),spinner:(color0C),hl:(color0D)
-    --color=fg:(color04),header:(color0D),info:(color0A),pointer:(color0C)
-    --color=marker:(color0C),fg+:(color06),prompt:(color0A),hl+:(color0D)
+    --color=bg+:$color00,bg:$color00,spinner:$color0C,hl:$color0D
+    --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C
+    --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D
   "
 end

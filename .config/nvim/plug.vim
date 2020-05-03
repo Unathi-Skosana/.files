@@ -35,11 +35,11 @@ if dein#load_state('/home/lynx/.cache/dein')
 
     " Utils
     call dein#add('Shougo/denite.nvim')
+    call dein#add('tpope/vim-repeat',  {'on_map' : '.'})
     call dein#add('tpope/vim-surround', {'on_map': {'n' : ['cs', 'ds', 'ys'], 'x' : 'S'}, 'depends' : 'vim-repeat'})
     call dein#add('tpope/vim-commentary', {'on_map': ['gcc', 'gcap', 'gc'], 'on_cmd': ['Commentary']})
     call dein#add('tpope/vim-fugitive',  { 'on_cmd': [ 'Git', 'Gstatus', 'Gwrite', 'Glog', 'Gcommit', 'Gblame', 'Ggrep', 'Gdiff', ] })
     call dein#add('tpope/vim-obsession')
-    call dein#add('tpope/vim-repeat',  {'on_map' : '.'})
     call dein#add('kana/vim-operator-user')
     call dein#add('kana/vim-textobj-user')
     call dein#add('kana/vim-operator-replace', {'on_map': { 'vnx': '<Plug>' }})
