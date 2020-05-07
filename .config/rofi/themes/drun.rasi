@@ -1,14 +1,14 @@
 configuration {
     font:                           "Iosevka Term Bold 13";
     show-icons:                     true;
-	icon-theme: 					"McMojave-circle-blue";
+    icon-theme: 					          "McMojave-circle-blue";
     drun-display-format:            "{name}";
     threads:                        0;
     scroll-method:                  0;
     disable-history:                false;
     fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+    hide-scrollbar: 				true;
+    sidebar-mode: 					false;
 }
 
 * {

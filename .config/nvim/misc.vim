@@ -1,14 +1,6 @@
-set spell spelllang=en_us
-
-if has('vim_starting')
-    set encoding=UTF-8
-    scriptencoding UTF-8
-endif
-
-"" Completion {{{
+" Completion {{{
 set complete-=i
 set completeopt=longest,menu,menuone,preview,noselect,noinsert
-set list
 " }}}
 
 " Search {{{
@@ -24,12 +16,12 @@ set cpoptions-=m    " showmatch will wait 0.5s or until a char is typed
 " }}}
 
 " Misc {{{
+set spell spelllang=en_us
 set shortmess=a
+set cmdheight=2
 set laststatus=2
 set noshowmode
-set nowrap
-set listchars=tab:┊\ ,nbsp:␣,trail:·,extends:>,precedes:<
-set fillchars=vert:\│
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 set clipboard& clipboard+=unnamedplus
 set history=2000
 set updatetime=300
@@ -40,6 +32,20 @@ set confirm
 set autoread
 set autowrite
 set conceallevel=0
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=-1
+set textwidth=80
+set smarttab
+set autoindent
+set shiftround
+set wrap linebreak nolist
+
+if has('vim_starting')
+    set encoding=UTF-8
+    scriptencoding UTF-8
+endif
 
 if &shell =~# 'fish$'
     set shell=sh
@@ -58,10 +64,9 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
 " }}}
-
-" folds {{{
+"
+" Folding {{{
 set foldenable
-set foldlevel=1
 set foldlevelstart=10
 set foldnestmax=10
 " }}}

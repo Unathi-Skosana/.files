@@ -68,7 +68,7 @@ let g:mkdp_preview_options = {
 
 " use a custom markdown style must be absolute path
 " like '/Users/username/markdown.css' or expand('~/markdown.css')
-let g:mkdp_markdown_css = '/home/lynx/Repositories/markdown-styles/witex/markdown.css'
+let g:mkdp_markdown_css = '/home/lynx/.pandoc/markdown.css'
 
 " use a custom highlight style must absolute path
 " like '/Users/username/highlight.css' or expand('~/highlight.css')

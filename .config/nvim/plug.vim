@@ -20,7 +20,6 @@ if dein#load_state('/home/lynx/.cache/dein')
     call dein#add('godlygeek/tabular', { 'on_cmd' : [ 'Tab', 'Tabularize' ] , 'augroup' : 'tabular' })
     call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd', 'vimwiki'],
 					\ 'build': 'sh -c "cd app & yarn install"' })
-    call dein#add('lervag/vimtex')
     call dein#add('vimwiki/vimwiki')
 
 
@@ -47,7 +46,7 @@ if dein#load_state('/home/lynx/.cache/dein')
     call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
     call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
     call dein#add('Raimondi/delimitMate', {'on_map' : { 'i' : ['(', '[', '{', '$' ] }})
-    call dein#add('SirVer/ultisnips', {'on_map' : { 'i' : ['<c-l>', '<c-j>'] }})
+    call dein#add('SirVer/ultisnips', {'on_map' : { 'i' : ['<c-j>', '<c-k>'] }})
     call dein#add('honza/vim-snippets')
     call dein#add('christoomey/vim-tmux-navigator')
     call dein#add('easymotion/vim-easymotion')

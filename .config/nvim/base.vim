@@ -1,12 +1,11 @@
 " Syntax, colors and styling {{{
-" Enable true color 启用终端24位色
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
 
-colorscheme base16-ocean
+colorscheme nightfly
 
 hi LineNr         guibg=NONE
 hi PrimaryBlock   guibg=NONE     guifg=#4A5568
@@ -60,7 +59,7 @@ set statusline+=%#SecondaryBlock#
 set statusline+=\ %p
 "}}}
 
-"" Supertab {{{
+" supertab {{{
 let g:SuperTabMappingForward = '<s-tab>'
 let g:SuperTabMappingBackward = '<tab>'
 " }}}

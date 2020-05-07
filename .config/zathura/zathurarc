@@ -18,7 +18,7 @@ set guioptions ""
 
 # zathurarc-dark
 
-set font "Iosevka Term Bold"
+set font "Iosevka Term Bold 10"
 set default-bg "#000000" #00
 set default-fg "#F7F7F6" #01
 

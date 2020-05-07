@@ -43,6 +43,10 @@ set -gx LANG en_US.UTF-8
 set -gx JUPYTERLAB_DIR $HOME/.local/share/jupyter/lab
 set -gx WIKI_PATH $HOME/Dropbox/wiki
 set -gx FZF_DEFAULT_COMMAND 'fd -H'
+set -gx FZF_DEFAULT_OPTS '--color=fg:#acb4c2,bg:#011627,hl:#82aaff
+    --color=fg+:#acb4c2,bg+:#011627,hl+:#82aaff
+    --color=info:#7fdbca,prompt:#ecc48d,pointer:#7fdbca
+    --color=marker:#fc514e,spinner:#7fdbca,header:#fc514e'
 
 # Load Tacklebox configuration
 . $HOME/.tacklebox/tacklebox.fish
@@ -56,5 +60,3 @@ set -gx FZF_DEFAULT_COMMAND 'fd -H'
 # Load bindings
 . $HOME/.config/fish/bindings.fish
 
-
-_gen_fzf_default_opts

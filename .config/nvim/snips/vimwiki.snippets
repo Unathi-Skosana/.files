@@ -1,9 +1,7 @@
 snippet w "Title Block" b
 ---
-title: ${1:`!p snip.rv = fn.rstrip('.md').replace('-', ' ')`}
-Date: `date '+%Y-%m-%d %H:%M'`
-Tags: ${2:unknown, unknown}
-URL: `!p snip.rv ='' if not fn else fn.strip().rstrip('.md').replace(' ', '-')`
+title: ${1:`!p snip.rv = fn.rstrip('.md').replace('-', ' ').title()`}
+date: `date '+%Y-%m-%d %H:%M'`
 ---
 ${0}
 endsnippet
@@ -19,4 +17,24 @@ endsnippet
 snippet c "Insert code block" b
 \`\`\`${0}
 \`\`\`
+endsnippet
+
+snippet ali "aligned env" b
+\$\$
+\begin{aligned}
+	$0
+\end{aligned}
+\$\$
+endsnippet
+
+snippet beg "begin env" b
+\$\$
+\\begin{$1}
+	$0
+\\end{$1}
+\$\$
+endsnippet
+
+snippet fr "fraction" b
+\\frac{$1}{$2}$0
 endsnippet

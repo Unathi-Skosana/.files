@@ -22,9 +22,13 @@ alias yst 'yadm status'
 alias ylog 'yadm log'
 alias ycl 'yadm clone'
 
+# fzf commands
+alias fc 'cd_with_fzf && clear'
+alias fo 'open_with_fzf && clear'
+alias vo 'nvim (fzf --preview="cat {}" --preview-window=right:70%:wrap)'
+
 # general commands
 alias v 'nvim'
-alias vo 'nvim (fzf --preview="cat {}" --preview-window=right:70%:wrap)'
 alias c 'clear'
 alias py 'python'
 alias cat 'bat'

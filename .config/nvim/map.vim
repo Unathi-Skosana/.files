@@ -1,59 +1,27 @@
+" base  {{{
 let mapleader=" "
 let maplocalleader="-"
 
-nnoremap ; :
-nnoremap : ;
 nnoremap <leader>r :source $MYVIMRC<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
+nnoremap ; :
+nnoremap : ;
+
 
 " More quickly call external programs
 nnoremap <leader>> :!<space>
 
-" Copy/Paste from register
-vnoremap <leader>cc "*y
-map <leader>vv "*p
-
-" insert keymap like emacs
-inoremap <C-w> <C-[>diwa
-inoremap <C-h> <BS>
-inoremap <C-d> <Del>
-inoremap <C-k>  <ESC>d$a
-inoremap <C-u> <C-G>u<C-U>
-inoremap <C-b> <Left>
-inoremap <C-f> <Right>
-inoremap <C-a> <Home>
+" popup menu
 inoremap <expr><C-e> pumvisible() ? "\<C-e>" : "\<End>"
 
-" command line alias
-"cnoremap w!! w !sudo tee % >/dev/null
-cnoremap <C-p> <Up>
-cnoremap <C-b> <Left>
-cnoremap <C-f> <Right>
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
-cnoremap <C-d> <Del>
-cnoremap <C-h> <BS>
-cnoremap <C-t> <C-R>=expand("%:p:h") . "/" <CR>
+" filename without extension
+inoremap <localleader>f <C-R>=expand("%:t:r")<CR>
 
-" Write buffer (save)
-noremap <Leader>w :w<CR>
-imap <C-S> <esc>:w<CR>
-imap <C-Q> <esc>:wq<CR>
-
-"insert a newline
-inoremap <C-O> <Esc>o
-
+"buffers
 nnoremap  ]b :bp<CR>
 nnoremap  [b :bn<CR>
-"delete buffer
 nnoremap <C-x>  :bd<CR>
-
-"switch window
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
 
 "smart move
 nnoremap j gj
@@ -63,10 +31,6 @@ vnoremap k gk
 
 "yank to end
 nnoremap Y y$
-
-" settings for resize splitted window
-nmap <C-w>[ :vertical resize -3<CR>
-nmap <C-w>] :vertical resize +3<CR>
 
 " Remove spaces at the end of lines
 nnoremap <silent> ,<Space> :<C-u>silent! keeppatterns %substitute/\s\+$//e<CR>
@@ -83,13 +47,13 @@ noremap <expr> <C-b> max([winheight(0) - 2, 1])
 	\ ."\<C-u>".(line('w0') <= 1 ? "H" : "M")
 noremap <expr> <C-e> (line("w$") >= line('$') ? "j" : "3\<C-e>")
 noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "3\<C-y>")
+" }}}
 
-" folding
-inoremap <F9> <C-O>za
+" folding {{{
 nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
-
+"}}}
 
 if dein#tap('coc.nvim') " Coc {{{
     " Show all diagnostics
@@ -123,6 +87,7 @@ if dein#tap('coc.nvim') " Coc {{{
     nmap <leader>ac  <Plug>(coc-codeaction)
     " Fix autofix problem of current line
     nmap <leader>qf  <Plug>(coc-fix-current)
+
     " Remap keys for gotos
     nmap <silent> gd <Plug>(coc-definition)
     nmap <silent> gy <Plug>(coc-type-definition)
@@ -168,13 +133,14 @@ if dein#tap('coc.nvim') " Coc {{{
 endif
 " }}}
 
-" Quickfix 
+" Quickfix  {{{
 nnoremap <silent> <UP> :cope<CR>
 nnoremap <silent> <DOWN> :cclose<CR>
 nnoremap <silent> <leader>cn :cnext<CR>
 nnoremap <silent> <leader>cp :cprev<CR>
 nnoremap <silent> <RIGHT> :cnext<CR>
 nnoremap <silent> <LEFT> :cprev<CR>
+"}}}
 
 " Make many of the jump commands also center on search term {{{
 nnoremap n nzz
@@ -281,11 +247,6 @@ endif
 if dein#tap('vim-easy-align') " {{{
     xmap ga <Plug>(EasyAlign)
     nmap ga <Plug>(EasyAlign)
-endif
-" }}}
-
-if dein#tap('vimwiki') " {{{
-	nnoremap <silent> <Leader>W :<C-u>VimwikiIndex<CR>
 endif
 " }}}
 

@@ -22,12 +22,13 @@ endfunction
 
 autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
-cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+" custom commands
+command! -bang -nargs=* Notes call fzf#vim#grep("find $WIKI_PATH -iname \"*.md\" 
+      \| xargs rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, <bang>0)
+
 nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <C-o> :Buffers<CR>
-nnoremap <silent> <C-f> :BLines<CR>
-nnoremap <silent> <leader>f :Lines<CR>
-nnoremap <silent> <leader>f :Lines<CR>
+nnoremap <silent> <leader>l :Lines<CR>
 nnoremap <silent> <leader>t :BTags<CR>
+nnoremap <silent>  leader>n :Notes<CR>
 nnoremap <silent> <C-p> :call fzf#vim#files('.', fzf#vim#with_preview())<CR>
-nmap <leader>y :History:<CR>
+nnoremap <silent> <leader>y :History:<CR>
