@@ -30,6 +30,7 @@ set -gx PATH $PATH $HOME/.gem/ruby/2.6.0/bin
 set -gx PATH $PATH $HOME.gem/ruby/2.6.0/bin
 set -gx PATH $PATH $HOME/.npm-global/bin
 set -gx PATH $PATH $HOME/.bin
+set -gx PATH $PATH $HOME/.cargo/bin
 set -gx PATH $PATH /opt/anaconda/bin
 
 # ENV VARIABLES

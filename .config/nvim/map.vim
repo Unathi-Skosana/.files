@@ -15,9 +15,6 @@ nnoremap <leader>> :!<space>
 " popup menu
 inoremap <expr><C-e> pumvisible() ? "\<C-e>" : "\<End>"
 
-" filename without extension
-inoremap <localleader>f <C-R>=expand("%:t:r")<CR>
-
 "buffers
 nnoremap  ]b :bp<CR>
 nnoremap  [b :bn<CR>

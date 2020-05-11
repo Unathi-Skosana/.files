@@ -70,6 +70,10 @@ if dein#load_state('/home/lynx/.cache/dein')
     call dein#add('Shougo/defx.nvim')
     call dein#add('kristijanhusak/defx-git')
     call dein#add('kristijanhusak/defx-icons')
+    call dein#add('norcalli/nvim-colorizer.lua', {
+          \ 'on_event': 'FileType',
+          \ 'hook_source': 'luafile ~/.config/nvim/plugin/colorizer.lua'
+          \ })
 
     " Required:
     call dein#end()
@@ -85,7 +89,7 @@ if dein#check_install()
     call dein#install()
 endif
 
-command! PacAdd call dein#add()
+command! -nargs=1 PacAdd call dein#add("<qargs>")
 command! PacInstall call dein#install()
 command! -bang PacUpdate call dein#update()
 command! PacClean call dein#recache_runtimepath()
