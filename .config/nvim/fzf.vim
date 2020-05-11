@@ -22,10 +22,6 @@ endfunction
 
 autocmd! User FzfStatusLine call <SID>fzf_statusline()
 
-" custom commands
-command! -bang -nargs=* Notes call fzf#vim#grep("find $WIKI_PATH -iname \"*.md\" 
-      \| xargs rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, <bang>0)
-
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>l :Lines<CR>
 nnoremap <silent> <leader>t :BTags<CR>

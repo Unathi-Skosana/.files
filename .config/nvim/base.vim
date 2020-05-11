@@ -64,4 +64,6 @@ let g:SuperTabMappingForward = '<s-tab>'
 let g:SuperTabMappingBackward = '<tab>'
 " }}}
 
+set shell=/usr/bin/bash
+
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :
