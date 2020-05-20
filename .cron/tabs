@@ -1,0 +1,3 @@
+50 20-23,0-3 * * * DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /home/lynx/.bin/bedtime-notify >> /home/lynx/logs/bedtime.log 2>&1
+0 2 * * * /home/lynx/.bin/home-backup >> /home/lynx/logs/backup.log 2>&1
+0 5 * * * /home/lynx/.bin/clean >> /home/lynx/logs/clean.log

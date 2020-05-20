@@ -1,0 +1,26 @@
+{
+  "configsVersion": 9,
+  "lastDraggedTabs": {
+    "tabIds": [
+      5
+    ],
+    "urlsDigest": "0deb3545a073f9eab5e60f6773046ae55c779e15"
+  },
+  "migratedBookmarkUrls": [
+    "moz-extension://74695f1d-a40d-419d-a869-9be1402780d7/resources/group-tab.html",
+    "moz-extension://74695f1d-a40d-419d-a869-9be1402780d7/options/options.html",
+    "moz-extension://74695f1d-a40d-419d-a869-9be1402780d7/resources/startup.html",
+    "moz-extension://74695f1d-a40d-419d-a869-9be1402780d7/tests/runner.html"
+  ],
+  "notifiedFeaturesVersion": 4,
+  "optionsExpandedSections": [
+    "section-appearance",
+    "section-addons",
+    "section-advanced",
+    "section-debug"
+  ],
+  "showExpertOptions": true,
+  "sidebarPosition": 2,
+  "style": "vertigo",
+  "userStyleRules": "tab-item.pinned {\n  margin: 0px 10px !important;\n  padding: 0px 5px !important;\n}\n\n:root.right tab-item.pinned:hover tab-favicon, :root.right tab-favicon\n{\n  transform: none;\n}\n\n:root.right tab-item.pinned tab-favicon {\n  margin: 0px !important;\n  transition-property: none;\n}\n\n:root.right tab-item.pinned.active:not(:hover) tab-favicon\n{\n  transition-property: none;\n  margin-right: 0px;\n}\n\n:root.right tab-item.pinned:hover\n{\n  transition-property: none !important;\n}\n\n:root.right tab-item.pinned:hover tab-favicon \n{\n  margin: 0px !important;\n}\n\ntab-item {\n  margin       : 15px 0px 15px 0px ;\n  padding-top  : 5px;\n  padding-right: 10px;\n  transition   : all 0.3s ease-i-out !important;\n}\n\ntab-item .label\n{\n /* empty */  \n}\n\ntab-item.active\n{\n  margin-right: 0px;\n  font-weight : bolder;\n  transition  : scale 0.3s ease-i-out !important;\n  color       : var(--tab-text-color ) !important;\n}\n\ntab-item:hover\n{\n /* empty */\n}\n\ntab-item:not(:hover) tab-closebox\n{\n  right    : -30px;\n  transform: scale(100%);\n}\n\ntab-item tab-closebox\n{\n  position     : absolute;\n  right        : 5px;\n  opacity      : 1;\n  transition   : all 0.1s ease-in-out;\n\n}\n\n\n:root.right tab-item tab-twisty\n{\n  display: none;\n}\n\n:root.right tab-item tab-favicon\n{\n  transform: scale(100%);\n  margin-left: 20px;\n  margin-bottom: 8px;\n  order: 1000;\n  transition: all 0.2s ease-in-out;\n}\n\n:root.right tab-item.active:not(:hover) tab-favicon\n{\n  transform: scale(100%);\n  margin-right: 0px;\n}\n\n:root.right tab-item:hover tab-favicon, :root.right tab-favicon\n{\n  transform: translateX(40px);\n}\n\n:root.right tab-item:hover tab-favicon \n{\n  margin-left: 15px;\n}\n\n.tab:not(.group-tab):not([data-current-uri^=\"chrome:\"]):not([data-current-uri^=\"about:addons\"]):not([data-current-uri^=\"about:preferences\"]) \n.favicon .favicon-default::before\n{\n  background: url(\"chrome://branding/content/identity-icons-brand.svg\") no-repeat center / 100% !important;\n  mask: none !important;\n}\n\n/* hide scrollbar until hovering over tabs */\n#tabbar.overflow {\n   scrollbar-width: none;\n} \n#tabbar.overflow:hover {\n   scrollbar-width: thin;\n} \n\n.tabs, .body, #background {\n}\n"
+}

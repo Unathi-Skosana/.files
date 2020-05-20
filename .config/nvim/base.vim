@@ -5,7 +5,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-colorscheme nightfly
+colorscheme gruvbox
 
 hi LineNr         guibg=NONE
 hi PrimaryBlock   guibg=NONE     guifg=#4A5568
@@ -64,6 +64,6 @@ let g:SuperTabMappingForward = '<s-tab>'
 let g:SuperTabMappingBackward = '<tab>'
 " }}}
 
-set shell=/usr/bin/bash
+set shell=/usr/bin/fish
 
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

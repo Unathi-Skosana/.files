@@ -17,22 +17,22 @@ endif
 
 augroup user_plugin_filetype " {{{
 	autocmd!
-	autocmd FileType crontab " {{{
+	autocmd FileType crontab
 				\ setlocal nobackup nowritebackup
-  "}}}
 
-	autocmd FileType tex,bib " {{{
+	autocmd FileType tex,bib
 				\ let b:delimitMate_quotes = "\" ' $"
 				\ | let b:delimitMate_smart_matchpairs = '^\%(\w\|\!\|[£]\|[^[:space:][:punct:]]\)'
-	"}}}
+				\ | setlocal textwidth=80
 
   autocmd FileType markdown,vimwiki,pandoc
 				\ let b:delimitMate_quotes = "\" ' $"
 				\ | let b:delimitMate_smart_matchpairs = '^\%(\w\|\!\|[£]\|[^[:space:][:punct:]]\)'
+				\ | setlocal textwidth=80
 
-	autocmd BufNewFile,BufRead *.prisma " {{{
+	autocmd BufNewFile,BufRead *.prisma
 				\ setfiletype graphql
-  " }}}
+
 	augroup END " }}}
 
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

@@ -7,8 +7,8 @@ window:
         lines: 0
 
     padding:
-        x: 34
-        y: 34
+        x: 20
+        y: 20
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -24,22 +24,22 @@ draw_bold_text_with_bright_colors: false
 # Font configuration
 font:
   normal:
-    family: Basier Square Mono
+    family: JetBrains Mono
 
     style: Regular
 
   bold:
-    family: Basier Square Mono
+    family: JetBrains Mono
 
     style: Bold
 
   italic:
-    family: Basier Square Mono
+    family: JetBrains Mono
 
     style: Italic
 
   # Point size
-  size: 13.0
+  size: 12.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -58,42 +58,37 @@ font:
   # effect.
   use_thin_strokes: true
 
-# Color scheme (Nightfly)
+# Colors (Gruvbox dark)
 colors:
-   # Default colors
+  # Default colors
   primary:
-     background: '#011627'
-     foreground: '#acb4c2'
+    # hard contrast: background = '#1d2021'
+    background: '#282828'
+    # soft contrast: background = '#32302f'
+    foreground: '#ebdbb2'
 
-  cursor:
-    text: '#fafafa'
-    cursor: '#9ca1aa'
-
-  selection:
-    text: '#080808'
-    background: '#b2ceee'
-
-   # Normal colors
+  # Normal colors
   normal:
-    black:   '#1d3b53'
-    red:     '#fc514e'
-    green:   '#a1cd5e'
-    yellow:  '#e3d18a'
-    blue:    '#82aaff'
-    magenta: '#c792ea'
-    cyan:    '#7fdbca'
-    white:   '#a1aab8'
+    black:   '#282828'
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
 
-   # Bright colors
+  # Bright colors
   bright:
-    black:   '#7c8f8f'
-    red:     '#ff5874'
-    green:   '#21c7a8'
-    yellow:  '#ecc48d'
-    blue:    '#82aaff'
-    magenta: '#ae81ff'
-    cyan:    '#7fdbca'
-    white:   '#d6deeb'
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
+
 
 # Visual Bell
 #

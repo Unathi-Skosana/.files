@@ -8,8 +8,9 @@ augroup END "}}}
 
 fu! s:isdir(dir) abort "{{{
     return !empty(a:dir) && (isdirectory(a:dir) ||
-       \ (!empty($SYSTEMDRIVE) && isdirectory('/'.tolower($SYSTEMDRIVE[0]).a:dir)))
-endfu "}}}
+       \ (!empty($SYSTEMDRIVE) && isdirectory('/'.tolower($SYSTEMDRIVE[1]).a:dir)))
+endfu
+"}}}
 
 call defx#custom#option('_', {
 	\ 'resume': 1,

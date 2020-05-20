@@ -1,6 +1,7 @@
 # git commands
 alias gcot 'git commit -m'
 alias ga 'git add'
+alias gr 'git rm -r --cached'
 alias gall 'git add -A'
 alias gp 'git push'
 alias gc 'git commit -m'
@@ -13,6 +14,7 @@ alias gcl 'git clone'
 # yadm
 alias ycot 'yadm commit -m'
 alias ya 'yadm add'
+alias yr 'yadm rm -r --cached'
 alias yall 'yadm add -A'
 alias yp 'yadm push'
 alias yc 'yadm commit -m'

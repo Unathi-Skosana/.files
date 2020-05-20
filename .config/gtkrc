@@ -1,30 +1,30 @@
-# created by KDE Plasma, Mon May 11 16:52:34 2020
+# created by KDE Plasma, Tue May 19 12:58:08 2020
 #
 style "default"
 {
-  bg[NORMAL] = { 0.173, 0.180, 0.200 }
+  bg[NORMAL] = { 1.000, 1.000, 1.000 }
   bg[SELECTED] = { 0.000, 0.808, 0.600 }
-  bg[INSENSITIVE] = { 0.173, 0.180, 0.200 }
-  bg[ACTIVE] = { 0.157, 0.161, 0.180 }
-  bg[PRELIGHT] = { 0.173, 0.180, 0.200 }
+  bg[INSENSITIVE] = { 1.000, 1.000, 1.000 }
+  bg[ACTIVE] = { 0.984, 0.984, 0.984 }
+  bg[PRELIGHT] = { 1.000, 1.000, 1.000 }
 
-  base[NORMAL] = { 0.192, 0.200, 0.220 }
+  base[NORMAL] = { 1.000, 1.000, 1.000 }
   base[SELECTED] = { 0.000, 0.808, 0.600 }
-  base[INSENSITIVE] = { 0.173, 0.180, 0.200 }
+  base[INSENSITIVE] = { 1.000, 1.000, 1.000 }
   base[ACTIVE] = { 0.000, 0.808, 0.600 }
   base[PRELIGHT] = { 0.000, 0.808, 0.600 }
 
-  text[NORMAL] = { 0.918, 0.918, 0.918 }
+  text[NORMAL] = { 0.200, 0.200, 0.200 }
   text[SELECTED] = { 1.000, 1.000, 1.000 }
-  text[INSENSITIVE] = { 0.157, 0.161, 0.180 }
+  text[INSENSITIVE] = { 0.984, 0.984, 0.984 }
   text[ACTIVE] = { 1.000, 1.000, 1.000 }
   text[PRELIGHT] = { 1.000, 1.000, 1.000 }
 
-  fg[NORMAL] = { 0.918, 0.918, 0.918 }
+  fg[NORMAL] = { 0.200, 0.200, 0.200 }
   fg[SELECTED] = { 1.000, 1.000, 1.000 }
-  fg[INSENSITIVE] = { 0.157, 0.161, 0.180 }
-  fg[ACTIVE] = { 0.918, 0.918, 0.918 }
-  fg[PRELIGHT] = { 0.918, 0.918, 0.918 }
+  fg[INSENSITIVE] = { 0.984, 0.984, 0.984 }
+  fg[ACTIVE] = { 0.200, 0.200, 0.200 }
+  fg[PRELIGHT] = { 0.200, 0.200, 0.200 }
 }
 
 class "*" style "default"

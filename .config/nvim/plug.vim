@@ -18,13 +18,20 @@ if dein#load_state('/home/lynx/.cache/dein')
 
     "  File types
     call dein#add('godlygeek/tabular', { 'on_cmd' : [ 'Tab', 'Tabularize' ] , 'augroup' : 'tabular' })
+    call dein#add('plasticboy/vim-markdown')
     call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd', 'vimwiki'],
 					\ 'build': 'sh -c "cd app & yarn install"' })
     call dein#add('vimwiki/vimwiki')
+    call dein#add('rust-lang/rust.vim')
+    call dein#add('fatih/vim-go')
+    call dein#add('numirias/semshi')
+    call dein#add('jparise/vim-graphql')
+    call dein#add('pangloss/vim-javascript')
+    call dein#add('lervag/vimtex')
+    call dein#add('georgewitteman/vim-fish')
 
 
     " Completion, Tests, LSP
-    call dein#add('sheerun/vim-polyglot')
     call dein#add('tpope/vim-dispatch')
     call dein#add('neomake/neomake')
     call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
@@ -55,6 +62,8 @@ if dein#load_state('/home/lynx/.cache/dein')
     call dein#add('z0mbix/vim-shfmt', { 'for': 'sh' })
 
     " UI
+    call dein#add('morhetz/gruvbox')
+    call dein#add('dracula/vim')
     call dein#add('majutsushi/tagbar')
     call dein#add('rhysd/git-messenger.vim', {
             \   'lazy' : 1,

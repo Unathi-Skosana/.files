@@ -1,0 +1,277 @@
+:root {
+  --initial-width     : 40px;     /* initial width of the sidebar */
+  --sidebar-width     : 250px;    /* expanded width of the sidebar */
+  --toolbar-height    : 0;
+  --menubar-height    : 0px;
+  --toolmenubar-height: 0px;    /* sum of previous two */
+}
+
+/* show bookmarks toolbar on new tab only */
+#main-window #PersonalToolbar {
+  visibility : collapse !important;
+  z-index    : 1000!important;
+  position   : relative!important;
+  margin-left: var(--initial-width);              /* shift toolbar to the right based on initial width */
+  margin-top : var(--toolbar-height) !important;
+}
+
+#main-window[title^="Firefox Developer Edition"] #PersonalToolbar {
+  visibility: visible !important;
+  margin-top: -1px !important;
+}
+
+/* 
+There's two main sidebar components. 
+1. #sidebar-box (outer)
+2. #sidebar (inner) 
+*/
+
+:root {
+  --sidebar-min-width: 10px;
+  --sidebar-visible-width: 200px;
+}
+
+/* lock outer to height by doing the inverse margin of the toolbar element */
+/* set outer width = initial width */
+#sidebar-box {
+  z-index      : 1000 !important;
+  position     : relative!important;
+  margin-top   : var(--menubar-height) !important;
+  padding-top  : calc(-1*var(--menubar-height));
+  min-width    : var(--initial-width) !important;
+  max-width    : var(--initial-width) !important;
+
+}
+
+/* inner width = expanded width & move inner to only show initial-width long section */
+#sidebar-box #sidebar {
+    min-width    : var(--sidebar-width) !important;
+    max-width    : var(--sidebar-width) !important;
+    transform    : translateX(calc(var(--initial-width) - var(--sidebar-width))) !important;
+    transition   : all 0.2s ease-in-out;
+}
+
+/* move inner to show entire sidebar */
+#sidebar-box #sidebar:hover {
+    transform : translateX(0) !important;
+    box-shadow: none !important;
+}
+
+#main-window[title^="Firefox Developer Edition"] #sidebar-box {
+  margin-top: var(--toolmenubar-height) !important;
+}
+
+/* hide sidebar header for tree style tabs sidebar */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  display: none;
+}
+
+/* Hide the title bar */
+#titlebar {
+  visibility: collapse;
+}
+
+/* hide normal horizontal tab bar */
+#TabsToolbar {
+  visibility: collapse;
+}
+
+#sidebar { border-right: none !important; }
+
+toolbar#nav-bar {
+  padding-bottom: 7px;
+  margin-left   : calc(10px + -2.0*var(--initial-width));
+  border        : none !important;
+}
+
+toolbar{
+  border: none !important;
+}
+
+/* Hide splitter, when using Tree Style Tab. */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] + #sidebar-splitter {
+  display: none !important;
+}
+
+#nav-bar {
+  height: 40px;
+}
+
+/* URL BAR */
+
+#urlbar-container {
+  --urlbar-container-height: 40px !important;
+}
+
+#urlbar {
+  --urlbar-toolbar-height: 40px !important;
+  --urlbar-height: 26px !important;
+}
+
+/* Set max-height for items visible without scrolling */
+#urlbarView-results, #urlbar-results {
+  height: unset !important;
+  max-height: calc(2.5 * (var(--mbarstyler-title-font-size) + var(--mbarstyler-bottom-border-width)) * var(--mbarstyler-max-rows-without-scrolling)) !important;
+
+}
+
+#urlbar-results {
+  overflow-y: auto !important; 
+}
+
+
+  /* Clean up extra spacing at the top and bottom */  
+#urlbar-results {
+  padding: 20px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background: inherit !important;;
+}
+
+.search-one-offs {
+  opacity: 0;
+  outline: none !important;
+  animation: none !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#urlbar-input {
+  padding: 0px 20px !important;
+}
+
+
+#urlbar.megabar > #urlbar-background {
+  opacity: 0;
+  outline: none !important;
+  animation: none !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  position: relative;
+}
+
+#urlbar.megabar > #urlbar-background::before,
+#urlbar.megabar > #urlbar-background::after {
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+  position: absolute;
+}
+
+#urlbar.megabar > #urlbar-background::before {
+  z-index: -1;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.2);
+  top: calc(var(--urlbar-container-height) + 10px);
+}
+
+#urlbar[open="true"] > #urlbar-background {
+  opacity: 1;
+}
+
+#urlbar,
+.searchbar-textbox,
+#urlbar:hover,
+.searchbar-textbox:hover {
+  font-size: 1.1em !important;
+}
+
+/* Hide bookmark button, page actions, security labels and extension icons */
+#star-button-box,
+#pageActionButton,
+#blocked-permissions-container,
+#identity-icon-labels,
+#extension-icon {
+  display: none !important;
+  background: transparent !important;
+}
+
+/* Borders inside URL bar */
+#identity-box {
+  border: 0 !important;
+  padding: 0 4px !important;
+}
+
+#identity-box #identity-icon {
+  margin-right: -20px !important;
+  opacity: 0 !important;
+}
+
+/* Spacing. */
+#sToolbar .titlebar-placeholder[type="pre-tabs"] {
+  width: 1.22em !important;
+  border-right: none !important;
+}
+
+.titlebar-placeholder[type="post-tabs"] {
+  width: 8px !important;
+}
+
+#PersonalToolbar {
+  max-height: none !important;
+  /* Otherwise it's limited to 4em */
+  height: 2.5em;
+  /* Just some ridiculous size so you know it works. */
+}
+
+/* Hide titlebar spaces */
+.titlebar-spacer {
+  display: none;
+}
+
+/* Put tabs below the nav bar. */
+#titlebar {
+  -moz-box-ordinal-group: 1 !important;
+  /*   background: var(--toolbar-bgcolor) !important; */
+}
+
+/* Put nav bar above the tab bar and make a space for traffic lights. */
+#nav-bar {
+  -moz-box-ordinal-group: 0 !important;
+  padding-left: 75px !important;
+}
+
+#navigator-toolbox[readeractive="true"] {
+  box-shadow: none !important;
+}
+
+#navigator-toolbox[readeractive="true"]::after {
+  height: 0 !important;
+}
+
+#reader-mode-button {
+  opacity: 0 !important;
+  visibility: collapse !important;
+}
+
+#reader-mode-button[readeractive="true"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#pageActionSeparator {
+  opacity: 0 !important;
+  margin-right: 2px !important;
+  margin-left: 2px !important;
+}
+
+#tracking-protection-icon-container {
+  border-image-slice: initial;
+  border: none;
+  padding: 0 4px;
+}
+
+/* Move traffic lights in the space carved above. */
+.titlebar-buttonbox-container {
+  position: absolute;
+  display: block;
+  margin-top: -28px;
+}
+
+#PanelUI-webext-privacy_privacy_com-browser-action-view {
+  min-width: 500px !important;
+}
