@@ -5,7 +5,8 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-colorscheme gruvbox
+let ayucolor="mirage"   " for dark version of theme
+colorscheme ayu
 
 hi LineNr         guibg=NONE
 hi PrimaryBlock   guibg=NONE     guifg=#4A5568

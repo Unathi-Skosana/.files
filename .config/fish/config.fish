@@ -23,31 +23,7 @@ set fish_greeting ""
 # Remove path underline
 set fish_color_valid_path
 
-# PATHS
-set -gx PATH $PATH $HOME/.local/bin/
-set -gx PATH $PATH $HOME/go/bin
-set -gx PATH $PATH $HOME/.gem/ruby/2.6.0/bin
-set -gx PATH $PATH $HOME.gem/ruby/2.6.0/bin
-set -gx PATH $PATH $HOME/.npm-global/bin
-set -gx PATH $PATH $HOME/.bin
-set -gx PATH $PATH $HOME/.cargo/bin
-set -gx PATH $PATH /opt/anaconda/bin
-
-# ENV VARIABLES
-set -gx PROJECT_PATHS $HOME/Repositories $HOME/playground $HOME/go/src/github.com $HOME/Dropbox $HOME/.config
-set -gx EDITOR /usr/bin/nvim
-set -gx VISUAL /usr/bin/nvim
-set -gx VIMPATH /home/nyx/.config/nvim
-set -x -U GOPATH $HOME/go
-set -gx LC_ALL en_US.UTF-8
-set -gx LANG en_US.UTF-8
-set -gx JUPYTERLAB_DIR $HOME/.local/share/jupyter/lab
-set -gx WIKI_PATH $HOME/Dropbox/wiki
-set -gx FZF_DEFAULT_OPTS "--color=fg:#acb4c2,bg:#011627,hl:#82aaff
-    --color=fg+:#acb4c2,bg+:#011627,hl+:#82aaff
-    --color=info:#7fdbca,prompt:#ecc48d,pointer:#7fdbca
-    --color=marker:#fc514e,spinner:#7fdbca,header:#fc514e"
-set -gx FZF_DEFAULT_COMMAND 'fd -H'
+. $HOME/.config/fish/envs.fish
 
 # Load Tacklebox configuration
 . $HOME/.tacklebox/tacklebox.fish

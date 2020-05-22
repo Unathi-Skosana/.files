@@ -62,8 +62,7 @@ if dein#load_state('/home/lynx/.cache/dein')
     call dein#add('z0mbix/vim-shfmt', { 'for': 'sh' })
 
     " UI
-    call dein#add('morhetz/gruvbox')
-    call dein#add('dracula/vim')
+    call dein#add('ayu-theme/ayu-vim')
     call dein#add('majutsushi/tagbar')
     call dein#add('rhysd/git-messenger.vim', {
             \   'lazy' : 1,
