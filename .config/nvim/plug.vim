@@ -28,8 +28,10 @@ if dein#load_state('/home/lynx/.cache/dein')
     call dein#add('jparise/vim-graphql')
     call dein#add('pangloss/vim-javascript')
     call dein#add('lervag/vimtex')
+    call dein#add('chemzqm/vim-jsx-improve')
     call dein#add('georgewitteman/vim-fish')
-
+    call dein#add('vim-pandoc/vim-pandoc')
+    call dein#add('vim-pandoc/vim-pandoc-syntax')
 
     " Completion, Tests, LSP
     call dein#add('tpope/vim-dispatch')
@@ -62,7 +64,7 @@ if dein#load_state('/home/lynx/.cache/dein')
     call dein#add('z0mbix/vim-shfmt', { 'for': 'sh' })
 
     " UI
-    call dein#add('ayu-theme/ayu-vim')
+    call dein#add('ghifarit53/tokyonight-vim')
     call dein#add('majutsushi/tagbar')
     call dein#add('rhysd/git-messenger.vim', {
             \   'lazy' : 1,

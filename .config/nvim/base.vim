@@ -5,8 +5,11 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-let ayucolor="mirage"   " for dark version of theme
-colorscheme ayu
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+let g:tokyonight_disable_italic_comment = 1
+
+colorscheme tokyonight
 
 hi LineNr         guibg=NONE
 hi PrimaryBlock   guibg=NONE     guifg=#4A5568

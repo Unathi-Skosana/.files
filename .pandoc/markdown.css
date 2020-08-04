@@ -7,46 +7,73 @@ means.
 For more information, please refer to <http://unlicense.org/>
 *********************************************************************/
 
-/*
-WiTeX
-https://github.com/AndrewBelt/WiTeX
-*/
+html {
+  scroll-behavior: smooth;
+}
 
-@import url('https://cdn.jsdelivr.net/npm/@typopro/web-iosevka@3.7.5/TypoPRO-Iosevka.css');
+@font-face {
+	font-family: 'Iosevka';
+  font-style: normal;
+  font-weight: normal;
+	src: url('https://cdn.jsdelivr.net/gh/Unathi-Skosana/vwc@master/static/fonts/Iosevka/iosevka-regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+  font-style: italic;
+  font-weight: normal;
+	src: url('https://cdn.jsdelivr.net/gh/Unathi-Skosana/vwc@master/static/fonts/Iosevka/iosevka-italic.ttf') format('truetype');
+}
+
+
+@font-face {
+	font-family: 'Iosevka';
+  font-style: normal;
+  font-weight: bold;
+	src: url('https://cdn.jsdelivr.net/gh/Unathi-Skosana/vwc@master/static/fonts/Iosevka/iosevka-bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+  font-style: italic;
+  font-weight: bold;
+	src: url('https://cdn.jsdelivr.net/gh/Unathi-Skosana/vwc@master/static/fonts/Iosevka/iosevka-bolditalic.ttf') format('truetype');
+}
+
 
 @font-face {
 	font-family: 'Palatino';
-    font-style: normal;
-    font-weight: bold;
-	src: local('./fonts/Palatino/palatino-bold.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+	src: url('https://cdn.jsdelivr.net/gh/Unathi-Skosana/vwc@master/static/fonts/Palatino/palatino-bold.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Palatino';
-    font-style: normal;
-    font-weight: normal;
-	src: local('./fonts/Palatino/palatino-regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+	src: url('https://cdn.jsdelivr.net/gh/Unathi-Skosana/vwc@master/static/fonts/Palatino/palatino-regular.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Optima';
-    font-style: normal;
-    font-weight: normal;
-	src: local('./fonts/Optima/OPTIMA.TTF') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+	src: url('https://cdn.jsdelivr.net/gh/Unathi-Skosana/vwc@master/static/fonts/Optima/optima-regular.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Optima';
-    font-style: normal;
-    font-weight: bold;
-	src: local('./fonts/Optima/Optima Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: bold;
+	src: url('https://cdn.jsdelivr.net/gh/Unathi-Skosana/vwc@master/static/fonts/Optima/optima-medium.ttf') format('truetype');
 }
 
 @font-face {
 	font-family: 'Optima';
-    font-style: italic;
-    font-weight: normal;
-	src: local('./fonts/Optima/Optima_Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: normal;
+  src: url('https://cdn.jsdelivr.net/gh/Unathi-Skosana/vwc@master/static/fonts/Optima/optima-italic.ttf') format('truetype');
 }
 
 
@@ -55,24 +82,41 @@ https://github.com/AndrewBelt/WiTeX
 body {
 	background: none;
 	font-size: 14pt;
-	font-family: Palatino, sans-serif;
+	font-family: 'Palatino';
+  background-color: hsl(210, 20%, 98%);
+	text-rendering: optimizeLegibility;
+
 }
 
-pre, code {
-  font-family: 'TypoPRO Iosevka Term', monospace;
+pre, code, kbd {
+  font-family: 'Iosevka';
+}
+
+pre:not(.sourceCode),div.sourceCode {
+  overflow: auto !important;
+  padding: 1.5rem;
+  border: 2px solid  #eee;
+  border-radius: 0.5rem;
 }
 
 #page-ctn {
   margin: 0 auto;
   max-width: 900px;
-  color: #24292e;
+  color: hsl(0, 5%, 10%);
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  font-family: Optima;
 }
 
 
-
 h1, h2, h3, h4, h5, h6 {
+  font-family: Optima;
 	border: none;
-	font-weight: bold;
 }
 
 a, a:visited {
@@ -80,12 +124,14 @@ a, a:visited {
 }
 
 a.new, a.new:visited {
-	color: black;
+  color: hsl(0, 5%, 10%);
 }
 
-ul {
-	list-style: disc;
+
+.toc-section-number {
+  margin-right: 0.5rem;
 }
+
 
 #markdown-navigation, #markdown-page-base, #markdown-head-base, #footer {
 	/* nuke everything but the content */
@@ -101,7 +147,7 @@ ul {
 
 #content, div#content {
 	border: none;
-	color: black;
+  color: hsl(0, 5%, 10%);
 }
 
 #firstHeading, #siteSub {
@@ -225,7 +271,8 @@ div.tleft {
 }
 
 pre, code {
-	font-family: "Latin Modern Mono", monospace !important;
+  font-family: 'TypoPRO Iosevka Term', monospace;
+  font-size: 85%;
 }
 
 sup {
@@ -259,5 +306,5 @@ sup {
 }
 
 strong, em {
-  color: #c7254e;
+  color: #a00;
 }

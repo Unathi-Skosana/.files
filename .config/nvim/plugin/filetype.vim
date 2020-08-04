@@ -1,7 +1,14 @@
+" Markdown {{{
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_autowrite = 1
+" }}}
+
 " LaTeX {{{
 let g:tex_flavor = "latex"
 let g:tex_conceal = 0
-" }}
+" }}}
 
 if !has('autocmd')
   finish

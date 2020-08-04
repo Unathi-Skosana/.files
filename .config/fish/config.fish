@@ -37,3 +37,7 @@ set fish_color_valid_path
 # Load bindings
 . $HOME/.config/fish/bindings.fish
 
+
+#nvm install 6.11.1
+#nvm alias default 6.11.1
+#nvm alias default 6.11.1

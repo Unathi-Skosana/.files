@@ -27,6 +27,22 @@ snippet ali "aligned env" b
 \$\$
 endsnippet
 
+snippet ket "ket"
+|$0\rangle
+endsnippet
+
+snippet bra "bra"
+\langle $0|
+endsnippet
+
+snippet inp "inner product"
+\langle $1|$2|$1\rangle
+endsnippet
+
+snippet oup "outer product"
+| ${1}${VISUAL:} \rangle\langle ${2}${VISUAL:} |
+endsnippet
+
 snippet beg "begin env" b
 \$\$
 \\begin{$1}
@@ -35,14 +51,14 @@ snippet beg "begin env" b
 \$\$
 endsnippet
 
-snippet fr "fraction" b
+snippet fr "fraction"
 \\frac{$1}{$2}$0
 endsnippet
 
-snippet cl "ceil" b
+snippet cl "ceil"
 \\lceil$1\\rceil
 endsnippet
 
-snippet fl "floor" b
+snippet fl "floor"
 \\lfloor$1\\rfloor
 endsnippet
