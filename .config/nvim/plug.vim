@@ -58,7 +58,6 @@ if dein#load_state('/home/lynx/.cache/dein')
     call dein#add('SirVer/ultisnips', {'on_map' : { 'i' : ['<c-j>', '<c-k>'] }})
     call dein#add('honza/vim-snippets')
     call dein#add('christoomey/vim-tmux-navigator')
-    call dein#add('easymotion/vim-easymotion')
     call dein#add('yuttie/comfortable-motion.vim')
     call dein#add('wakatime/vim-wakatime')
     call dein#add('z0mbix/vim-shfmt', { 'for': 'sh' })
@@ -71,18 +70,20 @@ if dein#load_state('/home/lynx/.cache/dein')
             \   'on_cmd' : 'GitMessenger',
             \   'on_map' : '<Plug>(git-messenger)',
             \ })
+    call dein#add('lifepillar/vim-colortemplate')
     call dein#add('junegunn/goyo.vim')
     call dein#add('junegunn/limelight.vim')
     call dein#add('Yggdroot/indentLine')
     call dein#add('airblade/vim-gitgutter')
     call dein#add('mhinz/vim-startify')
     call dein#add('simnalamburt/vim-mundo', {'on_cmd': ['MundoHide', 'MundoShow', 'MundoToggle']})
-    call dein#add('Shougo/defx.nvim')
-    call dein#add('kristijanhusak/defx-git')
-    call dein#add('kristijanhusak/defx-icons')
     call dein#add('norcalli/nvim-colorizer.lua', {
           \ 'on_event': 'FileType',
           \ 'hook_source': 'luafile ~/.config/nvim/plugin/colorizer.lua'
+          \ })
+    call dein#add('ms-jpq/chadtree', {
+          \ 'branch': 'chad',
+          \ 'do': ':UpdateRemotePlugins'
           \ })
 
     " Required:

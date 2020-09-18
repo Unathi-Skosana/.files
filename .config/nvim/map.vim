@@ -2,12 +2,15 @@
 let mapleader=" "
 let maplocalleader="-"
 
+
 nnoremap <leader>r :source $MYVIMRC<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap ; :
 nnoremap : ;
 
+" fix spelling errors
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 " More quickly call external programs
 nnoremap <leader>> :!<space>
@@ -157,11 +160,9 @@ if executable('rg')
 endif
 " }}}
 
-if dein#tap('defx.nvim') " {{{
-	nnoremap <silent> <LocalLeader>e
-		\ :<C-u>Defx -toggle `getcwd()` -buffer-name=tab`tabpagenr()`<CR>
-	nnoremap <silent> <LocalLeader>a
-		\ :<C-u>Defx `getcwd()` -search=`expand('%:p')` -buffer-name=tab`tabpagenr()`<CR>
+if dein#tap('chadtree') " {{{
+	nnoremap <leader>v <cmd>CHADopen<cr>
+	nnoremap <leader>l <cmd>call setqflist([])<cr>
 endif
 "}}}
 

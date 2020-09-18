@@ -78,5 +78,6 @@ command! -bang -nargs=* Notes call fzf#vim#grep("find $WIKI_PATH -iname \"*.md\"
       \| xargs rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, <bang>0)
 nnoremap <leader>[ :Vwc 
 nnoremap <leader>] :Vwc %:p <CR>
+nnoremap <leader><leader>m :MarkdownPreview
 
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

@@ -69,5 +69,6 @@ let g:SuperTabMappingBackward = '<tab>'
 " }}}
 
 set shell=/usr/bin/fish
+set autochdir
 
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :
