@@ -26,14 +26,14 @@ draw_bold_text_with_bright_colors: false
 # Font configuration
 font:
   normal:
-    family: PragmataPro
+    family: Basier Square Mono
     style: Regular
   bold:
-    family: PragmataPro
-    style: Medium
+    family: Basier Square Mono
+    style: Regular
   italic:
-    family: PragmataPro
-    style: Italic
+    family: Basier Square Mono 
+    style: Regular
 
   # Point size
   size: 12

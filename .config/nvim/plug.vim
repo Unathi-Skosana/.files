@@ -30,8 +30,6 @@ if dein#load_state('/home/lynx/.cache/dein')
     call dein#add('lervag/vimtex')
     call dein#add('chemzqm/vim-jsx-improve')
     call dein#add('georgewitteman/vim-fish')
-    call dein#add('vim-pandoc/vim-pandoc')
-    call dein#add('vim-pandoc/vim-pandoc-syntax')
 
     " Completion, Tests, LSP
     call dein#add('tpope/vim-dispatch')

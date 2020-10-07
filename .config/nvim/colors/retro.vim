@@ -17,6 +17,7 @@ let s:t_Co = exists('&t_Co') && !empty(&t_Co) && &t_Co > 1 ? &t_Co : 2
 let s:tmux = executable('tmux') && $TMUX !=# ''
 
 let g:colors_name = 'retro'
+"
 " }}}
 " Configuration: {{{
 let s:configuration = {}
@@ -27,7 +28,9 @@ let s:configuration.enable_italic = get(g:, 'retro_enable_italic', 0)
 let s:configuration.cursor = get(g:, 'retro_cursor', 'auto')
 let s:configuration.current_word = get(g:, 'retro_current_word', get(g:, 'retro_transparent_background', 0) == 0 ? 'grey background' : 'bold')
 " }}}
+
 " Palette: {{{
+"
 "
 "
 let s:palette = {
@@ -37,18 +40,22 @@ let s:palette = {
       \ 'bg2':        ['#2a2b3d',   '236',  'DarkGrey'],
       \ 'bg3':        ['#32344a',   '237',  'DarkGrey'],
       \ 'bg4':        ['#3b3d57',   '237',  'Grey'],
-      \ 'bg_red':     ['#ED4F69',   '203',  'Red'],
-      \ 'diff_red':   ['#ED4F4F',   '52',   'DarkRed'],
-      \ 'bg_green':   ['#10D7AE',   '107',  'Green'],
-      \ 'diff_green': ['#ACF2BD',   '22',   'DarkGreen'],
-      \ 'bg_blue':    ['#09d1d6',   '110',  'Blue'],
-      \ 'diff_blue':  ['#7E7EFF',   '17',   'DarkBlue'],
       \ 'fg':         ['#A9B1D6',   '250',  'White'],
-      \ 'red':        ['#FF636E',   '203',  'Red'],
-      \ 'orange':     ['#DEA584',   '215',  'Orange'],
-      \ 'yellow':     ['#EC915C',   '179',  'Yellow'],
-      \ 'green':      ['#4FEBA5',   '107',  'Green'],
-      \ 'blue':       ['#5c82ff',   '110',  'Blue'],
+      \ 'bg_red':     ['#FFAEBC',   '203',  'Red'],
+      \ 'diff_red':   ['#EE89B6',   '52',   'DarkRed'],
+      \ 'bg_green':   ['#ACF2BD',   '22',   'DarkGreen'],
+      \ 'diff_green': ['#10D7AE',   '107',  'Green'],
+      \ 'bg_blue':    ['#A2E6F5',   '17',   'DarkBlue'],
+      \ 'diff_blue':  ['#65C7DE',   '110',  'Blue'],
+      \ 'pink+1':     ['#D551A0',   '52',   'DarkRed'],
+      \ 'red':        ['#EA7794',   '203',  'Red'],
+      \ 'orange':     ['#EC915C',   '215',  'Orange'],
+      \ 'yellow':     ['#FFC86F',   '179',  'Yellow'],
+      \ 'lime':       ['#ACF2BD',   '22',   'DarkGreen'],
+      \ 'green+1':    ['#4FEBA5',   '110',  'Blue'],
+      \ 'green':      ['#10D7AE',   '107',  'Green'],
+      \ 'teal':       ['#09D1D6',   '107',  'Green'],
+      \ 'blue':       ['#5C82FF',   '110',  'Blue'],
       \ 'purple':     ['#7566FF',   '176',  'Magenta'],
       \ 'grey':       ['#778CA3',   '246',  'LightGrey'],
       \ 'none':       ['NONE',      'NONE', 'NONE']
