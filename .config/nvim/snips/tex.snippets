@@ -18,6 +18,19 @@ def math():
 endglobal
 
 
+snippet standalone "standalone template" b 
+\documentclass[crop,tikz,convert={outext=.svg,command=\unexpanded{pdf2svg\infile\space\outfile}},multi=false]{standalone}[$0]
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\makeatletter
+
+\begin{document}
+	$1
+\end{document}
+
+\endsnippet
+
+
 snippet template "Basic template" b
 \documentclass[a4paper]{article}
 
