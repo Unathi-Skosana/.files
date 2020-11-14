@@ -36,6 +36,21 @@ augroup user_plugin_filetype " {{{
 				\ let b:delimitMate_quotes = "\" ' $"
 				\ | let b:delimitMate_smart_matchpairs = '^\%(\w\|\!\|[£]\|[^[:space:][:punct:]]\)'
 				\ | setlocal textwidth=80
+				\ | syn match math '\\$[^$].\{-}\$'
+			  \ | syn region match start=/\\$\\$/ end=/\\$\\$/
+
+	autocmd FileType markdown
+				\	let g:vim_markdown_folding_style_pythonic = 1
+				\ | let g:vim_markdown_follow_anchor = 1
+				\ | let g:vim_markdown_math = 1
+				\ | let g:vim_markdown_frontmatter = 1
+				\ | let g:vim_markdown_toml_frontmatter = 1
+				\ | let g:vim_markdown_toml_frontmatter = 1
+				\ | let g:vim_markdown_strikethrough = 1
+				\ | let g:vim_markdown_new_list_item_indent = 2
+				\ | let g:vim_markdown_no_extensions_in_markdown = 1
+				\ | let g:vim_markdown_autowrite = 1
+
 
 	autocmd BufNewFile,BufRead *.prisma
 				\ setfiletype graphql

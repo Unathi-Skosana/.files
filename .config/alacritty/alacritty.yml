@@ -26,17 +26,17 @@ draw_bold_text_with_bright_colors: false
 # Font configuration
 font:
   normal:
-    family: Basier Square Mono
-    style: Regular
+    family: Monoid
+    style: Retina
   bold:
-    family: Basier Square Mono
-    style: Regular
+    family: Monoid
+    style: Retina
   italic:
-    family: Basier Square Mono 
-    style: Regular
+    family: Monoid
+    style: Italic
 
   # Point size
-  size: 12
+  size: 10.0
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -165,6 +165,10 @@ live_config_reload: true
 # Entries in `shell.args` are passed unmodified as arguments to the shell.
 shell:
   program: /bin/fish
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
 
 mouse:
   double_click: { threshold: 300 }
