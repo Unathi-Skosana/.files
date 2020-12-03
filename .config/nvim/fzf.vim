@@ -25,6 +25,6 @@ autocmd! User FzfStatusLine call <SID>fzf_statusline()
 nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>l :Lines<CR>
 nnoremap <silent> <leader>t :BTags<CR>
-nnoremap <silent>  leader>n :Notes<CR>
-nnoremap <silent> <C-p> :call fzf#vim#files('.', fzf#vim#with_preview())<CR>
+nnoremap <silent> <leader>nn :Notes<CR>
 nnoremap <silent> <leader>y :History:<CR>
+nnoremap <silent> <C-p> :call fzf#vim#files('.', fzf#vim#with_preview())<CR>

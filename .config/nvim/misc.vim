@@ -72,7 +72,6 @@ set foldlevelstart=10
 set foldnestmax=10
 " }}}
 
-
 " custom commands
 command! -bang -nargs=1 Vwc execute ':!vwc '.<q-args>
 command! -bang -nargs=* Notes call fzf#vim#grep("find $WIKI_PATH -iname \"*.md\" 

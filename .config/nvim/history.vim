@@ -8,7 +8,6 @@ set shada='300,<50,@100,s10,h
 if $SUDO_USER !=# '' && $USER !=# $SUDO_USER
             \ && $HOME !=# expand('~'.$USER)
             \ && $HOME ==# expand('~'.$SUDO_USER)
-
     set noswapfile
     set nobackup
     set nowritebackup

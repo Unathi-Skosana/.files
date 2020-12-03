@@ -15,7 +15,7 @@ inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 " More quickly call external programs
 nnoremap <leader>> :!<space>
 
-" popup menu
+" pop up menu
 inoremap <expr><C-e> pumvisible() ? "\<C-e>" : "\<End>"
 
 "buffers
@@ -248,4 +248,4 @@ if dein#tap('vim-easy-align') " {{{
 endif
 " }}}
 
-" vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :
+" vim: set fold method=marker ts=2 SW=2 two=80 nut :
