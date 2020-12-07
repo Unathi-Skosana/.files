@@ -3,6 +3,18 @@ function pacro
     sudo pacman -Rns (pacman -Qtdq)
 end
 
+function rga-fzf
+	set -l RG_PREFIX "rga --files-with-matches"
+	set -l file (
+		FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
+			fzf --sort --preview="rga --pretty --context 5 {q} {}" \
+				--phony -q "$1" \
+				--bind "change:reload:$RG_PREFIX {q}" \
+				--preview-window="70%:wrap"
+	)
+	file && echo "opening $file" && xdg-open "$file"
+end
+
 function new_folder_from_template
     mkdir -p $argv[2]
     cp -RT $HOME/Templates/$argv[1] $argv[2]
