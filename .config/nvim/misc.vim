@@ -22,7 +22,7 @@ set cmdheight=2
 set laststatus=2
 set noshowmode
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
-set clipboard& clipboard+=unnamedplus
+set clipboard^=unnamed,unnamedplus
 set history=2000
 set updatetime=300
 set undofile
@@ -71,14 +71,5 @@ set foldenable
 set foldlevelstart=10
 set foldnestmax=10
 " }}}
-
-" custom commands
-command! -bang -nargs=1 Vwc execute ':!vwc '.<q-args>
-command! -bang -nargs=* Notes call fzf#vim#grep("find $WIKI_PATH -iname \"*.md\" 
-      \| xargs rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, <bang>0)
-nnoremap <leader>[ :Vwc 
-nnoremap <leader>] :Vwc %:p <CR>
-nnoremap <leader><leader>m :MarkdownPreview <CR>
-nnoremap <leader><leader>n :Make <CR>
 
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

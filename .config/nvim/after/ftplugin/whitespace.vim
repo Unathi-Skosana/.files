@@ -1,18 +1,5 @@
-
-" Whitespace utilities
-" ---
-
 " Remove end of line white space
 command! -range=% WhitespaceErase call <SID>WhitespaceErase(<line1>,<line2>)
-
-" Whitespace events
-if v:version >= 702
-	augroup plugin_whitespace
-		autocmd!
-		autocmd InsertEnter * call <SID>ToggleWhitespace('i')
-		autocmd InsertLeave * call <SID>ToggleWhitespace('n')
-	augroup END
-endif
 
 function! s:ToggleWhitespace(mode)
 	if &buftype =~? 'nofile\|help\|quickfix' || &filetype ==? ''
@@ -37,3 +24,5 @@ function! s:WhitespaceErase(line1, line2)
 	silent! execute ':'.a:line1.','.a:line2.'s/\s\+$//'
 	call setpos('.', l:save_cursor)
 endfunction
+
+" vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

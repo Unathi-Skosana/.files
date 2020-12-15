@@ -1,8 +1,4 @@
-" base  {{{
-let mapleader=" "
-let maplocalleader="-"
-
-
+" base
 nnoremap <leader>r :source $MYVIMRC<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
@@ -47,15 +43,31 @@ noremap <expr> <C-b> max([winheight(0) - 2, 1])
 	\ ."\<C-u>".(line('w0') <= 1 ? "H" : "M")
 noremap <expr> <C-e> (line("w$") >= line('$') ? "j" : "3\<C-e>")
 noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "3\<C-y>")
-" }}}
 
-" folding {{{
+" folding 
 nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
-"}}}
 
-if dein#tap('coc.nvim') " Coc {{{
+" note taking commands
+command! -bang -nargs=1 Vwc execute ':!vwc '.<q-args>
+command! -bang -nargs=* Notes call fzf#vim#grep("find $WIKI_PATH -iname \"*.md\" 
+      \| xargs rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, <bang>0)
+nnoremap <leader>[ :Vwc 
+nnoremap <leader>] :Vwc %:p <CR>
+
+
+if dein#tap('vim-dispatch') " {{{
+  nnoremap <leader><leader>n :Make <CR>
+endif
+" }}}
+
+if dein#tap('markdown') " {{{
+  nnoremap <leader><leader>m :MarkdownPreview <CR>
+endif
+" }}}
+
+if dein#tap('coc.nvim') " {{{
     " Show all diagnostics
     nnoremap <silent> <leader>cd  :<C-u>CocList diagnostics<cr>
     " Manage extensions
@@ -195,26 +207,13 @@ if dein#tap('vim-mundo') " {{{
 endif
 " }}}
 
-if dein#tap('comfortable-motion.vim') " {{{
-    nnoremap <silent> <C-d> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 2)<CR>
-    nnoremap <silent> <C-u> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -2)<CR>
-    nnoremap <silent> <C-f> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
-    nnoremap <silent> <C-b> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
-endif
-" }}}
-
-if dein#tap('goyo.vim') " {{{
-    nnoremap <Leader>G :Goyo<CR>
-endif
-" }}}
-
 if dein#tap('vim-startify') " {{{
     noremap <silent> <leader>s :Startify<CR>
 endif
 " }}}
 
-if dein#tap('tagbar') " {{{
-    nnoremap <silent><localleader>t :TagbarToggle<CR>
+if dein#tap('vista.vim') " {{{
+    nnoremap <silent><localleader>t :Vista!!<CR>
 endif
 " }}}
 
@@ -247,5 +246,15 @@ if dein#tap('vim-easy-align') " {{{
     nmap ga <Plug>(EasyAlign)
 endif
 " }}}
+"
+if dein#tap('fzf.vim') " {{{
+  nnoremap <silent> <leader>b :Buffers<CR>
+  nnoremap <silent> <leader>l :Lines<CR>
+  nnoremap <silent> <leader>t :BTags<CR>
+  nnoremap <silent> <leader>nn :Notes<CR>
+  nnoremap <silent> <leader>y :History:<CR>
+  nnoremap <silent> <C-p> :call fzf#vim#files('.', fzf#vim#with_preview())<CR>
+endif
+" }}}
 
-" vim: set fold method=marker ts=2 SW=2 two=80 nut :
+" vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

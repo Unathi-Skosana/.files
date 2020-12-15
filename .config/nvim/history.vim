@@ -21,14 +21,4 @@ if exists('&backupskip')
     set backupskip+=.vault.vim
 endif
 
-" Disable swap/undo/viminfo/shada files in temp directories or shm
-augroup user_secure
-    autocmd!
-    silent! autocmd BufNewFile,BufReadPre
-                \ /tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim
-                \ setlocal noswapfile noundofile nobackup nowritebackup viminfo= shada=
-augroup END
-
-
-
-
+" vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :
