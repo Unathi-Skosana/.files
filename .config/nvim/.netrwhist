@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =0
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/home/lynx/.config/nvim/spell'
 let g:netrw_dirhist_0='/home/lynx/.config/nvim/plugin'
 let g:netrw_dirhist_9='/home/lynx/repositories/ptycho/engine'
 let g:netrw_dirhist_8='/home/lynx/repositories/ptycho/viz/convergence'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_5='/home/lynx'
 let g:netrw_dirhist_4='/home/lynx/repositories/seperability/tests'
 let g:netrw_dirhist_3='/home/lynx/repositories/msc-summary'
 let g:netrw_dirhist_2='/home/lynx/iqss-beamer-theme/demo'
-let g:netrw_dirhist_1='/home/lynx/repositories/ptycho/tests'

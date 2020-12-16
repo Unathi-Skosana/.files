@@ -47,6 +47,9 @@ if dein#load_state('/home/lynx/.cache/dein')
     call dein#add('universal-ctags/ctags')
     call dein#add('liuchengxu/vista.vim')
 
+    " supertab
+    call dein#add('ervandew/supertab')
+
     " vim text alignment
     call dein#add('junegunn/vim-easy-align')
 
@@ -195,7 +198,6 @@ let g:CoolTotalMatches = 1
   let g:vim_markdown_autowrite = 1
 " }}}
 
-" markdown preview {{{
   " set to 1, nvim will open the preview window after entering the markdown buffer
   " default: 0
   let g:mkdp_auto_start = 0

@@ -1,3 +1,7 @@
+set shortmess=a
+set laststatus=2
+set noshowmode
+
 " statusline colors {{{
 hi LineNr         guibg=NONE
 hi PrimaryBlock   guibg=NONE     guifg=#4A5568

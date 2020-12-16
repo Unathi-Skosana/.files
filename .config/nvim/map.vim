@@ -146,30 +146,30 @@ endif
 " }}}
 
 " Quickfix  {{{
-nnoremap <silent> <UP> :cope<CR>
-nnoremap <silent> <DOWN> :cclose<CR>
-nnoremap <silent> <leader>cn :cnext<CR>
-nnoremap <silent> <leader>cp :cprev<CR>
-nnoremap <silent> <RIGHT> :cnext<CR>
-nnoremap <silent> <LEFT> :cprev<CR>
+	nnoremap <silent> <UP> :cope<CR>
+	nnoremap <silent> <DOWN> :cclose<CR>
+	nnoremap <silent> <leader>cn :cnext<CR>
+	nnoremap <silent> <leader>cp :cprev<CR>
+	nnoremap <silent> <RIGHT> :cnext<CR>
+	nnoremap <silent> <LEFT> :cprev<CR>
 "}}}
 
 " Make many of the jump commands also center on search term {{{
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap <C-o> <C-o>zz
-nnoremap <C-i> <C-i>zz
-nnoremap * *zz
-nnoremap # #zz
-nnoremap <leader>, :nohlsearch<CR>
-nnoremap <leader>/ :silent grep<space>
-nnoremap <leader>co :cw<CR>
-nnoremap <leader>cc :ccl<CR>
+	nnoremap n nzz
+	nnoremap N Nzz
+	nnoremap <C-o> <C-o>zz
+	nnoremap <C-i> <C-i>zz
+	nnoremap * *zz
+	nnoremap # #zz
+	nnoremap <leader>, :nohlsearch<CR>
+	nnoremap <leader>/ :silent grep<space>
+	nnoremap <leader>co :cw<CR>
+	nnoremap <leader>cc :ccl<CR>
 
-" set ag as the grep program
-if executable('rg') 
-  set grepprg=rg\ --vimgrep
-endif
+	" set ag as the grep program
+	if executable('rg')  
+		set grepprg=rg\ --vimgrep
+	endif
 " }}}
 
 if dein#tap('chadtree') " {{{
@@ -179,11 +179,11 @@ endif
 "}}}
 
 if dein#tap('fzf.vim') " {{{
-    noremap  <silent> <C-p> :FZF<CR>
-    nnoremap <silent> <leader>ff :Files<CR>
-    nnoremap <silent> <leader>fc :Colors<CR>
-    nnoremap <silent> <leader>fb :Buffers<CR>
-    nnoremap <silent> <leader>fr :Rg<CR>
+  noremap  <silent> <C-p> :FZF<CR>
+  nnoremap <silent> <leader>ff :Files<CR>
+  nnoremap <silent> <leader>fc :Colors<CR>
+  nnoremap <silent> <leader>fb :Buffers<CR>
+  nnoremap <silent> <leader>fr :Rg<CR>
 endif
 " }}}
 
