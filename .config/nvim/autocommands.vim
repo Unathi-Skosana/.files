@@ -1,13 +1,8 @@
-if !has('autocmd')
-  finish
-endif
-
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
+" jump to the last position when reopening a file
 if has("autocmd") "{{{
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
-"}}}
+" }}}
 
 augroup user_plugin_filetype " {{{
 	autocmd!
@@ -64,6 +59,5 @@ augroup plugin_whitespace
 	autocmd InsertEnter * call <SID>ToggleWhitespace('i')
 	autocmd InsertLeave * call <SID>ToggleWhitespace('n')
 augroup END
-
 
 " vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :

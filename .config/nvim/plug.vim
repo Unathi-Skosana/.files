@@ -72,8 +72,9 @@ if dein#load_state('/home/lynx/.cache/dein')
     call dein#add('tpope/vim-obsession')
 
     " fuzzy finder
-    call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
-    call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+    if executable('fzf') 
+      call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+    endif
 
     " auto closing pairs
     call dein#add('Raimondi/delimitMate', {'on_map' : { 'i' : ['(', '[', '{', '$' ] }})
@@ -81,9 +82,20 @@ if dein#load_state('/home/lynx/.cache/dein')
     " snippets
     call dein#add('SirVer/ultisnips', {'on_map' : { 'i' : ['<c-j>', '<c-k>'] }})
     call dein#add('honza/vim-snippets')
+    "
+    if executable('tmux')
+      " navigate tmux vim splits
+      call dein#add('christoomey/vim-tmux-navigator')
 
-    " navigate tmux vim splits
-    call dein#add('christoomey/vim-tmux-navigator')
+
+    " Let vim detect tmux focus event correctly, see
+    " https://github.com/neovim/neovim/issues/9486 and
+    " https://vi.stackexchange.com/q/18515/15292
+      call dein#add('tmux-plugins/vim-tmux-focus-events')
+
+    " .tmux.conf syntax highlighting and setting check
+      call dein#add('tmux-plugins/vim-tmux', { 'for': 'tmux' })
+    endif
 
     " collecting stats for time spent on various projects
     call dein#add('wakatime/vim-wakatime')
