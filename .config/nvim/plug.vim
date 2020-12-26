@@ -16,6 +16,12 @@ if dein#load_state('/home/lynx/.cache/dein')
     " Local plugins
     call dein#local('$VIM_PATH/local')
 
+    " highlight url links
+    call dein#add('itchyny/vim-highlighturl')
+
+    " Handy unix command inside Vim (Rename, Move etc.)
+    call dein#add('tpope/vim-eunuch')
+
     " typesetting
     call dein#add('godlygeek/tabular', { 'on_cmd' : [ 'Tab', 'Tabularize' ] , 'augroup' : 'tabular' })
     call dein#add('plasticboy/vim-markdown')
@@ -42,6 +48,7 @@ if dein#load_state('/home/lynx/.cache/dein')
     call dein#add('tpope/vim-dispatch')
     call dein#add('neomake/neomake')
     call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
+    call dein#add('prettier/vim-prettier')
 
     " ctags
     call dein#add('universal-ctags/ctags')
@@ -77,7 +84,7 @@ if dein#load_state('/home/lynx/.cache/dein')
     endif
 
     " auto closing pairs
-    call dein#add('Raimondi/delimitMate', {'on_map' : { 'i' : ['(', '[', '{', '$' ] }})
+    call dein#add('jiangmiao/auto-pairs')
 
     " snippets
     call dein#add('SirVer/ultisnips', {'on_map' : { 'i' : ['<c-j>', '<c-k>'] }})
@@ -487,7 +494,7 @@ let g:CoolTotalMatches = 1
   " To enable fzf's preview window set g:vista_fzf_preview.
   " The elements of g:vista_fzf_preview will be passed as arguments to fzf#vim#with_preview()
   " For example:
-  let g:vista_fzf_preview = ['right:50%']
+  let g:vista_fzf_preview = ['right:80%']
 
   " Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
   let g:vista#renderer#enable_icon = 1
