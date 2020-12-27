@@ -28,9 +28,6 @@ nnoremap Y y$
 " Remove spaces at the end of lines
 nnoremap <silent> ,<Space> :<C-u>silent! keeppatterns %substitute/\s\+$//e<CR>
 
-" a command which  edit PLugin config easy
-nnoremap <leader>p :EditPluginSetting <Space>
-
 " Improve scroll, credits: https://github.com/Shougo
 nnoremap <expr> zz (winline() == (winheight(0)+1) / 2) ?
 	\ 'zt' : (winline() == 1) ? 'zb' : 'zz'
@@ -45,17 +42,17 @@ noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "3\<C-y>")
 command! -bang -nargs=1 Vwc execute ':!vwc '.<q-args>
 command! -bang -nargs=* Notes call fzf#vim#grep("find $WIKI_PATH -iname \"*.md\" 
       \| xargs rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, <bang>0)
-nnoremap <leader>[ :Vwc 
-nnoremap <leader>] :Vwc %:p <CR>
+nnoremap <silent> <localleader>[ :Vwc 
+nnoremap <silent> <localleader>] :Vwc %:p <CR>
 
 
 if dein#tap('vim-dispatch') " {{{
-  nnoremap <leader><leader>n :Make <CR>
+  nnoremap <silent><localleader>n :Make <CR>
 endif
 " }}}
 
 if dein#tap('markdown') " {{{
-  nnoremap <leader><leader>m :MarkdownPreview <CR>
+  nnoremap <silent><localleader>m :MarkdownPreview <CR>
 endif
 " }}}
 
@@ -216,12 +213,6 @@ endif
 	endif
 " }}}
 
-if dein#tap('chadtree') " {{{
-	nnoremap <leader>v <cmd>CHADopen<cr>
-	nnoremap <leader>l <cmd>call setqflist([])<cr>
-endif
-"}}}
-
 if dein#tap('fzf.vim') " {{{
   noremap  <silent> <C-p> :FZF<CR>
   nnoremap <silent> <leader>ff :Files<CR>
@@ -295,7 +286,7 @@ if dein#tap('fzf.vim') " {{{
   nnoremap <silent> <leader>b :Buffers<CR>
   nnoremap <silent> <leader>l :Lines<CR>
   nnoremap <silent> <leader>t :BTags<CR>
-  nnoremap <silent> <leader>nn :Notes<CR>
+  nnoremap <silent> <leader>n :Notes<CR>
   nnoremap <silent> <leader>y :History:<CR>
   nnoremap <silent> <C-p> :call fzf#vim#files('.', fzf#vim#with_preview())<CR>
 endif

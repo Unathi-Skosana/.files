@@ -1,37 +1,14 @@
 scriptencoding UTF-8
 
+	" Required {{{
+	filetype plugin on
+	syntax enable
+	set nocompatible
+" }}}
+
 " leaders {{{
 	let mapleader=" "
 	let maplocalleader="-"
-" }}}
-
-" Syntax, colors and styling {{{
-	if exists('+termguicolors')
-		let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-		let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-		set termguicolors
-	endif
-
-	let g:tokyonight_style = 'night' " available: night, storm
-	let g:tokyonight_enable_italic = 1
-	let g:tokyonight_disable_italic_comment = 1
-
-	colorscheme tokyonight
-" }}}
-
-" supertab {{{
-let g:SuperTabMappingForward = '<s-tab>'
-let g:SuperTabMappingBackward = '<tab>'
-let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
-let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
-let g:SuperTabContextDiscoverDiscovery =
-		\ ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
-
-autocmd FileType *
-	\ if &omnifunc != '' |
-	\   call SuperTabChain(&omnifunc, "<c-p>") |
-	\ endif
-
 " }}}
 
 " Completion behaviour {{
@@ -44,9 +21,6 @@ autocmd FileType *
 " }}}
 
 " Misc {{{
-	" File and script encoding settings for vim
-	set encoding=UTF-8
-
 	" Search ignoring case & Keep case when searching with *
 	set ignorecase smartcase
 
@@ -111,6 +85,25 @@ autocmd FileType *
 
 	" deepest fold nest
 	set foldnestmax=5
+
+	" Do not show mode on command line since vim-airline can show it
+	set noshowmode
+
+ " List all matches and complete first match.
+	set wildmode=list:full
+
+	" don't continue comments on newline
+	set formatoptions-=o
+
+	" prevent two spaces in a row
+	set nojoinspaces
+
+	" normal splits
+	set splitbelow splitright
+
+	" don't jump to first character of the line
+	set nostartofline
+
 " }}}
 
 " Abbreviations {{{

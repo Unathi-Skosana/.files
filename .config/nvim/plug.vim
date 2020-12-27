@@ -1,7 +1,3 @@
-if &compatible
-    set nocompatible               " Be iMproved
-endif
-
 " Required:
 set runtimepath+=/home/lynx/.cache/dein/repos/github.com/Shougo/dein.vim
 
@@ -138,20 +134,10 @@ if dein#load_state('/home/lynx/.cache/dein')
           \ 'hook_source': 'luafile ~/.config/nvim/colorizer.lua'
           \ })
 
-    " file exploxer
-    call dein#add('ms-jpq/chadtree', {
-          \ 'branch': 'chad',
-          \ 'do': ':UpdateRemotePlugins'
-          \ })
-
     " Required:
     call dein#end()
     call dein#save_state()
 endif
-
-" Required:
-filetype plugin indent on
-syntax enable
 
 " If you want to install not installed plugins on startup.
 if dein#check_install()
@@ -164,12 +150,36 @@ command! -bang PacUpdate call dein#update()
 command! PacClean call dein#recache_runtimepath()
 command! PacStatus call dein#status()
 
+" colors {{{
+    if exists('+termguicolors')
+        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+        set termguicolors
+    endif
+
+	let g:tokyonight_style = 'night' " available: night, storm
+	let g:tokyonight_enable_italic = 1
+	let g:tokyonight_disable_italic_comment = 1
+	colorscheme tokyonight
+" }}}
+
+" supertab {{{
+    let g:SuperTabMappingForward = '<s-tab>'
+    let g:SuperTabMappingBackward = '<tab>'
+    let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
+    let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+    let g:SuperTabContextDiscoverDiscovery =
+		\ ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
+
+    autocmd FileType *
+        \ if &omnifunc != '' |
+        \   call SuperTabChain(&omnifunc, "<c-p>") |
+        \ endif
+" }}}
 
 " vimtex {{
   let g:tex_flavor = "latex"
   let g:tex_conceal = 0
-  let b:delimitMate_quotes = "\" ' $"
-  let b:delimitMate_smart_matchpairs = '^\%(\w\|\!\|[£]\|[^[:space:][:punct:]]\)'
 
   let g:vimtex_compiler_latexmk = {
     \ 'build_dir' : 'build',
@@ -187,14 +197,6 @@ command! PacStatus call dein#status()
       \ 'mode' : 2,
   \ }
 " }}
-
-" delimate {{{
-  let b:delimitMate_quotes = "\" ' $"
-  let b:delimitMate_smart_matchpairs = '^\%(\w\|\!\|[£]\|[^[:space:][:punct:]]\)'
-  syn match math '\\$[^$].\{-}\$'
-  syn region match start=/\\$\\$/ end=/\\$\\$/
-
-" }}}
 
 " vim-cool {{{
 let g:CoolTotalMatches = 1
@@ -467,38 +469,6 @@ let g:CoolTotalMatches = 1
 " }}}
 
 " vista {{{
-  " This could make the display more compact or more spacious.
-  " e.g., more compact: ["▸ ", ""]
-  " Note: this option only works the LSP executives, doesn't work for `:Vista ctags`.
-  let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-
-  " Executive used when opening vista sidebar without specifying it.
-  " See all the avaliable executives via `:echo g:vista#executives`.
-  let g:vista_default_executive = 'ctags'
-
-  " Set the executive for some filetypes explicitly. Use the explicit executive
-  " instead of the default one for these filetypes when using `:Vista` without
-  " specifying the executive.
-  let g:vista_executive_for = {
-    \ 'cpp': 'vim_lsp',
-    \ 'php': 'vim_lsp',
-    \ }
-
-  " Declare the command including the executable and options used to generate ctags output
-  " for some certain filetypes.The file path will be appened to your custom command.
-  " For example:
-  let g:vista_ctags_cmd = {
-        \ 'haskell': 'hasktags -x -o - -c',
-        \ }
-
-  " To enable fzf's preview window set g:vista_fzf_preview.
-  " The elements of g:vista_fzf_preview will be passed as arguments to fzf#vim#with_preview()
-  " For example:
-  let g:vista_fzf_preview = ['right:80%']
-
-  " Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
-  let g:vista#renderer#enable_icon = 1
-
   " The default icons can't be suitable for all the filetypes, you can extend it as you wish.
   let g:vista#renderer#icons = {
   \   "function": "\uf794",
@@ -522,8 +492,6 @@ let g:CoolTotalMatches = 1
     " Quit Neovim if vista window is the only window
     autocmd BufEnter * call s:close_vista_win()
   augroup END
-
-  nnoremap <silent> <Space>t :<C-U>Vista!!<CR>
 
   function! s:close_vista_win() abort
     if winnr('$') == 1 && getbufvar(bufnr(), '&filetype') ==# 'vista'
