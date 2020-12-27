@@ -180,7 +180,6 @@ command! PacStatus call dein#status()
 " vimtex {{
   let g:tex_flavor = "latex"
   let g:tex_conceal = 0
-
   let g:vimtex_compiler_latexmk = {
     \ 'build_dir' : 'build',
   \ }
@@ -481,6 +480,7 @@ let g:CoolTotalMatches = 1
 
   " Do not echo message on command line
   let g:vista_echo_cursor = 0
+
   " Stay in current window when vista window is opened
   let g:vista_stay_on_open = 0
 
@@ -500,3 +500,5 @@ let g:CoolTotalMatches = 1
   endfunction
 
 " }}}
+
+" vim:set ft=vim et sw=2:

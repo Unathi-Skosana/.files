@@ -119,4 +119,4 @@ scriptencoding UTF-8
 	cnoreabbrev Qall qall
 " }}}
 
-" vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :
+" vim:set ft=vim et sw=2:

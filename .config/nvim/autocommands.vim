@@ -60,4 +60,4 @@ augroup plugin_whitespace
 	autocmd InsertLeave * call <SID>ToggleWhitespace('n')
 augroup END
 
-" vim: set foldmethod=marker ts=2 sw=2 tw=80 noet :
+" vim:set ft=vim et sw=2:
