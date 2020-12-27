@@ -1,4 +1,4 @@
-" statusline colors {{{
+" status line colors {{{
 hi LineNr         guibg=NONE
 hi PrimaryBlock   guibg=NONE     guifg=#4A5568
 hi ModeBlock      guibg=NONE     guifg=#FBD38D
@@ -14,7 +14,7 @@ hi SignColumn     guibg=NONE
 
 " }}}
 
-" statusline {{{
+" status line {{{
 let g:currentmode={
     \ 'n'  : 'N ',
     \ 'no' : 'NO',
