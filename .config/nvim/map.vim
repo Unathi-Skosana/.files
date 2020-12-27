@@ -28,23 +28,12 @@ nnoremap Y y$
 " Remove spaces at the end of lines
 nnoremap <silent> ,<Space> :<C-u>silent! keeppatterns %substitute/\s\+$//e<CR>
 
-" Improve scroll, credits: https://github.com/Shougo
-nnoremap <expr> zz (winline() == (winheight(0)+1) / 2) ?
-	\ 'zt' : (winline() == 1) ? 'zb' : 'zz'
-noremap <expr> <C-f> max([winheight(0) - 2, 1])
-	\ ."\<C-d>".(line('w$') >= line('$') ? "L" : "M")
-noremap <expr> <C-b> max([winheight(0) - 2, 1])
-	\ ."\<C-u>".(line('w0') <= 1 ? "H" : "M")
-noremap <expr> <C-e> (line("w$") >= line('$') ? "j" : "3\<C-e>")
-noremap <expr> <C-y> (line("w0") <= 1         ? "k" : "3\<C-y>")
-
 " note taking commands
 command! -bang -nargs=1 Vwc execute ':!vwc '.<q-args>
 command! -bang -nargs=* Notes call fzf#vim#grep("find $WIKI_PATH -iname \"*.md\" 
       \| xargs rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, <bang>0)
-nnoremap <silent> <localleader>[ :Vwc 
-nnoremap <silent> <localleader>] :Vwc %:p <CR>
-
+nnoremap <buffer><silent> <localleader>[ :Vwc 
+nnoremap <buffer><silent> <localleader>] :Vwc %:p <CR>
 
 if dein#tap('vim-dispatch') " {{{
   nnoremap <silent><localleader>n :Make <CR>
@@ -107,14 +96,6 @@ if dein#tap('coc.nvim') " {{{
 	" Formatting selected code.
 	xmap <leader>f  <Plug>(coc-format-selected)
 	nmap <leader>f  <Plug>(coc-format-selected)
-
-	augroup mygroup
-		autocmd!
-		" Setup formatexpr specified filetype(s).
-		autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-		" Update signature help on jump placeholder.
-		autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-	augroup end
 
 	" Applying codeAction to the selected region.
 	" Example: `<leader>aap` for current paragraph
@@ -213,15 +194,6 @@ endif
 	endif
 " }}}
 
-if dein#tap('fzf.vim') " {{{
-  noremap  <silent> <C-p> :FZF<CR>
-  nnoremap <silent> <leader>ff :Files<CR>
-  nnoremap <silent> <leader>fc :Colors<CR>
-  nnoremap <silent> <leader>fb :Buffers<CR>
-  nnoremap <silent> <leader>fr :Rg<CR>
-endif
-" }}}
-
 if dein#tap('vim-go') " {{{
 	autocmd FileType go
 		\   nmap <C-]> <Plug>(go-def)
@@ -265,6 +237,11 @@ if dein#tap('vim-fugitive') " {{{
 	nnoremap <silent> <leader>gF :Gfetch<CR>
 	nnoremap <silent> <leader>gS :Git<CR>
 	nnoremap <silent> <leader>gp :Gpush<CR>
+    nnoremap <silent> <leader>dp :diffput 1 \| diffupdate<CR>
+    nnoremap <silent> <leader>dl :diffget //2 \| diffupdate<CR>
+    nnoremap <silent> <leader>dr :diffget //3 \| diffupdate<CR>
+    nnoremap <silent> <leader>du :diffupdate<CR>
+    set diffopt+=vertical
 endif
 " }}}
 
@@ -283,12 +260,20 @@ endif
 " }}}
 "
 if dein#tap('fzf.vim') " {{{
+  nnoremap <silent> <C-p> :Files<CR>
   nnoremap <silent> <leader>b :Buffers<CR>
   nnoremap <silent> <leader>l :Lines<CR>
   nnoremap <silent> <leader>t :BTags<CR>
   nnoremap <silent> <leader>n :Notes<CR>
   nnoremap <silent> <leader>y :History:<CR>
-  nnoremap <silent> <C-p> :call fzf#vim#files('.', fzf#vim#with_preview())<CR>
+  nnoremap <silent> <leader>fc :Colors<CR>
+  nnoremap <silent> <leader>fr :Rg<CR>
+endif
+" }}}
+
+if dein#tap('nvim-miniyank') " {{{
+  map p <Plug>(miniyank-autoput)
+  map P <Plug>(miniyank-autoPut)
 endif
 " }}}
 

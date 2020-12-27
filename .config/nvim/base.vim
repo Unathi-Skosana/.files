@@ -2,7 +2,7 @@ scriptencoding UTF-8
 
 	" Required {{{
 	filetype plugin on
-	syntax enable
+	syntax on
 	set nocompatible
 " }}}
 
@@ -50,11 +50,8 @@ scriptencoding UTF-8
 	set list
 	set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
 
-	" Clipboard settings, always use clipboard for all delete, yank, change, put
-	" operation, see https://stackoverflow.com/q/30691466/6064933
-	if !empty(provider#clipboard#Executable())
-		set clipboard+=unnamedplus
-	endif
+    " do not use selection clipboard
+	set clipboard=unnamedplus
 
 	" The number of command and search history to keep
 	set history=500
@@ -68,7 +65,7 @@ scriptencoding UTF-8
 	" Persistent undo even after you close a file and re-open it
 	set undofile
 
-" Ask for confirmation when handling unsaved or read-only files
+    " Ask for confirmation when handling unsaved or read-only files
 	set confirm
 
 	" autowrite file on certain circumstances

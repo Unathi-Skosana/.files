@@ -134,6 +134,9 @@ if dein#load_state('/home/lynx/.cache/dein')
           \ 'hook_source': 'luafile ~/.config/nvim/colorizer.lua'
           \ })
 
+    call dein#add('bfredl/nvim-miniyank')
+    call dein#add('ConradIrwin/vim-bracketed-paste') 
+
     " Required:
     call dein#end()
     call dein#save_state()
@@ -152,18 +155,19 @@ command! PacStatus call dein#status()
 
 " colors {{{
     if exists('+termguicolors')
-        let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-        let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+        "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+        "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
         set termguicolors
     endif
 
 	let g:tokyonight_style = 'night' " available: night, storm
 	let g:tokyonight_enable_italic = 1
 	let g:tokyonight_disable_italic_comment = 1
+
 	colorscheme tokyonight
 " }}}
 
-" supertab {{{
+" super tab {{{
     let g:SuperTabMappingForward = '<s-tab>'
     let g:SuperTabMappingBackward = '<tab>'
     let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
