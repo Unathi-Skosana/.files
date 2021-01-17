@@ -2,20 +2,23 @@ env:
   TERM: xterm-256color
 
 window:
-    dynamic_title: true
 
     dimensions:
         columns: 0
         lines: 0
 
     padding:
-        x: 20
-        y: 20
+        x: 15
+        y: 15
+
+    dynamic_padding: false
+
+    startup_mode: Windowed
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  history: 10000
+  history: 5000
 
   # Scrolling distance multiplier.
   multiplier: 3
@@ -36,7 +39,7 @@ font:
     style: Italic
 
   # Point size
-  size: 13.5
+  size: 14
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -164,7 +167,7 @@ live_config_reload: true
 # You can set `shell.program` to the path of your favorite shell, e.g. `/bin/fish`.
 # Entries in `shell.args` are passed unmodified as arguments to the shell.
 shell:
-  program: /bin/fish
+  program: /usr/bin/fish
   args:
     - -l
     - -c

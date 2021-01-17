@@ -1,9 +1,11 @@
 scriptencoding UTF-8
 
 	" Required {{{
-	filetype plugin on
 	syntax on
 	set nocompatible
+    if has("autocmd")
+      filetype plugin indent on
+    endif
 " }}}
 
 " leaders {{{
@@ -11,9 +13,9 @@ scriptencoding UTF-8
 	let maplocalleader="-"
 " }}}
 
-" Completion behaviour {{
-	set completeopt+=menuone  " Show menu even if there is only one item
+" Completion behaviour {{{
 	set completeopt-=preview  " Disable the preview window
+	set completeopt+=menuone  " Show menu even if there is only one item
 	set pumheight=10  " Maximum number of items to show in popup menu
 
 	" Insert mode key word completion setting
@@ -25,13 +27,10 @@ scriptencoding UTF-8
 	set ignorecase smartcase
 
 	" Character to show before the lines that have been soft-wrapped
-	set showbreak=↪
+	set showbreak=↪ 
 
 	" Do not show "match xx of xx" and other messages during auto-completion
 	set shortmess+=c
-
-	" auto change directories
-	set autochdir
 
 	" fish shell as default
 	set shell=/usr/bin/fish
@@ -42,6 +41,16 @@ scriptencoding UTF-8
 	set shiftwidth=4    " number of spaces to use for autoindent
 	set shiftround      " round indent to multiple of shiftwidth
 	set expandtab       " expand tab to spaces so that tabs are spaces
+
+    " auto and smart indents
+    set smartindent
+    set autoindent
+
+    " enhanced auto completion
+    set wildmenu
+
+    " do not redraw screen while executing macros
+    set lazyredraw
 
 	" spelling language
 	set spell spelllang=en_us
@@ -56,7 +65,7 @@ scriptencoding UTF-8
 	" The number of command and search history to keep
 	set history=500
 
-	" The number of seconds of inactivity before swap file is written to disk
+	"     The number of seconds of inactivity before swap file is written to disk
 	set updatetime=750
 
 	" show numbers relative to current position
@@ -92,14 +101,14 @@ scriptencoding UTF-8
 	" don't continue comments on newline
 	set formatoptions-=o
 
-	" prevent two spaces in a row
-	set nojoinspaces
-
 	" normal splits
 	set splitbelow splitright
 
-	" don't jump to first character of the line
-	set nostartofline
+    " enable setting title
+    set title
+
+    " configure title to look like: Vim /path/to/file
+    set titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70
 
 " }}}
 

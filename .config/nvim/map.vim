@@ -1,15 +1,22 @@
-" base
+" semicolons & colons
+nnoremap ; :
+nnoremap : ;
+
+" Paste last time yanked, not deleted with any of d,x,c,s.
+nnoremap <leader>p "0p
+nnoremap <leader>P "0P
+
+" reload, save and quit shortcuts
 nnoremap <leader>r :source $MYVIMRC<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
-nnoremap ; :
-nnoremap : ;
 
 " fix spelling errors
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-" More quickly call external programs
-nnoremap <leader>> :!<space>
+" Splits
+nnoremap <leader>> 10<C-w>>
+nnoremap <leader>< 10<C-w><
 
 "buffers
 nnoremap  ]b :bp<CR>
@@ -25,23 +32,8 @@ vnoremap k gk
 "yank to end
 nnoremap Y y$
 
-" Remove spaces at the end of lines
-nnoremap <silent> ,<Space> :<C-u>silent! keeppatterns %substitute/\s\+$//e<CR>
-
-" note taking commands
-command! -bang -nargs=1 Vwc execute ':!vwc '.<q-args>
-command! -bang -nargs=* Notes call fzf#vim#grep("find $WIKI_PATH -iname \"*.md\" 
-      \| xargs rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, <bang>0)
-nnoremap <buffer><silent> <localleader>[ :Vwc 
-nnoremap <buffer><silent> <localleader>] :Vwc %:p <CR>
-
 if dein#tap('vim-dispatch') " {{{
-  nnoremap <silent><localleader>n :Make <CR>
-endif
-" }}}
-
-if dein#tap('markdown') " {{{
-  nnoremap <silent><localleader>m :MarkdownPreview <CR>
+  nnoremap <silent><localleader>m :Make <CR>
 endif
 " }}}
 
@@ -189,7 +181,7 @@ endif
 	nnoremap <leader>cc :ccl<CR>
 
 	" set ag as the grep program
-	if executable('rg')  
+	if executable('rg')
 		set grepprg=rg\ --vimgrep
 	endif
 " }}}

@@ -1,8 +1,8 @@
 " Required:
-set runtimepath+=/home/lynx/.cache/dein/repos/github.com/Shougo/dein.vim
+  set runtimepath+=/home/lynx/.cache/dein/repos/github.com/Shougo/dein.vim
 
-" Required:
-if dein#load_state('/home/lynx/.cache/dein')
+  " Required:
+  if dein#load_state('/home/lynx/.cache/dein')
     call dein#begin('/home/lynx/.cache/dein')
 
     " Let dein manage dein
@@ -21,13 +21,19 @@ if dein#load_state('/home/lynx/.cache/dein')
     " typesetting
     call dein#add('godlygeek/tabular', { 'on_cmd' : [ 'Tab', 'Tabularize' ] , 'augroup' : 'tabular' })
     call dein#add('plasticboy/vim-markdown')
-    call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd', 'vimwiki'],
+    call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'markdown.pandoc', 'rmd', 'vimwiki'],
 					\ 'build': 'sh -c "cd app & yarn install"' })
     call dein#add('vimwiki/vimwiki')
     call dein#add('lervag/vimtex')
 
-    " golang
+    " go
     call dein#add('fatih/vim-go')
+
+    " json
+    call dein#add('elzr/vim-json', {'on_ft': ['json', 'markdown']})
+    
+    "python
+    call dein#add('numirias/semshi')
 
     " js, jsx & graphql
     call dein#add('jparise/vim-graphql')
@@ -36,14 +42,13 @@ if dein#load_state('/home/lynx/.cache/dein')
 
     " shell
     call dein#add('georgewitteman/vim-fish')
-    call dein#add('numirias/semshi')
     call dein#add('z0mbix/vim-shfmt', { 'for': 'sh' })
 
     " tests, lsp & completion
     call dein#add('janko/vim-test')
     call dein#add('tpope/vim-dispatch')
     call dein#add('neomake/neomake')
-    call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
+    call dein#add('neoclide/coc.nvim', {'merged': 0, 'rev': 'release'})
     call dein#add('prettier/vim-prettier')
 
     " ctags
@@ -106,13 +111,7 @@ if dein#load_state('/home/lynx/.cache/dein')
     " Clear highlight search automatically for you
     call dein#add('romainl/vim-cool')
 
-    " text objects
-    call dein#add('kana/vim-operator-user')
-    call dein#add('kana/vim-textobj-user')
-    call dein#add('kana/vim-operator-replace', {'on_map': { 'vnx': '<Plug>' }})
-    call dein#add('jeetsukumaran/vim-pythonsense')
-
-    " theme
+    " themes
     call dein#add('ghifarit53/tokyonight-vim')
     call dein#add('lifepillar/vim-colortemplate')
 
@@ -134,8 +133,13 @@ if dein#load_state('/home/lynx/.cache/dein')
           \ 'hook_source': 'luafile ~/.config/nvim/colorizer.lua'
           \ })
 
+    "  yanking & pasting
     call dein#add('bfredl/nvim-miniyank')
     call dein#add('ConradIrwin/vim-bracketed-paste') 
+
+    " distraction-free writing
+    call dein#add('junegunn/goyo.vim')
+    call dein#add('junegunn/limelight.vim')
 
     " Required:
     call dein#end()
@@ -147,41 +151,75 @@ if dein#check_install()
     call dein#install()
 endif
 
+" github api token for checking package updates
+let g:dein#install_github_api_token="c714a533ff542a9be00be1dd1267152c25cef510"
+
 command! -nargs=1 PacAdd call dein#add("<qargs>")
 command! PacInstall call dein#install()
-command! -bang PacUpdate call dein#update()
-command! PacClean call dein#recache_runtimepath()
-command! PacStatus call dein#status()
+command! PacUpdate  call dein#update()
+command! PacClean   call dein#recache_runtimepath()
+command! PacStatus  call dein#check_update()
 
 " colors {{{
-    if exists('+termguicolors')
-        "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-        "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-        set termguicolors
-    endif
+  if exists('+termguicolors')
+      "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+      "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+      set termguicolors
+  endif
 
-	let g:tokyonight_style = 'night' " available: night, storm
-	let g:tokyonight_enable_italic = 1
-	let g:tokyonight_disable_italic_comment = 1
+  let g:tokyonight_style = 'night' " available: night, storm
+  let g:tokyonight_enable_italic = 1
+  let g:tokyonight_disable_italic_comment = 1
 
-	colorscheme tokyonight
+  colorscheme tokyonight
 " }}}
 
+"
 " super tab {{{
-    let g:SuperTabMappingForward = '<s-tab>'
-    let g:SuperTabMappingBackward = '<tab>'
-    let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
-    let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
-    let g:SuperTabContextDiscoverDiscovery =
-		\ ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
-
-    autocmd FileType *
-        \ if &omnifunc != '' |
-        \   call SuperTabChain(&omnifunc, "<c-p>") |
-        \ endif
+  let g:SuperTabMappingForward = '<tab>'
+  let g:SuperTabMappingBackward = '<s-tab>'
+  let g:SuperTabDefaultCompletionType = "<c-n>"
+  let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
+  let g:SuperTabContextTextOmniPrecedence = ['&omnifunc', '&completefunc']
+  let g:SuperTabContextDiscoverDiscovery =
+      \ ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
+  autocmd FileType *
+      \ if &omnifunc != '' |
+      \   call SuperTabChain(&omnifunc, "<c-n>") |
+      \ endif
 " }}}
 
-" vimtex {{
+" list of the extensions to make sure are always installed
+let g:coc_global_extensions = [
+            \'coc-yank',
+            \'coc-ultisnips',
+            \'coc-tailwindcss',
+            \'coc-snippets',
+            \'coc-pairs',
+            \'coc-json',
+            \'coc-actions',
+            \'coc-css',
+            \'coc-html',
+            \'coc-tsserver',
+            \'coc-yaml',
+            \'coc-lists',
+            \'coc-pyright',
+            \'coc-clangd',
+            \'coc-prettier',
+            \'coc-syntax',
+            \'coc-git',
+            \'coc-marketplace',
+            \'coc-highlight',
+            \'coc-vimtex',
+            \'coc-bibtex',
+            \'coc-vimlsp',
+            \'coc-tsserver',
+            \'coc-sh',
+            \'coc-markdownlint',
+            \'coc-diagnostic'
+            \]
+
+" vim tex {{
   let g:tex_flavor = "latex"
   let g:tex_conceal = 0
   let g:vimtex_compiler_latexmk = {
@@ -202,57 +240,32 @@ command! PacStatus call dein#status()
 " }}
 
 " vim-cool {{{
-let g:CoolTotalMatches = 1
+  let g:CoolTotalMatches = 1
 " }}}
 
 " markdown {{{
-  let g:vim_markdown_math = 1
-  let g:vim_markdown_frontmatter = 1
-  let g:vim_markdown_strikethrough = 1
-  let g:vim_markdown_autowrite = 1
-  let g:vim_markdown_folding_style_pythonic = 1
-  let g:vim_markdown_follow_anchor = 1
-  let g:vim_markdown_math = 1
-  let g:vim_markdown_frontmatter = 1
-  let g:vim_markdown_toml_frontmatter = 1
-  let g:vim_markdown_toml_frontmatter = 1
-  let g:vim_markdown_strikethrough = 1
-  let g:vim_markdown_new_list_item_indent = 2
-  let g:vim_markdown_no_extensions_in_markdown = 1
-  let g:vim_markdown_autowrite = 1
+    " disable header folding
+    let g:vim_markdown_folding_disabled = 1
+
+    " do not use conceal feature, the implementation is not so good
+    let g:vim_markdown_conceal = 0
+
+    " disable math tex conceal feature
+    let g:tex_conceal = ""
+    let g:vim_markdown_math = 1
+
+    " support front matter of various format
+    let g:vim_markdown_frontmatter = 1  " for YAML format
+    let g:vim_markdown_toml_frontmatter = 1  " for TOML format
+    let g:vim_markdown_json_frontmatter = 1  " for JSON format
 " }}}
 
-  " set to 1, nvim will open the preview window after entering the markdown buffer
-  " default: 0
-  let g:mkdp_auto_start = 0
-
+" markdown-preview.nvim {{{
   " set to 1, the nvim will auto close current preview window when change
   " from markdown buffer to another buffer
   " default: 1
   let g:mkdp_auto_close = 0
-
-  " set to 1, the vim will refresh markdown when save the buffer or
-  " leave from insert mode, default 0 is auto refresh markdown as you edit or
-  " move the cursor
-  " default: 0
-  let g:mkdp_refresh_slow = 0
-
-  " set to 1, the MarkdownPreview command can be use for all files,
-  " by default it can be use in markdown file
-  " default: 0
-  let g:mkdp_command_for_global = 0
-
-  " set to 1, preview server available to others in your network
-  " by default, the server listens on localhost (127.0.0.1)
-  " default: 0
-  let g:mkdp_open_to_the_world = 0
-
-  " use custom IP to open preview page
-  " useful when you work in remote vim and preview on local browser
-  " more detail see: https://github.com/iamcco/markdown-preview.nvim/pull/9
-  " default empty
-  let g:mkdp_open_ip = ''
-
+  "
   " specify browser to open preview page
   " default: ''
   let g:mkdp_browser = 'firefox'
@@ -260,11 +273,6 @@ let g:CoolTotalMatches = 1
   " set to 1, echo preview page url in command line when open preview page
   " default is 0
   let g:mkdp_echo_preview_url = 0
-
-  " a custom vim function name to open preview page
-  " this function will receive url as param
-  " default is empty
-  let g:mkdp_browserfunc = ''
 
   " options for markdown render
   " mkit: markdown-it options for render
@@ -354,10 +362,10 @@ let g:CoolTotalMatches = 1
   let g:go_highlight_extra_types = 1
   let g:go_highlight_build_constraints = 1
   let g:go_highlight_generate_tags = 1
+  
   "disable use K to run godoc
   let g:go_doc_keywordprg_enabled = 0
   let g:go_def_mapping_enabled = 0
-
 " }}}
 
 " fzf {{{
@@ -388,7 +396,7 @@ let g:CoolTotalMatches = 1
 " }}}
 
 
-" gitgutter {{{
+" git gutter {{{
   let g:gitgutter_sign_added = '+'
   let g:gitgutter_sign_modified = '~'
   let g:gitgutter_sign_removed = '-'
@@ -398,23 +406,17 @@ let g:CoolTotalMatches = 1
   highlight GitGutterDelete guifg=#F56565 guibg=NONE
   highlight GitGutterAdd    guifg=#48BB78 guibg=NONE
   highlight GitGutterChange guifg=#ECC94B guibg=NONE
-
 " }}}
 
-" indentline {{{
+" indent line {{{
   let g:indentline_enabled = 1
-  let g:indentline_char='┆'
+  let g:indentline_char_list=['▏', '¦', '┆', '┊']
   let g:indentLine_fileTypeExclude = ['defx', 'denite','startify','tagbar','vista_kind','vista']
-  let g:indentLine_concealcursor = 'niv'
-  let g:indentLine_color_term = 96
-  let g:indentLine_color_gui= '#725972'
-  let g:indentLine_showFirstIndentLevel =1
-
-  autocmd FileType markdown let g:indentLine_enabled=0
-
+  let g:indentLine_setColors = 0
+  let g:indentLine_setConceal = 0
 " }}}
 
-" vimwiki {{{
+" vim wiki {{{
   let default_wiki = {}
   let default_wiki.path = '~/Dropbox/wiki/'
   let default_wiki.syntax = 'markdown'
@@ -426,12 +428,6 @@ let g:CoolTotalMatches = 1
   let code_wiki.syntax = 'markdown'
   let code_wiki.ext = '.md'
   let code_wiki.auto_diary_index = 1
-
-  let personal_wiki = {}
-  let personal_wiki.path = '~/Dropbox/wiki/personal'
-  let personal_wiki.syntax = 'markdown'
-  let personal_wiki.ext = '.md'
-  let personal_wiki.auto_diary_index = 1
 
   let academics_wiki = {}
   let academics_wiki.path = '~/Dropbox/wiki/academics'
@@ -453,14 +449,30 @@ let g:CoolTotalMatches = 1
 
   let g:vimwiki_table_mappings = 0
   let g:vimwiki_global_ext = 0
-  let g:vimwiki_list = [default_wiki,books_wiki,code_wiki,personal_wiki,academics_wiki,cheats_wiki]
+  let g:vimwiki_list = [default_wiki,books_wiki,code_wiki,academics_wiki,cheats_wiki]
   let g:taskwiki_markup_syntax = 'markdown'
   let g:vimwiki_ext2syntax = {}
-
+  let g:vimwiki_listsyms = '✗○◐●✓'
 " }}}
 
 " startify {{{
-  let g:startify_bookmarks=['~/.config/alacritty/alacritty.yml', '~/.config/nvim/init.vim', '~/repositories/', '~/Dropbox/']
+  " bookmarks
+  let g:startify_bookmarks = [
+        \ {'a' : '~/.config/alacritty/alacritty.yml'},
+        \ {'v' : '~/.config/nvim/init.vim'},
+        \ {'r' : '~/repositories/'},
+        \ {'d' : '~/Dropbox/'}
+        \ ]
+
+  " custom commands
+  let g:startify_commands = [
+    \ {'ch':  ['Health Check', ':checkhealth']},
+    \ {'ps': ['Packages status', ':PacStatus']},
+    \ {'pu': ['Packages updates',':PacUpdate']},
+    \ {'uc': ['Update coc Plugins', ':CocUpdate']},
+    \ {'h':  ['Help', ':help']},
+    \ ]
+
   let g:startify_lists = [
             \ { 'type': 'sessions',  'header': ['   Sessions']       },
             \ { 'type': 'files',     'header': ['   Recent Files']   },
@@ -472,7 +484,14 @@ let g:CoolTotalMatches = 1
 " }}}
 
 " vista {{{
+  let g:vista_executive_for = {
+        \ 'c': 'coc',
+        \ }
+  let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+  let g:vista_sidebar_width = 50
+  "
   " The default icons can't be suitable for all the filetypes, you can extend it as you wish.
+  let g:vista#renderer#enable_icon = 1
   let g:vista#renderer#icons = {
   \   "function": "\uf794",
   \   "variable": "\uf71b",
@@ -502,7 +521,11 @@ let g:CoolTotalMatches = 1
       quit
     endif
   endfunction
-
 " }}}
 
-" vim:set ft=vim et sw=2:
+" Goyo & Limelight {{{
+  autocmd! User GoyoEnter Limelight
+  autocmd! User GoyoLeave Limelight!
+" }}}
+
+"vim:set ft=vim et sw=2:

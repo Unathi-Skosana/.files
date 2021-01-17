@@ -33,11 +33,3 @@ set fish_color_valid_path
 
 # Load custom functions
 . $HOME/.config/fish/functions/misc.fish
-
-# Load bindings
-. $HOME/.config/fish/bindings.fish
-
-
-#nvm install 6.11.1
-#nvm alias default 6.11.1
-#nvm alias default 6.11.1

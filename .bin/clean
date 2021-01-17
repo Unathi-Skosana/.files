@@ -6,7 +6,7 @@ sh -c "echo 3 > /proc/sys/vm/drop_caches"
 updatedb
 yes | pacman -Sc
 yes | pacman -Rns $(pacman -Qtdq)
-yes | /usr/bin/python3.8 /home/lynx/.bin/rmshit.py
+yes | /usr/bin/python /home/lynx/.bin/rmshit.py
 
 exit 0
 
