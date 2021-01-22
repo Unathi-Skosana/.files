@@ -31,5 +31,8 @@ set fish_color_valid_path
 # Load fish aliases
 . $HOME/.config/fish/aliases.fish
 
+# Load fish abbreviations
+. $HOME/.config/fish/abbreviations.fish
+
 # Load custom functions
 . $HOME/.config/fish/functions/misc.fish
