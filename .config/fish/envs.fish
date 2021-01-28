@@ -19,8 +19,8 @@ set -gx LANG en_US.UTF-8
 set -gx WIKI_PATH $HOME/Dropbox/wiki
 set -gx FZF_DEFAULT_COMMAND 'fd -H'
 set -gx FZF_DEFAULT_OPTS "
- --color=fg:#a9b1d6,bg:#1a1b26,hl:#449dab
- --color=fg+:#acb0d0,bg+:#1a1b26,hl+:#0db9d7
- --color=info:#9ece6a,prompt:#f7768e,pointer:#bb9af7
- --color=marker:#b9f27c,spinner:#ff9e64,header:#7aa2f7'
+ --color=fg:#cbe2e7,bg:#1e1c31,hl:#3e3859
+ --color=fg+:#cbe2e7,bg+:#1e1c31,hl+:#585273
+ --color=info:#ffe6b3,prompt:#f02e6e,pointer:#d4bfff
+ --color=marker:#d4bfff,spinner:#F2B482,header:#62d196
 "

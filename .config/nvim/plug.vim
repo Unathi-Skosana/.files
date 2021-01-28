@@ -48,7 +48,7 @@
     call dein#add('janko/vim-test')
     call dein#add('tpope/vim-dispatch')
     call dein#add('neomake/neomake')
-    call dein#add('neoclide/coc.nvim', {'merged': 0, 'rev': 'release'})
+    call dein#add('neoclide/coc.nvim', { 'merged': 0, 'rev': 'master', 'build': 'yarn install --frozen-lockfile' })
     call dein#add('prettier/vim-prettier')
 
     " ctags
@@ -112,7 +112,7 @@
     call dein#add('romainl/vim-cool')
 
     " themes
-    call dein#add('ghifarit53/tokyonight-vim')
+    call dein#add('embark-theme/vim', { 'as': 'embar' })
     call dein#add('lifepillar/vim-colortemplate')
 
     " indent markers
@@ -167,11 +167,7 @@ command! PacStatus  call dein#check_update()
       set termguicolors
   endif
 
-  let g:tokyonight_style = 'night' " available: night, storm
-  let g:tokyonight_enable_italic = 1
-  let g:tokyonight_disable_italic_comment = 1
-
-  colorscheme tokyonight
+  colorscheme embark
 " }}}
 
 "
