@@ -233,6 +233,9 @@ let g:coc_global_extensions = [
       \ 'show_numbers' : 1,
       \ 'mode' : 2,
   \ }
+
+
+  let g:vimtex_grammar_vlty = {'lt_command': 'languagetool'}
 " }}
 
 " vim-cool {{{

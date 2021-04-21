@@ -29,7 +29,7 @@ set fish_color_valid_path
 . $HOME/.tacklebox/tacklebox.fish
 
 # Load fish aliases
-. $HOME/.config/fish/aliases.fish
+# . $HOME/.config/fish/aliases.fish
 
 # Load fish abbreviations
 . $HOME/.config/fish/abbreviations.fish

@@ -36,6 +36,7 @@ scriptencoding UTF-8
 	set shell=/usr/bin/fish
 
 	" General tab settings
+    set textwidth=80
 	set tabstop=4       " number of visual spaces per TAB
 	set softtabstop=4   " number of spaces in tab when editing
 	set shiftwidth=4    " number of spaces to use for autoindent
@@ -44,7 +45,9 @@ scriptencoding UTF-8
 
     " auto and smart indents
     set smartindent
+    set smarttab
     set autoindent
+    set wrap linebreak
 
     " enhanced auto completion
     set wildmenu

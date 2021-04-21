@@ -2,11 +2,5 @@
 
 ## Notification whenever I have unfinished tasks
 
-school=$(python $HOME/.bin/t.py --task-dir ~/tasks --list school)
-miscellaneous=$(python $HOME/.bin/t.py --task-dir ~/tasks --list miscellaneous)
-
-if [[ ! -z "$school" || ! -z "$miscellaneous" ]];
-then
-    /usr/bin/aplay $HOME/.bin/notify.wav
-    /usr/bin/notify-send "Unfinished tasks" -t 8000 "School work\n$school\n\n\nMiscellaneous\n$miscellaneous"
-fi
+/usr/bin/aplay $HOME/.bin/notify.wav
+/usr/bin/notify-send "Daily tasks" -t 8000 "Check your grit task-list."

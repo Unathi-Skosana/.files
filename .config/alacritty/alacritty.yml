@@ -29,14 +29,11 @@ draw_bold_text_with_bright_colors: false
 # Font configuration
 font:
   normal:
-    family: Iosevka
+    family: Agave
     style: Regular
   bold:
-    family: Iosevka
+    family: Agave
     style: Bold
-  italic:
-    family: Iosevka
-    style: Italic
 
   # Point size
   size: 14

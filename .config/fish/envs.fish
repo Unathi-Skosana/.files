@@ -11,11 +11,10 @@ set -gx PATH $PATH /opt/anaconda/bin
 set -gx PROJECT_PATHS $HOME/repositories $HOME/playground $HOME/go/src/github.com $HOME/Dropbox $HOME/.config
 set -gx EDITOR /usr/bin/nvim
 set -gx VISUAL /usr/bin/nvim
+set -gx LANG en_US.UTF-8
 set -x -U GOPATH $HOME/go
 set -gx VIMPATH /home/nyx/.config/nvim
 set -gx JUPYTERLAB_DIR $HOME/.local/share/jupyter/lab
-set -gx LC_ALL en_US.UTF-8
-set -gx LANG en_US.UTF-8
 set -gx WIKI_PATH $HOME/Dropbox/wiki
 set -gx FZF_DEFAULT_COMMAND 'fd -H'
 set -gx FZF_DEFAULT_OPTS "

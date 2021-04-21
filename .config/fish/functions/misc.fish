@@ -17,7 +17,7 @@ end
 
 function new_folder_from_template
     mkdir -p $argv[2]
-    cp -RT $HOME/Templates/$argv[1] $argv[2]
+    cp -RT $HOME/templates/$argv[1] $argv[2]
 end
 
 function rm_swap
