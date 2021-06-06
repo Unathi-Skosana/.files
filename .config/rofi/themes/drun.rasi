@@ -1,5 +1,5 @@
 configuration {
-    font:                           "IBM Plex Mono Medium 13";
+    font:                           "Agave 18";
     show-icons:                     true;
     drun-display-format:            "{name}";
     threads:                        0;

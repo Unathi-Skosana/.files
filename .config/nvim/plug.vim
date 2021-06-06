@@ -50,6 +50,10 @@
     call dein#add('neomake/neomake')
     call dein#add('neoclide/coc.nvim', { 'merged': 0, 'rev': 'master', 'build': 'yarn install --frozen-lockfile' })
     call dein#add('prettier/vim-prettier')
+    call dein#add('kyazdani42/nvim-web-devicons')
+    call dein#add('folke/trouble.nvim', {
+          \ 'hook_source': 'luafile ~/.config/nvim/trouble.lua'
+          \ })
 
     " ctags
     call dein#add('universal-ctags/ctags')
@@ -113,6 +117,7 @@
 
     " themes
     call dein#add('embark-theme/vim', { 'as': 'embar' })
+    call dein#add('folke/tokyonight.nvim')
     call dein#add('lifepillar/vim-colortemplate')
 
     " indent markers
@@ -167,7 +172,7 @@ command! PacStatus  call dein#check_update()
       set termguicolors
   endif
 
-  colorscheme embark
+  colorscheme tokyonight
 " }}}
 
 "

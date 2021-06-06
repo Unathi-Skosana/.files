@@ -23,6 +23,8 @@ set fish_greeting ""
 # Remove path underline
 set fish_color_valid_path
 
+. $HOME/.config/fish/colors.fish
+
 . $HOME/.config/fish/envs.fish
 
 # Load Tacklebox configuration
