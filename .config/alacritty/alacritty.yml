@@ -29,14 +29,17 @@ draw_bold_text_with_bright_colors: false
 # Font configuration
 font:
   normal:
-    family: Agave
-    style: Regular
+    family: SFMono Nerd Font Mono
+    style: Medium
   bold:
-    family: Agave
-    style: Bold
+    family: SFMono Nerd Font Mono
+    style: Semibold
+  italic:
+    family: SFMono Nerd Font Mono
+    style: SemiboldItalic
 
   # Point size
-  size: 14
+  size: 12
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -167,7 +170,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attach || tmux"
+    - "tmux -u attach || tmux -u"
 
 mouse:
   double_click: { threshold: 300 }

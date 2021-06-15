@@ -40,6 +40,7 @@ abbr  j 'pj'
 abbr  t 'exa --tree -L 2'
 abbr  ydl 'youtube-dl'
 abbr  gdl 'gitdir'
+abbr -a pjo pj open
 
 # pacman abbr es
 abbr  pac 'pacman -S'        # install

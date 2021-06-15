@@ -57,10 +57,21 @@ function p
 
     ag -U -g ".pdf\$" \
     | fast-p \
-    | fzf --read0 --reverse -e -d '\$\t'  \
+    | fzf --read0 --reverse -e -d '\t'  \
         --preview-window down:80% --preview '
-            v=$(echo {q} | tr " " "|"); 
+            set v -l (echo {q} | tr " " "|"); 
             echo -e {1}"\n"{2} | grep -E "^|$v" -i --color=always;
         ' \
-    | cut -z -f 1 -d '\$\t' | tr -d '\n' | xargs -r --null $open > /dev/null 2> /dev/null
+    | cut -z -f 1 | tr -d '\n' | xargs -r --null $open > /dev/null 2> /dev/null
+end
+
+
+# fasd & fzf change directory - jump using `fasd` if given argument, filter output of `fasd` using `fzf` else
+function z
+    if test (count $argv) -gt 0
+        fasd cd -d -i "$argv" && return
+    end
+
+    set -l dir
+    set dir "(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "$dir" || return 1
 end
