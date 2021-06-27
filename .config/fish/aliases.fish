@@ -1,1 +1,1 @@
-
+alias cat 'bat'

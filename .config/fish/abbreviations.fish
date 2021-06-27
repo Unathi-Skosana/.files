@@ -24,18 +24,10 @@ abbr  yst 'yadm status'
 abbr  ylog 'yadm log'
 abbr  ycl 'yadm clone'
 
-# fzf commands
-abbr  fc 'cd_with_fzf && clear'
-abbr  fo 'open_with_fzf && clear'
-abbr  vo 'nvim (fzf --preview="cat {}" --preview-window=right:70%:wrap)'
-
 # general commands
 abbr  v 'nvim'
 abbr  c 'clear'
 abbr  py 'python'
-abbr  cat 'bat'
-abbr  cf 'source $HOME/.config/fish/config.fish;clear'
-abbr  l 'exa'
 abbr  j 'pj'
 abbr  t 'exa --tree -L 2'
 abbr  ydl 'youtube-dl'

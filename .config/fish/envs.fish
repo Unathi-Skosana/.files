@@ -17,9 +17,9 @@ set -gx VIMPATH /home/nyx/.config/nvim
 set -gx JUPYTERLAB_DIR $HOME/.local/share/jupyter/lab
 set -gx WIKI_PATH $HOME/Dropbox/wiki
 set -gx FZF_DEFAULT_COMMAND 'fd -H'
-#p set -gx FZF_DEFAULT_OPTS "
-#  --color=fg:#cbe2e7,bg:#1e1c31,hl:#3e3859
-#  --color=fg+:#cbe2e7,bg+:#1e1c31,hl+:#585273
-#  --color=info:#ffe6b3,prompt:#f02e6e,pointer:#d4bfff
-#  --color=marker:#d4bfff,spinner:#F2B482,header:#62d196
-# "
+set -gx FZF_DEFAULT_OPTS "
+    --color=fg:#c0caf5,bg:#242838,hl:#bb9af7 
+    --color=fg+:#a9b1d6,bg+:#242838,hl+:#bb9af7
+    --color=info:#db4b4b,prompt:#7dcfff,pointer:#7dcfff 
+    --color=marker:#7aa2f7,spinner:#e0af86,header:#f7768e
+"

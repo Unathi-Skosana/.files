@@ -1,0 +1,13 @@
+#!/bin/sh
+
+MONITOR="eDP-1"
+PEN_NAME="ELAN2514:00 04F3:23F5 Pen (0)"
+ERASER_NAME="ELAN2514:00 04F3:23F5 Eraser (0)"
+PEN_ID=`xinput | grep "$PEN_NAME" | cut -f 2 | cut -c 4-5`
+ERASER_ID=`xinput | grep "$ERASER_NAME" | cut -f 2 | cut -c 4-5`
+
+xinput set-button-map "$PEN_NAME" 1 3 2
+xinput map-to-output "$PEN_ID" "$MONITOR"
+xinput map-to-output "$ERASER_ID" "$MONITOR"
+
+exit 0
